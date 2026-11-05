@@ -249,6 +249,89 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 .mk .b{border:2px solid #7a4a5a;background:#fff}
 .mk .cnt{flex:1;border:2px solid #7a4a5a;background:#fff;padding:3px 0}
 .bsecret{font-size:20px;margin-top:6px;animation:blink 1s steps(2) infinite}
+.spa{position:relative;width:240px;height:200px;margin:8px auto;background:linear-gradient(#cdeffd,#eaf9ff);border:3px solid var(--line);box-shadow:3px 3px 0 var(--pink2);touch-action:none;overflow:hidden;user-select:none;-webkit-user-select:none}
+.spacat{position:absolute;left:50%;margin-left:-54px;bottom:40px;width:108px;height:108px;line-height:0;z-index:1}
+.spacat.happy{animation:bob 1s steps(2) infinite}
+.spacat .dirt{position:absolute;width:8px;height:8px;background:#a9805f;box-shadow:8px 5px 0 #a9805f,3px 9px 0 #8a6347}
+.spacat .acc{position:absolute;line-height:0}
+.spa .tub{position:absolute;left:18px;right:18px;bottom:0;height:62px;background:#fff;border:3px solid #7a4a5a;z-index:2;box-shadow:inset 0 -10px 0 #ffd1de}
+.spa .foam{position:absolute;background:#fff;border:2px solid #bde0fe;z-index:3;pointer-events:none}
+.spa .spk{position:absolute;z-index:4;pointer-events:none;line-height:0;animation:sparkf .6s steps(4) forwards}
+@keyframes sparkf{to{transform:translateY(-16px);opacity:0}}
+.spagauges{display:flex;flex-direction:column;gap:5px;margin:6px 8px}
+.spagauges div{display:flex;align-items:center;gap:8px;font-size:18px}
+.spagauges span{width:64px;text-align:left}
+.spagauges .gb{flex:1;height:14px;border:2px solid var(--line);background:var(--bg)}
+.spagauges .gb i{display:block;height:100%;width:0;background:var(--pink2)}
+.stool{min-width:0!important;flex:1;font-size:18px!important;padding:6px 2px!important;line-height:1.1}
+.slook{min-width:0!important;width:68px;font-size:15px!important;padding:5px 2px!important;line-height:1.1}
+.fu{position:fixed;inset:0;z-index:24;display:none;overflow:hidden;background:#cdeffd;transition:background 1.4s linear}
+.fu.on{display:block}
+.fu.dusk{background:#7c7a96}
+.fu *{box-sizing:border-box}
+.fu-stage{position:absolute;inset:0}
+.fu-stage.shk{animation:fushake .6s steps(10)}
+@keyframes fushake{0%,100%{transform:translate(0)}20%{transform:translate(-10px,6px)}40%{transform:translate(9px,-7px)}60%{transform:translate(-7px,-5px)}80%{transform:translate(6px,7px)}}
+.fu-g{position:absolute;left:0;right:0;bottom:0;height:30%;background:#8fd694;border-top:4px solid #7a4a5a;z-index:2;transition:background 1.4s linear}
+.fu.dusk .fu-g{background:#4f6f5c}
+.fu-sun{position:absolute;top:14px;left:16px;width:44px;height:44px;background:#ffd23f;border:4px solid #ff9f43;box-shadow:0 0 0 6px rgba(255,210,63,.4);transition:opacity 1.4s linear}
+.fu.dusk .fu-sun{opacity:0}
+.fu-main{position:absolute;left:50%;bottom:30%;margin-left:-48px;line-height:0;z-index:3}
+.fu-main.rumble{animation:furum .08s steps(2) 16}
+@keyframes furum{25%{transform:translate(-4px,1px)}75%{transform:translate(4px,-1px)}}
+.fu-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:9}
+.fu-flash.go{animation:fuflash .8s steps(8) forwards}
+@keyframes fuflash{0%{opacity:1}100%{opacity:0}}
+.fu-p{position:absolute;width:12px;height:12px;background:var(--c);z-index:4;animation:fup .9s steps(9) forwards}
+@keyframes fup{to{transform:translate(var(--dx),var(--dy));opacity:0}}
+.fu-boom{position:absolute;top:26%;left:0;right:0;text-align:center;font-size:84px;line-height:1;color:#ff4d6d;text-shadow:5px 5px 0 #ffd23f,-3px -3px 0 #7a4a5a;z-index:8;display:none}
+.fu-boom.go{display:block;animation:fuboom 1.2s steps(6) forwards}
+@keyframes fuboom{0%{transform:scale(.2)}30%{transform:scale(1.25)}100%{transform:scale(1);opacity:0}}
+.fu-body{position:absolute;left:50%;bottom:30%;margin-left:-30px;line-height:0;opacity:0;z-index:3}
+.fu-body svg{transform:rotate(90deg)}
+.fu-body.show{animation:fudrop .7s steps(7) forwards}
+@keyframes fudrop{from{transform:translateY(-70vh);opacity:1}to{transform:none;opacity:1}}
+.fu-body.load{transition:transform 1s steps(10),opacity .3s linear .8s;transform:translateX(105px);opacity:0}
+.fu-amb{position:absolute;bottom:calc(30% - 8px);left:105%;width:130px;height:58px;z-index:3;transition:left 2s steps(20)}
+.fu-amb.park{left:calc(50% + 30px)}
+.fu-amb.leave{left:-200px;transition:left 1.8s steps(18)}
+.fu-amb.bn{animation:fubn .3s steps(2) 5}
+@keyframes fubn{50%{transform:translateY(-3px)}}
+.fu-amb>*{position:absolute}
+.fu-amb .cargo{left:40px;top:0;width:90px;height:42px;background:#fff;border:4px solid #7a4a5a}
+.fu-amb .cab{left:0;top:12px;width:44px;height:30px;background:#fff;border:4px solid #7a4a5a}
+.fu-amb .win{left:5px;top:16px;width:16px;height:12px;background:#9bd7ff;border:3px solid #7a4a5a}
+.fu-amb .cx1{left:76px;top:14px;width:26px;height:8px;background:#ff4d6d}
+.fu-amb .cx2{left:85px;top:5px;width:8px;height:26px;background:#ff4d6d}
+.fu-amb .wh{top:36px;width:20px;height:20px;background:#4a2a3a;border:4px solid #bbb}
+.fu-amb .lt{left:18px;top:2px;width:18px;height:9px;border:3px solid #7a4a5a;animation:fulight .3s steps(2) infinite}
+@keyframes fulight{0%{background:#ff4d6d}50%{background:#4d96ff}100%{background:#ff4d6d}}
+.fu-cats{position:absolute;left:0;right:0;bottom:30%;display:flex;justify-content:center;align-items:flex-end;gap:4px;padding:0 4px;z-index:3}
+.fu-c{position:relative;line-height:0;transition:transform 1.2s steps(12)}
+.fu-c.L{transform:translateX(-120vw)}
+.fu-c.R{transform:translateX(120vw)}
+.fu-c.in{transform:none}
+.fu-c.in.mad{animation:fumad .25s steps(2) infinite}
+@keyframes fumad{50%{transform:translateY(-3px)}}
+.fu-c.bow svg{transform:rotate(7deg) translateY(3px)}
+.fu-c .tear{position:absolute;width:4px;height:8px;background:#6bb5e8;top:44%;animation:futear .9s steps(6) infinite}
+@keyframes futear{from{transform:translateY(0);opacity:1}to{transform:translateY(20px);opacity:0}}
+.fu-sp{width:0;flex:none;transition:width 1.2s steps(12)}
+.fu-grave{position:absolute;left:50%;bottom:30%;margin-left:-25px;line-height:0;z-index:1;transform:translateY(105%)}
+.fu-grave.up{transition:transform 1.4s steps(14);transform:none}
+.fu-grave .fl{position:absolute;bottom:-4px}
+.fu-name{position:absolute;left:0;right:0;bottom:21%;text-align:center;font-size:20px;color:#fff;z-index:3;opacity:0;transition:opacity 1s linear}
+.fu-name.on{opacity:1}
+.fu-rain{position:absolute;inset:0;z-index:5;pointer-events:none;display:none}
+.fu-rain.on{display:block}
+.fu-rain i{position:absolute;top:-20px;width:2px;height:14px;background:#bfe3ff;animation:furain .7s linear infinite}
+@keyframes furain{to{transform:translateY(110vh)}}
+.fu-msg{position:absolute;top:7%;left:50%;transform:translateX(-50%);width:max-content;max-width:340px;background:var(--card);color:var(--ink);border:4px solid var(--line);box-shadow:4px 4px 0 var(--pink2);padding:8px 12px;font-size:23px;line-height:1.1;text-align:center;z-index:7}
+.fu-msg.big{font-size:30px;animation:fumsg .15s steps(2) infinite}
+@keyframes fumsg{50%{transform:translateX(-50%) translateY(-3px)}}
+.fu-skip{position:absolute;top:8px;right:8px;z-index:10;font-size:16px!important;padding:2px 8px!important}
+.fu-close{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);z-index:10;display:none}
+.fu-close.on{display:block}
 .credcats{display:grid;grid-template-columns:1fr 1fr;gap:10px 4px;margin:10px 0}.credroll .credcat{display:flex;align-items:center;justify-content:center;gap:6px;margin:0}.credcat svg{flex:none}
 .cc{opacity:0}.cc.y{opacity:1}.pend{visibility:hidden}
 @keyframes credroll{to{transform:translateY(var(--d))}}
@@ -339,6 +422,7 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
     <li>Écrire « miaou » comme mot de passe : le chat répond. Écrire « je t’aime » : confettis et réponse tendre.</li>
     <li>Taper sur le chat : il miaule et dit un de ses petits mots.</li>
     <li>Taper sur la pièce d’or : mini-jeu de mémoire. En gagnant, on reçoit l’indice pour l’œuf caché du mot de passe « miaou ».</li>
+    <li>Mini-jeu « Spa des ronrons » : savon, rinçage, brossage et petit look pour chouchouter ton chat.</li>
     <li>Mini-jeu « Nourris le chat » : remplir la gamelle sans déborder. Récompense : le secret « je t’aime » à écrire dans le mot de passe.</li>
     <li>Taper 3 fois sur le texte d’accueil : confettis.</li>
     <li>Taper sur la date des retrouvailles : petit mot doux.</li>
@@ -400,7 +484,14 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 <div><button class="btn" id="instPrev">‹ Retour</button><button class="btn main" id="instNext">Suivant ›</button></div>
 <button class="btn" id="instClose">Fermer</button></div></div>
 <div class="ovl" id="gameOvl"><div class="box"><h2>Memory des ronrons</h2><p style="margin:0">Retrouve les 6 paires · Coups : <b id="gmoves">0</b></p><div class="mem" id="mem"></div><div class="clue" id="clue">Bravo mon ronron ! ♡ Indice secret : c’est le mot que le chat dit si bien (5 lettres). Va l’écrire dans le mot de passe de l’Administrateur ronron…</div><button class="btn main" id="gnew">Rejouer</button><button class="btn" id="gclose">Fermer</button></div></div>
-<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ♡</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
+<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ♡</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button><button class="pick" id="gspa"></button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
+<div class="ovl" id="spaOvl"><div class="box" style="text-align:center"><h2 id="spaTitle">Spa des ronrons</h2>
+<div class="fbub" id="spaBub"></div>
+<div class="spa" id="spaArea"><div class="spacat" id="spaCat"></div><div class="tub"></div></div>
+<div class="spagauges"><div><span>Propre</span><div class="gb"><i id="gP"></i></div></div><div><span>Doux</span><div class="gb"><i id="gD"></i></div></div><div><span>Style</span><div class="gb"><i id="gS"></i></div></div></div>
+<div class="cats" id="spaTools"></div>
+<div class="cats" id="spaLooks" style="display:none"></div>
+<button class="btn" id="spaNew">Recommencer</button><button class="btn" id="spaClose">Fermer</button></div></div>
 <div class="ovl" id="feedOvl"><div class="box"><h2>Nourris le chat</h2><div class="fbub" id="fbub"></div><div class="feed"><div class="fcat" id="fcat"></div><div class="bowlwrap"><div class="stream" id="stream"></div><div class="bowl"><div class="bowlin"><div class="food" id="food"></div><div class="mk"></div></div></div></div></div><button class="btn main can" id="can">Maintiens pour verser la pâtée</button><div class="clue" id="fclue">Le chat ronronne de bonheur et te murmure son secret : « je t’aime ». Va l’écrire dans le mot de passe de l’Administrateur ronron ♡</div><button class="btn" id="fnew">Rejouer</button><button class="btn" id="fclose">Fermer</button></div></div>
 <div class="ovl" id="catchOvl"><div class="box"><h2>Attrape les cœurs</h2><div class="hud"><span>Cœurs : <b id="cscore">0</b>/15</span><span>Vies : <b id="clives">5</b></span></div><canvas class="hgame" id="ccv" width="300" height="380"></canvas><div class="fbub" id="cbub"></div><div class="clue" id="cclue"></div><button class="btn main" id="cnew">Rejouer</button><button class="btn" id="cclose">Fermer</button></div></div>
 <div class="ovl" id="mouseOvl"><div class="box"><h2>Chasse à la souris</h2><div class="hud"><span>Souris : <b id="mscore">0</b>/12</span><span>Temps : <b id="mleft">20</b></span></div><div class="holes" id="holes"></div><div class="fbub" id="mbub"></div><div class="clue" id="mclue"></div><button class="btn main" id="mstart">Jouer</button><button class="btn" id="mclose2">Fermer</button></div></div>
@@ -411,6 +502,7 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 <div id="topen" style="display:none"><div class="tick"><div class="tkt">BILLET POUR LES RETROUVAILLES</div><div class="tkrow"><div><small>DESTINATION</small><b>Mes bras ♡</b></div><div><small>DATE</small><b>Sam. 7 nov.</b></div><div><small>HEURE</small><b>19h00</b></div></div><div class="tkmsg" id="tmsg"></div><div class="tkstamp" id="tstamp">VALIDÉ ♡</div></div></div>
 <button class="btn" id="tclose">Fermer</button></div></div>
 <div class="police" id="police"><div class="pbox" id="pbox"><p style="margin:0 0 8px">Miaou-miaou, police des câlins ! L’enveloppe a explosé de tendresse… On la fait réapparaître ?</p><button class="btn main" id="pyes">Oui, s’il te plaît ♡</button><button class="btn" id="pno">Plus tard</button></div><div id="pcar" style="line-height:0"></div></div>
+<div class="fu" id="fu"><div class="fu-stage" id="fuStage"><div class="fu-sun"></div><div class="fu-g"></div><div class="fu-grave" id="fuGrave"></div><div class="fu-name" id="fuName"></div><div class="fu-main" id="fuMain"></div><div class="fu-body" id="fuBody"></div><div class="fu-amb" id="fuAmb"><div class="cargo"></div><div class="cab"></div><div class="win"></div><div class="cx1"></div><div class="cx2"></div><div class="lt"></div><div class="wh" style="left:10px"></div><div class="wh" style="left:96px"></div></div><div class="fu-cats" id="fuCats"></div><div class="fu-rain" id="fuRain"></div></div><div class="fu-boom" id="fuBoom">BOUM !</div><div class="fu-msg" id="fuMsg"></div><div class="fu-flash" id="fuFlash"></div><button class="btn fu-skip" id="fuSkip">Passer</button><button class="btn main fu-close" id="fuClose">Fermer ♡</button></div>
 <div class="clown" id="clown"><div class="cl-msg" id="clMsg"></div><div class="cl-car" id="clCar"></div><div class="cl-cats" id="clCats"></div><button class="btn main cl-close" id="clClose">Fin du spectacle ♡</button></div>
 <div class="toast" id="toast">Enregistré ♡</div>
  
@@ -751,7 +843,7 @@ function credSpeed(s){
 $('credX1').onclick=()=>credSpeed(1);
 $('credX2').onclick=()=>credSpeed(2);
 $('credX4').onclick=()=>credSpeed(4);
-
+ 
 /* ---------- Installer l'appli (iPhone) ---------- */
 const APP_ICON=CAT_BASE.concat(['..oooooooo..']);
 const iSHARE=['....o....','...ooo...','..o.o.o..','....o....','.o..o..o.','.o.....o.','.o.....o.','.o.....o.','.ooooooo.'];
@@ -795,7 +887,7 @@ $('installBtn').onclick=instOpen;
 $('instClose').onclick=instClose;
 $('instPrev').onclick=()=>{if(instI>0){instI--;sfxPop();instShow()}};
 $('instNext').onclick=()=>{if(instI<INST.length-1){instI++;sfxPop();instShow()}else{instClose();rainHearts(10)}};
-
+ 
 /* ---------- Aide : visite guidée du site ---------- */
 const iQ=['.ooooo.','oo...oo','.....oo','...ooo.','..oo...','..oo...','.......','..oo...','..oo...'];
 const iHOUSE=['..oo..','.oppo.','oppppo','owwwwo','owewwo','oooooo'];
@@ -824,7 +916,7 @@ const HELP=[
   {k:['admin'],t:'En haut à gauche : l’espace Administrateur ronron. Il faut un mot de passe pour entrer… et certains mots magiques font des surprises !'},
   {k:['aide'],t:'Juste en dessous : le bouton Aide. Touche-le quand tu veux et je te refais la visite ♡'},
   {k:['music'],t:'En haut à droite : la musique. Tu peux la lancer, la mettre en pause et régler le volume.'},
-  {k:['coin'],t:'La petite pièce dorée ouvre les petits jeux : des défis, des chats bonus et ton carnet secret.'},
+  {k:['coin'],t:'La petite pièce dorée ouvre les petits jeux : des défis, des chats bonus, un spa pour me chouchouter et ton carnet secret.'},
   {k:['count'],t:'Le compte à rebours : il te dit combien de temps il reste avant les retrouvailles, samedi 7 novembre à 19h.'},
   {k:['route'],t:'La petite route relie chez Kevin et chez Léo, avec un chat qui voyage entre les deux maisons.'},
   {k:['env'],t:'L’enveloppe : elle s’ouvre à 19h le grand soir. Ensuite, touche-la pour relire ta lettre.'},
@@ -880,6 +972,97 @@ $('g2').insertAdjacentHTML('afterbegin',pix(CAT_ICON,4,GP)+'<br>');
 $('g1').onclick=()=>{$('menuOvl').classList.remove('on');newGame();$('gameOvl').classList.add('on')};
 $('g2').onclick=()=>{$('menuOvl').classList.remove('on');feedReset();$('feedOvl').classList.add('on')};
 $('mclose').onclick=()=>$('menuOvl').classList.remove('on');
+/* ---------- Spa des ronrons ---------- */
+const sBUB=['..ooo..','.o...o.','o..o..o','o.....o','.o...o.','..ooo..'];
+const sDROP=['...o...','..ooo..','.ooooo.','ooooooo','ooooooo','.ooooo.'];
+const sBRUSH=['.....oo','....oo.','...oo..','.xxo...','xxxx...','xxx....'];
+const SPAP={o:'#6bb5e8',x:'#ff8fab'};
+const ACC={
+  bow:{n:'Nœud',s:6,x:0,y:-6,g:['xx...xx','xxx.xxx','xxxoxxx','xxx.xxx','xx...xx'],p:{x:'#ff6f91',o:'#c9456a'}},
+  crown:{n:'Couronne',s:6,x:33,y:-14,g:['y.y.y.y','yyyyyyy','yrygyry','yyyyyyy'],p:{y:'#ffd23f',r:'#ff6f91',g:'#7ed6ff'}},
+  hat:{n:'Chapeau',s:6,x:39,y:-24,g:['..y..','.yyy.','.yry.','yyyyy','yryry'],p:{y:'#9bf6ff',r:'#ff6f91'}},
+  glasses:{n:'Lunettes',s:9,x:14,y:30,g:['kkkk.kkkk','kkkk.kkkk','.kk...kk.'],p:{k:'#4a2a3a'}},
+  flower:{n:'Fleur',s:6,x:88,y:-6,g:['.x.','xyx','.x.'],p:{x:'#ff8fab',y:'#ffd23f'}}
+};
+$('gspa').innerHTML=pix(sBUB,5,SPAP)+'<br>Spa<br>des ronrons';
+const SPA_N=9;
+let spaTool='foam',spaDone=false,spaLast=null,spaFoam=[],spaRinsed=0,spaDist=0,spaAcc='',spaAdds=0,spaAD=0,spaHint=false,spaT=null,spaG={P:0,D:0,S:0};
+function spaSay(t){const el=$('spaBub');el.textContent='';let i=0;clearInterval(spaT);spaT=setInterval(()=>{i++;el.textContent=t.slice(0,i);if(i%2===0&&t[i-1]!==' ')typeBlip();if(i>=t.length)clearInterval(spaT)},24)}
+function spaGauges(){$('gP').style.width=Math.round(spaG.P*100)+'%';$('gD').style.width=Math.round(spaG.D*100)+'%';$('gS').style.width=Math.round(spaG.S*100)+'%'}
+function spaAccDraw(){
+  document.querySelectorAll('#spaCat .acc').forEach(e=>e.remove());
+  const a=ACC[spaAcc];if(!a)return;
+  const d=document.createElement('div');d.className='acc';d.style.left=a.x+'px';d.style.top=a.y+'px';d.innerHTML=pix(a.g,a.s,a.p);$('spaCat').appendChild(d);
+}
+function spaSetTool(t,quiet){
+  spaTool=t;
+  document.querySelectorAll('#spaTools .stool').forEach(b=>b.classList.toggle('sel',b.dataset.t===t));
+  $('spaLooks').style.display=t==='look'?'flex':'none';
+  if(quiet)return;
+  spaSay({foam:'Splash ! Frotte-moi avec du savon, partout…',rinse:'Rince-moi bien, il faut que toute la mousse parte !',brush:'Brosse-moi tout doucement… ça ronronne déjà.',look:'Choisis-moi un petit look, s’il te plaît ♡'}[t]);
+}
+function spaStart(){
+  const n=CATS[catIdx].n;
+  $('spaTitle').textContent='Spa '+(/^[AEIOUÉ]/i.test(n)?'d’':'de ')+n;
+  spaDone=false;spaLast=null;spaFoam=[];spaRinsed=0;spaDist=0;spaAcc='';spaAdds=0;spaAD=0;spaHint=false;spaG={P:0,D:0,S:0};
+  $('spaArea').querySelectorAll('.foam,.spk').forEach(e=>e.remove());
+  const c=$('spaCat');c.classList.remove('happy');c.innerHTML=pix(CAT_A,9,catPal(catIdx));
+  for(let i=0;i<SPA_N;i++){const d=document.createElement('i');d.className='dirt';d.style.left=(6+Math.random()*84)+'px';d.style.top=(8+Math.random()*62)+'px';c.appendChild(d)}
+  const tb=$('spaTools');tb.innerHTML='';
+  [['foam',sBUB,'Savon'],['rinse',sDROP,'Rincer'],['brush',sBRUSH,'Brosse'],['look',ACC.bow.g,'Look']].forEach(a=>{
+    const b=document.createElement('button');b.className='pick stool';b.dataset.t=a[0];
+    b.innerHTML=pix(a[1],3,a[0]==='look'?ACC.bow.p:SPAP)+'<br>'+a[2];
+    b.onclick=()=>{if(!spaDone){sfxPop();spaSetTool(a[0])}};tb.appendChild(b)});
+  const lk=$('spaLooks');lk.innerHTML='';
+  Object.keys(ACC).concat(['none']).forEach(k=>{
+    const b=document.createElement('button');b.className='pick slook';
+    b.innerHTML=(k==='none'?'':pix(ACC[k].g,2,ACC[k].p))+'<br>'+(k==='none'?'Rien':ACC[k].n);
+    b.onclick=()=>{if(spaDone)return;sfxPop();spaAcc=k==='none'?'':k;spaG.S=spaAcc?1:0;spaAccDraw();spaGauges();spaCheck()};
+    lk.appendChild(b)});
+  spaSetTool('foam',true);spaGauges();
+  spaSay('Bienvenue au spa ! Je suis tout sale… Commence par le savon ♡');
+}
+function spaPt(e){const r=$('spaArea').getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+function spaAct(p,d){
+  const area=$('spaArea');
+  if(spaTool==='foam'){
+    spaAD+=d;
+    if(d===0||spaAD>=10){
+      spaAD=0;const z=12+Math.random()*10,f=document.createElement('div');
+      f.className='foam';f.style.width=f.style.height=z+'px';f.style.left=(p.x-z/2+(Math.random()*8-4))+'px';f.style.top=(p.y-z/2+(Math.random()*8-4))+'px';
+      area.appendChild(f);spaFoam.push(f);
+      if(spaFoam.length>45){const o=spaFoam.shift();o.remove()}
+      if(++spaAdds%4===0)typeBlip();
+    }
+  }else if(spaTool==='rinse'){
+    let hit=0;
+    spaFoam=spaFoam.filter(f=>{const x=parseFloat(f.style.left)+parseFloat(f.style.width)/2,y=parseFloat(f.style.top)+parseFloat(f.style.height)/2;if(Math.hypot(x-p.x,y-p.y)<26){f.remove();hit++;return false}return true});
+    if(hit){spaRinsed+=hit;spaG.P=Math.min(1,spaRinsed/25);spaGauges();
+      const dirt=$('spaCat').querySelectorAll('.dirt');dirt.forEach((e,i)=>{if(spaG.P>=(i+1)/SPA_N)e.style.display='none'});
+      typeBlip();spaCheck()}
+    else if(!spaFoam.length&&spaG.P<1&&!spaHint&&d===0){spaHint=true;spaSay('Il faut d’abord du savon, sinon il n’y a rien à rincer !')}
+  }else if(spaTool==='brush'){
+    if(p.x>60&&p.x<180&&p.y>30&&p.y<170){
+      spaDist+=d;spaG.D=Math.min(1,spaDist/900);spaGauges();
+      if(d>0&&Math.random()<.3){const k=document.createElement('div');k.className='spk';k.style.left=(p.x-5)+'px';k.style.top=(p.y-5)+'px';k.innerHTML=pix(STAR,2,GP);area.appendChild(k);setTimeout(()=>k.remove(),650)}
+      if(Math.random()<.12)typeBlip();spaCheck()
+    }
+  }
+}
+function spaCheck(){
+  if(spaDone||spaG.P<1||spaG.D<1||spaG.S<1)return;
+  spaDone=true;$('spaCat').classList.add('happy');
+  setTimeout(()=>{victory();rainHearts(16);buzz([80,40,80,40,200])},300);
+  spaSay('Ronron… je me sens tout neuf. Merci pour ce moment de spa ♡');
+}
+const spaA=$('spaArea');
+spaA.addEventListener('pointerdown',e=>{if(spaDone||spaTool==='look')return;e.preventDefault();try{spaA.setPointerCapture(e.pointerId)}catch(_){}spaLast=spaPt(e);spaAD=0;spaAct(spaLast,0)});
+spaA.addEventListener('pointermove',e=>{if(!spaLast||spaDone)return;e.preventDefault();const p=spaPt(e),d=Math.hypot(p.x-spaLast.x,p.y-spaLast.y);spaLast=p;spaAct(p,d)});
+['pointerup','pointercancel'].forEach(ev=>spaA.addEventListener(ev,()=>{spaLast=null}));
+$('gspa').onclick=()=>{$('menuOvl').classList.remove('on');spaStart();$('spaOvl').classList.add('on')};
+$('spaNew').onclick=()=>{sfxPop();spaStart()};
+$('spaClose').onclick=()=>{clearInterval(spaT);$('spaOvl').classList.remove('on')};
+
  
 const ovl=id=>$(id).classList;
 /* ---------- Jeux du soir (1 par jour, 20h) ---------- */
@@ -1221,8 +1404,87 @@ function clownShow(){
   T(()=>{msg.textContent='Les chatons dansent pour toi ♡';clownMusic();rainHearts(10)},3300);
 }
 $('clClose').onclick=()=>{clownClear();$('clown').classList.remove('on');$('clCats').innerHTML='';if(clWas)play()};
+ 
+/* ---------- Easter egg « bebou » : explosion, ambulance, enterrement ---------- */
+const FU_DEAD=(()=>{const g=CAT_A.map(r=>r.split(''));[[3,2],[3,4],[3,7],[3,9],[5,2],[5,4],[5,7],[5,9]].forEach(a=>{g[a[0]][a[1]]='e'});return g.map(r=>r.join(''))})();
+const FU_TOMB=['..oooooo..','.oggggggo.','oggggggggo','ogggxxgggo','ogxxxxxxgo','ogxxxxxxgo','ogggxxgggo','ogggxxgggo','oggggggggo','oggggggggo','oooooooooo'];
+const FU_TP={o:'#5b4a55',g:'#c9c4d6',x:'#8a84a3'};
+let fuT=[],fuI=[],fuWas=false,fuOn=false;
+function fuClear(){fuT.forEach(clearTimeout);fuT=[];fuI.forEach(clearInterval);fuI=[]}
+function fuMsg(t,big){const m=$('fuMsg');m.textContent=t;m.classList.toggle('big',!!big)}
+function boom(){sfx(t=>{const len=Math.floor(ac.sampleRate*.9),buf=ac.createBuffer(1,len,ac.sampleRate),d=buf.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2);const n=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();n.buffer=buf;f.type='lowpass';f.frequency.setValueAtTime(3000,t);f.frequency.exponentialRampToValueAtTime(90,t+.8);g.gain.value=.9;n.connect(f);f.connect(g);g.connect(sfxOut());n.start(t);blip(110,t,.7,'sawtooth',.35,28)})}
+function fuSiren(){let a=0;fuI.push(setInterval(()=>{a^=1;sfx(t=>blip(a?880:660,t,.3,'sine',.09))},380))}
+function fuSad(){
+  const mel=[69,0,67,0,64,64,0,0,65,0,64,0,62,62,0,0,60,0,62,0,64,0,60,0,57,57,0,0,57,0,0,0];let i=0;
+  fuI.push(setInterval(()=>{const n=mel[i%32];if(n)sfx(t=>blip(mf(n),t,.7,'triangle',.12));if(i%8===0)sfx(t=>blip(mf([45,41,43,45][(i>>3)%4]),t,1.8,'sine',.09));i++},520));
+}
+function fuSprites(mode){
+  const sc=innerWidth<420?3:4;
+  document.querySelectorAll('#fuCats .fu-c').forEach(e=>{
+    const p=catPal(+e.dataset.i);e.innerHTML=pix(mode==='angry'?CAT_ANGRY:CAT_A,sc,p);
+    if(mode==='sad'){e.classList.remove('mad');e.classList.add('bow');['26%','68%'].forEach(l=>{const t=document.createElement('i');t.className='tear';t.style.left=l;e.appendChild(t)})}
+  });
+}
+function funeralShow(){
+  fuClear();fuOn=true;
+  const T=(f,ms)=>fuT.push(setTimeout(f,ms)),o=$('fu'),st=$('fuStage'),main=$('fuMain'),body=$('fuBody'),amb=$('fuAmb'),cats=$('fuCats'),name=CATS[catIdx].n;
+  fuWas=musicOn;if(musicOn)pause();
+  o.className='fu on';st.classList.remove('shk');
+  main.className='fu-main';main.style.display='';main.innerHTML=pix(CAT_A,8,catPal(catIdx));
+  body.className='fu-body';body.style.cssText='';body.innerHTML=pix(FU_DEAD,5,catPal(catIdx));
+  amb.className='fu-amb';
+  $('fuBoom').className='fu-boom';$('fuFlash').className='fu-flash';$('fuClose').classList.remove('on');$('fuSkip').style.display='';
+  $('fuGrave').className='fu-grave';$('fuGrave').innerHTML='<span class="fl" style="left:-26px">'+pix(['.x.','xyx','.x.'],4,{x:'#ff8fab',y:'#ffd23f'})+'</span>'+pix(FU_TOMB,5,FU_TP)+'<span class="fl" style="right:-26px">'+pix(['.x.','xyx','.x.'],4,{x:'#ffffff',y:'#ffd23f'})+'</span>';
+  $('fuName').className='fu-name';$('fuName').textContent='Ci-gît '+name+' ♡';
+  $('fuRain').className='fu-rain';$('fuRain').innerHTML='';
+  for(let i=0;i<46;i++){const d=document.createElement('i');d.style.left=(Math.random()*100)+'%';d.style.animationDelay=(-Math.random()*.7)+'s';d.style.animationDuration=(.5+Math.random()*.4)+'s';$('fuRain').appendChild(d)}
+  document.querySelectorAll('#fuStage .fu-p').forEach(e=>e.remove());
+  cats.innerHTML='';
+  const others=CATS.map((c,i)=>i).filter(i=>i!==catIdx);
+  others.forEach((ci,k)=>{
+    if(k===2){const sp=document.createElement('div');sp.className='fu-sp';cats.appendChild(sp)}
+    const e=document.createElement('div');e.className='fu-c '+(k<2?'L':'R');e.dataset.i=ci;cats.appendChild(e);
+  });
+  fuSprites('angry');
+  fuMsg('Mot de passe accepté… ♡');
+  /* 1. ça tremble */
+  T(()=>{main.classList.add('rumble');fuMsg('Euh… le chat ne se sent pas très bien…');sfx(t=>blip(80,t,1.3,'sawtooth',.14,220))},700);
+  /* 2. BOUM */
+  T(()=>{
+    boom();buzz([200,60,300]);main.style.display='none';
+    $('fuFlash').classList.add('go');st.classList.add('shk');$('fuBoom').classList.add('go');fuMsg('',false);$('fuMsg').style.visibility='hidden';
+    const cols=['#ff4d6d','#ff9f43','#ffd23f','#fff3e6','#7a4a5a'];
+    for(let i=0;i<34;i++){const p=document.createElement('div'),a=Math.random()*6.283,r=60+Math.random()*(innerWidth*.45);p.className='fu-p';p.style.setProperty('--c',cols[i%5]);p.style.left='calc(50% - 6px)';p.style.bottom='calc(30% + 40px)';p.style.setProperty('--dx',Math.cos(a)*r+'px');p.style.setProperty('--dy',(Math.sin(a)*r*.8)+'px');st.appendChild(p)}
+  },2100);
+  T(()=>{body.classList.add('show')},2500);
+  T(()=>{$('fuMsg').style.visibility='';fuMsg('…Oh non.');},3600);
+  /* 3. ambulance */
+  T(()=>{amb.classList.add('park');fuSiren();fuMsg('Une ambulance arrive en urgence !')},4600);
+  T(()=>{amb.classList.add('bn');fuMsg('Elle ramasse le corps du chat…')},6700);
+  T(()=>{body.style.animation='none';body.style.opacity=1;void body.offsetWidth;body.classList.add('load')},7200);
+  T(()=>{amb.classList.remove('bn');amb.classList.add('leave');fuMsg('…')},8800);
+  T(()=>{fuI.forEach(clearInterval);fuI=[]},10800);
+  /* 4. les chats arrivent */
+  T(()=>{
+    document.querySelectorAll('#fuCats .fu-c').forEach((e,k)=>{fuT.push(setTimeout(()=>{e.classList.add('in');meow(true)},k*250))});
+    fuMsg('Tu l’as tuée, monstre !',true);buzz([100,50,100]);
+  },10900);
+  T(()=>document.querySelectorAll('#fuCats .fu-c').forEach(e=>e.classList.add('mad')),12400);
+  T(()=>{fuMsg('Les chats te jugent du regard…',false);document.querySelectorAll('#fuCats .fu-c').forEach(e=>e.classList.remove('mad'))},14200);
+  /* 5. tristesse + enterrement */
+  T(()=>{o.classList.add('dusk');$('fuRain').classList.add('on');fuSprites('sad');fuMsg('Puis la tristesse les envahit…');fuSad()},16400);
+  T(()=>{$('fuGrave').classList.add('up');cats.querySelector('.fu-sp').style.width='88px';$('fuName').classList.add('on');fuMsg('Enterrement de '+name)},19000);
+  T(()=>fuMsg('Une minute de silence pour ce petit ronron…'),22500);
+  T(()=>{fuMsg('(Rassure-toi : c’était un effet spécial, le chat va très bien ♡)');$('fuClose').classList.add('on');$('fuSkip').style.display='none'},27500);
+}
+function funeralClose(){
+  fuClear();fuOn=false;$('fu').className='fu';$('fuCats').innerHTML='';$('fuMsg').style.visibility='';
+  if(fuWas)play();
+}
+$('fuSkip').onclick=funeralClose;
+$('fuClose').onclick=funeralClose;
 let fails=0;
-function login(){const pv=$('pw').value.trim().toLowerCase();if(pv==='filou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');clownShow();return}if(pv==='léo'||pv==='leo'){$('err').textContent='Mon Léo adoré ♡';$('pw').value='';rainHearts(16);jingle();return}if(pv==='ronron'){$('err').textContent='Ronron ronron ronron… ♡';$('pw').value='';purr();return}if(pv==='chat'){$('err').textContent='Miaou ?';$('pw').value='';meow();return}if(pv==='miaou'){$('err').textContent='Miaou à toi aussi ♡';$('pw').value='';meow();return}if(/^(je t['’]aime|jtm)$/.test(pv)){$('err').textContent='Moi aussi, mon ronron ♡';$('pw').value='';burst();jingle();return}if($('pw').value===PASS){fails=0;ovl('loginOvl').remove('on');openAdmin()}else{fails++;const a=$('angry');$('pw').value='';sfxErr();buzz([80,50,80]);if(fails>2)setTimeout(()=>meow(true),350);if(fails===1){$('err').textContent='Bien tenté petit filou !'}else if(fails===2){$('err').textContent='T’es trop filou !'}else{$('err').textContent='';a.classList.remove('on');void a.offsetWidth;a.classList.add('on')}}}
+function login(){const pv=$('pw').value.trim().toLowerCase();if(pv==='bebou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');funeralShow();return}if(pv==='filou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');clownShow();return}if(pv==='léo'||pv==='leo'){$('err').textContent='Mon Léo adoré ♡';$('pw').value='';rainHearts(16);jingle();return}if(pv==='ronron'){$('err').textContent='Ronron ronron ronron… ♡';$('pw').value='';purr();return}if(pv==='chat'){$('err').textContent='Miaou ?';$('pw').value='';meow();return}if(pv==='miaou'){$('err').textContent='Miaou à toi aussi ♡';$('pw').value='';meow();return}if(/^(je t['’]aime|jtm)$/.test(pv)){$('err').textContent='Moi aussi, mon ronron ♡';$('pw').value='';burst();jingle();return}if($('pw').value===PASS){fails=0;ovl('loginOvl').remove('on');openAdmin()}else{fails++;const a=$('angry');$('pw').value='';sfxErr();buzz([80,50,80]);if(fails>2)setTimeout(()=>meow(true),350);if(fails===1){$('err').textContent='Bien tenté petit filou !'}else if(fails===2){$('err').textContent='T’es trop filou !'}else{$('err').textContent='';a.classList.remove('on');void a.offsetWidth;a.classList.add('on')}}}
 $('loginGo').onclick=login;
 $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
 function msgRow(v){const r=document.createElement('div');r.className='row';const i=document.createElement('input');i.value=v;i.maxLength=140;const b=document.createElement('button');b.className='btn';b.textContent='✕';b.setAttribute('aria-label','Supprimer');b.onclick=()=>r.remove();r.append(i,b);$('aMsgs').appendChild(r);return i}
