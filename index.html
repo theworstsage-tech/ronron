@@ -332,6 +332,7 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 .fu-skip{position:absolute;top:8px;right:8px;z-index:10;font-size:16px!important;padding:2px 8px!important}
 .fu-close{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);z-index:10;display:none}
 .fu-close.on{display:block}
+.srow{display:flex;align-items:center;gap:8px;margin:12px 0;text-align:left}.srow b{width:92px;font-weight:normal;font-size:21px}.srow input[type=range]{flex:1;min-width:0}.srow .btn{margin:0;min-width:96px}
 .credcats{display:grid;grid-template-columns:1fr 1fr;gap:10px 4px;margin:10px 0}.credroll .credcat{display:flex;align-items:center;justify-content:center;gap:6px;margin:0}.credcat svg{flex:none}
 .cc{opacity:0}.cc.y{opacity:1}.pend{visibility:hidden}
 @keyframes credroll{to{transform:translateY(var(--d))}}
@@ -359,7 +360,7 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
-<div class="player" id="player"><button class="coin" id="coin" aria-label="Mini-jeu"></button><button class="btn" id="pp" aria-label="Lecture ou pause">▶</button><input type="range" id="vol" min="0" max="1" step="0.05" value="0.5" aria-label="Volume"><span id="note" style="cursor:pointer">♪</span></div>
+<div class="player" id="player"><button class="coin" id="coin" aria-label="Mini-jeu"></button><button class="btn" id="setBtn" aria-label="Réglages"></button><span id="note" style="cursor:pointer">♪</span></div>
 <div id="sky"></div><canvas id="fx"></canvas><div class="gacha" id="gacha"></div>
 <main>
   <h1>La poste ronron</h1>
@@ -477,6 +478,12 @@ body.dawn #sky:not(.day){opacity:1!important;background:radial-gradient(circle a
 <div class="inststep" id="hStep"></div>
 <div><button class="btn" id="hPrev">‹ Retour</button><button class="btn main" id="hNext">Suivant ›</button></div>
 <button class="btn" id="hClose">Fermer</button></div></div>
+<div class="ovl" id="setOvl"><div class="box" style="text-align:center"><h2>Réglages ♡</h2>
+<div class="srow"><b>Musique</b><button class="btn" id="pp" aria-label="Lecture ou pause">▶</button><input type="range" id="vol" min="0" max="1" step="0.05" value="0.5" aria-label="Volume de la musique"></div>
+<div class="srow"><b>Bruitages</b><button class="btn" id="sfxT">Activés</button><input type="range" id="sfxVol" min="0" max="1" step="0.05" value="0.75" aria-label="Volume des bruitages"></div>
+<p style="margin:10px 0 2px;font-size:18px;opacity:.8">Tes réglages sont gardés quand tu redémarres le site ♡</p>
+<button class="btn main" id="restartBtn">Redémarrer</button>
+<button class="btn" id="setClose">Fermer</button></div></div>
 <div class="ovl" id="instOvl"><div class="box" style="text-align:center"><h2>Mon appli ♡</h2>
 <div class="instscene" id="instScene"></div>
 <div class="instcat"><div class="me" id="instCat"></div><div class="fbub" id="instBub"></div></div>
@@ -717,18 +724,22 @@ const mf=m=>440*Math.pow(2,(m-69)/12);
 const CH=[[60,64,67],[57,60,64],[53,57,60],[55,59,62]];
 const AR=[0,1,2,1,2,1,2,1];
 const ML=[76,0,79,0,76,0,72,0, 72,0,76,0,81,0,79,0, 77,0,81,0,79,0,77,0, 74,0,79,0,76,0,74,0];
+let SET={mv:.5,sv:.75,sfx:true,music:true};try{Object.assign(SET,JSON.parse(localStorage.getItem('ronron-set')||'{}'))}catch(e){}
+function saveSet(){try{localStorage.setItem('ronron-set',JSON.stringify(SET))}catch(e){}}
+$('vol').value=SET.mv;$('sfxVol').value=SET.sv;
+function sfxLevel(){return Math.pow(SET.sv,2)*1.2}
 function vol(){return Math.pow(+$('vol').value,2)*.6}
 function bell(f,t,g,d,dest){const o=ac.createOscillator(),o2=ac.createOscillator(),e=ac.createGain(),e2=ac.createGain();o.type='sine';o2.type='triangle';o.frequency.value=f;o2.frequency.value=f*3;e2.gain.value=.22;o2.connect(e2);e2.connect(e);o.connect(e);e.connect(dest||master);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.01);e.gain.exponentialRampToValueAtTime(.0001,t+d);o.start(t);o2.start(t);o.stop(t+d+.05);o2.stop(t+d+.05)}
 function sched(){while(nt<ac.currentTime+.4){const b=Math.floor(st/8)%4,k=st%8;bell(mf(CH[b][AR[k]]),nt,.16,.9);if(k===0)bell(mf(CH[b][0]-12),nt,.2,1.8);const m=ML[st%32];if(m)bell(mf(m),nt,.28,1.4);nt+=.34;st++}}
 function play(){try{if(!ac){const A=window.AudioContext||window.webkitAudioContext;ac=new A();master=ac.createGain();master.gain.value=vol();master.connect(ac.destination)}ac.resume();nt=ac.currentTime+.1;clearInterval(mt);mt=setInterval(sched,100);musicOn=true;$('pp').textContent='❚❚'}catch(e){}}
 function pause(){clearInterval(mt);musicOn=false;$('pp').textContent='▶'}
-$('pp').onclick=()=>musicOn?pause():play();
+$('pp').onclick=()=>{musicOn?pause():play();SET.music=musicOn;saveSet()};
  
 /* ---------- Bruitages et vibrations ---------- */
 function audio(){if(!ac){const A=window.AudioContext||window.webkitAudioContext;ac=new A();master=ac.createGain();master.gain.value=vol();master.connect(ac.destination)}if(ac.state==='suspended')ac.resume();return ac}
 let sfxG=null;
-function sfxOut(){audio();if(!sfxG){sfxG=ac.createGain();sfxG.gain.value=.7;sfxG.connect(ac.destination)}return sfxG}
-function sfx(fn){try{audio();fn(ac.currentTime+.01)}catch(e){}}
+function sfxOut(){audio();if(!sfxG){sfxG=ac.createGain();sfxG.gain.value=sfxLevel();sfxG.connect(ac.destination)}return sfxG}
+function sfx(fn){if(!SET.sfx)return;try{audio();fn(ac.currentTime+.01)}catch(e){}}
 function blip(f,t,d,type,g,f2){const o=ac.createOscillator(),e=ac.createGain();o.type=type||'square';o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g||.12,t+.005);e.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(e);e.connect(sfxOut());o.start(t);o.stop(t+d+.02)}
 function sfxPop(){sfx(t=>{blip(520,t,.08,'square',.1,780);blip(780,t+.09,.1,'square',.1,1040)})}
 function sfxErr(){sfx(t=>{blip(300,t,.18,'sawtooth',.12,200);blip(220,t+.2,.28,'sawtooth',.12,140)})}
@@ -738,7 +749,16 @@ function victory(){sfx(t=>{[72,76,79,84,88,91].forEach((m,i)=>bell(mf(m),t+i*.11
 function purr(){sfx(t=>{const o=ac.createOscillator(),l=ac.createOscillator(),lg=ac.createGain(),f=ac.createBiquadFilter(),e=ac.createGain();o.type='sawtooth';o.frequency.value=95;l.frequency.value=24;lg.gain.value=.12;e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(.18,t+.2);e.gain.linearRampToValueAtTime(0,t+2.2);f.type='lowpass';f.frequency.value=420;l.connect(lg);lg.connect(e.gain);o.connect(f);f.connect(e);e.connect(sfxOut());o.start(t);l.start(t);o.stop(t+2.3);l.stop(t+2.3)})}
 const hl=document.createElement('label');hl.style.cssText='position:fixed;left:-99px;top:0;opacity:0;pointer-events:none';const hi=document.createElement('input');hi.type='checkbox';hi.setAttribute('switch','');hl.appendChild(hi);document.body.appendChild(hl);
 function buzz(p){try{if(navigator.vibrate){navigator.vibrate(p);return}}catch(e){}let t=0;[].concat(p).forEach((d,i)=>{if(i%2===0)setTimeout(()=>{try{hl.click()}catch(e){}},t);t+=d})}
-$('vol').oninput=()=>{if(master)master.gain.setTargetAtTime(vol(),ac.currentTime,.03)};
+$('vol').oninput=()=>{if(master)master.gain.setTargetAtTime(vol(),ac.currentTime,.03);SET.mv=+$('vol').value;saveSet()};
+let sfxPT=0;
+$('sfxVol').oninput=()=>{SET.sv=+$('sfxVol').value;saveSet();if(sfxG)sfxG.gain.setTargetAtTime(sfxLevel(),ac.currentTime,.03);if(Date.now()-sfxPT>250){sfxPT=Date.now();sfxPop()}};
+function sfxUi(){$('sfxT').textContent=SET.sfx?'Activés':'Coupés';$('sfxVol').disabled=!SET.sfx}
+$('sfxT').onclick=()=>{SET.sfx=!SET.sfx;saveSet();sfxUi();if(SET.sfx)sfxPop()};
+sfxUi();
+$('setBtn').innerHTML=pix(['...ooo...','.o.ooo.o.','.ooooooo.','ooo...ooo','ooo...ooo','ooo...ooo','.ooooooo.','.o.ooo.o.','...ooo...'],2,{o:'#7a4a5a'});
+$('setBtn').onclick=()=>{sfxPop();ovl('setOvl').add('on')};
+$('setClose').onclick=()=>ovl('setOvl').remove('on');
+$('restartBtn').onclick=()=>{saveSet();location.reload()};
  
 /* ---------- Mini-jeu de la pièce ---------- */
 function typeBlip(){sfx(t=>blip(900+Math.random()*500,t,.04,'triangle',.05))}
@@ -843,7 +863,7 @@ function credSpeed(s){
 $('credX1').onclick=()=>credSpeed(1);
 $('credX2').onclick=()=>credSpeed(2);
 $('credX4').onclick=()=>credSpeed(4);
- 
+
 /* ---------- Installer l'appli (iPhone) ---------- */
 const APP_ICON=CAT_BASE.concat(['..oooooooo..']);
 const iSHARE=['....o....','...ooo...','..o.o.o..','....o....','.o..o..o.','.o.....o.','.o.....o.','.o.....o.','.ooooooo.'];
@@ -887,7 +907,7 @@ $('installBtn').onclick=instOpen;
 $('instClose').onclick=instClose;
 $('instPrev').onclick=()=>{if(instI>0){instI--;sfxPop();instShow()}};
 $('instNext').onclick=()=>{if(instI<INST.length-1){instI++;sfxPop();instShow()}else{instClose();rainHearts(10)}};
- 
+
 /* ---------- Aide : visite guidée du site ---------- */
 const iQ=['.ooooo.','oo...oo','.....oo','...ooo.','..oo...','..oo...','.......','..oo...','..oo...'];
 const iHOUSE=['..oo..','.oppo.','oppppo','owwwwo','owewwo','oooooo'];
@@ -1211,7 +1231,7 @@ $('tclose').onclick=()=>ovl('ticketOvl').remove('on');
 function bootLeave(){
   const b=$('boot');if(!b||b.classList.contains('out'))return;
   b.style.animation='';b.classList.add('out');setTimeout(()=>{try{b.remove()}catch(e){}},700);
-  if(!musicOn)play();
+  if(!musicOn&&SET.music!==false)play();
 }
 (function(){
   const b=$('boot');
@@ -1404,7 +1424,7 @@ function clownShow(){
   T(()=>{msg.textContent='Les chatons dansent pour toi ♡';clownMusic();rainHearts(10)},3300);
 }
 $('clClose').onclick=()=>{clownClear();$('clown').classList.remove('on');$('clCats').innerHTML='';if(clWas)play()};
- 
+
 /* ---------- Easter egg « bebou » : explosion, ambulance, enterrement ---------- */
 const FU_DEAD=(()=>{const g=CAT_A.map(r=>r.split(''));[[3,2],[3,4],[3,7],[3,9],[5,2],[5,4],[5,7],[5,9]].forEach(a=>{g[a[0]][a[1]]='e'});return g.map(r=>r.join(''))})();
 const FU_TOMB=['..oooooo..','.oggggggo.','oggggggggo','ogggxxgggo','ogxxxxxxgo','ogxxxxxxgo','ogggxxgggo','ogggxxgggo','oggggggggo','oggggggggo','oooooooooo'];
@@ -1461,7 +1481,7 @@ function funeralShow(){
   /* 3. ambulance */
   T(()=>{amb.classList.add('park');fuSiren();fuMsg('Une ambulance arrive en urgence !')},4600);
   T(()=>{amb.classList.add('bn');fuMsg('Elle ramasse le corps du chat…')},6700);
-  T(()=>{body.style.animation='none';body.style.opacity=1;void body.offsetWidth;body.classList.add('load')},7200);
+  T(()=>{body.style.animation='none';body.style.opacity=1;void body.offsetWidth;body.classList.add('load');body.style.opacity=0},7200);
   T(()=>{amb.classList.remove('bn');amb.classList.add('leave');fuMsg('…')},8800);
   T(()=>{fuI.forEach(clearInterval);fuI=[]},10800);
   /* 4. les chats arrivent */
