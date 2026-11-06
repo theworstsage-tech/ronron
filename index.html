@@ -530,7 +530,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
 <button class="menubtn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList"><span class="mb"></span><span>Menu</span></button>
-<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button></div>
+<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Ma maison</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button></div>
 <button class="themebtn" id="themeBtn" aria-label="Changer de thème"><span id="themeIcon"></span><span id="themeLbl">Sombre</span></button>
 <div class="avpage on" id="homePage" aria-hidden="false"><div class="avwrap">
 <div class="hpbunt" id="hpBunt"></div>
@@ -682,7 +682,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <div><button class="btn" id="instPrev">‹ Retour</button><button class="btn main" id="instNext">Suivant ›</button></div>
 <button class="btn" id="instClose">Fermer</button></div></div>
 <div class="ovl" id="gameOvl"><div class="box"><h2>Memory des ronrons</h2><p style="margin:0">Retrouve les 6 paires · Coups : <b id="gmoves">0</b></p><div class="mem" id="mem"></div><div class="clue" id="clue">Bravo mon ronron ! ♡ Indice secret : c’est le mot que le chat dit si bien (5 lettres). Va l’écrire dans le mot de passe de l’Administrateur ronron…</div><button class="btn main" id="gnew">Rejouer</button><button class="btn" id="gclose">Fermer</button></div></div>
-<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ♡</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button><button class="pick" id="gspa"></button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="ghome"></button><button class="pick" id="gcafe"></button></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
+<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ♡</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button><button class="pick" id="gspa"></button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
 <div class="ovl" id="spaOvl"><div class="box" style="text-align:center"><h2 id="spaTitle">Spa des ronrons</h2>
 <div class="fbub" id="spaBub"></div>
 <div class="spa" id="spaArea"><div class="spacat" id="spaCat"></div><div class="tub"></div></div>
@@ -1941,41 +1941,41 @@ const FP={o:'#7a4a5a',y:'#ffb347',e:'#4a2a3a'};
 const FISHG=['...ooo....','.oooyyoo.o','oyeyyyyyoo','.oooyyoo.o','...ooo....'];
 const FP2={o:'#7a4a5a',p:'#ff8fab',q:'#ffb3c6',w:'#fff3e6',y:'#ffd23f',g:'#7ed99a',d:'#4fa66a',b:'#9bd7ff',n:'#c9976b',m:'#8a6347',k:'#4a2a3a',r:'#ff6f91',u:'#c9a0f0'};
 const FUR={
- sofa:{n:'Canapé',p:80,y0:.9,g:['.oooooooooooo.','oqqqqqqqqqqqqo','oqppppppppppqo','oqppppppppppqo','oqqqqqqqqqqqqo','oooooooooooooo','.oo........oo.']},
- basket:{n:'Panier douillet',p:50,y0:.9,g:['..oooooooo..','.owwwwwwwwo.','oqqqqqqqqqqo','oqppppppppqo','.oooooooooo.']},
- tree:{n:'Arbre à chat',p:120,y0:.9,g:['..oooooo..','.onnnnnno.','oonnnnnnoo','.oooooooo.','....om....','....om....','..oooooo..','.onnnnnno.','.oooooooo.','....om....','....om....','oooooooooo','onnnnnnnno','oooooooooo']},
- plant:{n:'Plante',p:25,y0:.9,g:['...g.g..','.g.ggg.g','.gggdggg','..gggdg.','...ggg..','.oooooo.','.oppppo.','.oppppo.','..oppo..','..oooo..']},
- lamp:{n:'Lampe',p:35,y0:.9,g:['.oooo.','oyyyyo','oyyyyo','.oyyo.','..oo..','..om..','..om..','..om..','..om..','..om..','oppppo','oooooo']},
- table:{n:'Table basse',p:45,y0:.9,g:['oooooooooooo','onnnnnnnnnno','oooooooooooo','.om......mo.','.om......mo.','.om......mo.']},
- aqua:{n:'Aquarium',p:90,y0:.9,g:['oooooooooooo','obbbbbbbbbbo','obbbbyybbbbo','obbbyyykbbbo','obbbbyybbbbo','obbbbbbbbbbo','ogggbbbbgggo','oooooooooooo','.om......mo.']}
+ sofa:{n:'Canapé',p:160,y0:.9,g:['.oooooooooooo.','oqqqqqqqqqqqqo','oqppppppppppqo','oqppppppppppqo','oqqqqqqqqqqqqo','oooooooooooooo','.oo........oo.']},
+ basket:{n:'Panier douillet',p:100,y0:.9,g:['..oooooooo..','.owwwwwwwwo.','oqqqqqqqqqqo','oqppppppppqo','.oooooooooo.']},
+ tree:{n:'Arbre à chat',p:240,y0:.9,g:['..oooooo..','.onnnnnno.','oonnnnnnoo','.oooooooo.','....om....','....om....','..oooooo..','.onnnnnno.','.oooooooo.','....om....','....om....','oooooooooo','onnnnnnnno','oooooooooo']},
+ plant:{n:'Plante',p:50,y0:.9,g:['...g.g..','.g.ggg.g','.gggdggg','..gggdg.','...ggg..','.oooooo.','.oppppo.','.oppppo.','..oppo..','..oooo..']},
+ lamp:{n:'Lampe',p:70,y0:.9,g:['.oooo.','oyyyyo','oyyyyo','.oyyo.','..oo..','..om..','..om..','..om..','..om..','..om..','oppppo','oooooo']},
+ table:{n:'Table basse',p:90,y0:.9,g:['oooooooooooo','onnnnnnnnnno','oooooooooooo','.om......mo.','.om......mo.','.om......mo.']},
+ aqua:{n:'Aquarium',p:180,y0:.9,g:['oooooooooooo','obbbbbbbbbbo','obbbbyybbbbo','obbbyyykbbbo','obbbbyybbbbo','obbbbbbbbbbo','ogggbbbbgggo','oooooooooooo','.om......mo.']}
 };
 const DEC={
- frame:{n:'Cadre cœur',p:15,y0:.34,g:['ooooooo','oqqqqqo','oqrqrqo','oqrrrqo','oqqrqqo','oqqqqqo','ooooooo']},
- window:{n:'Fenêtre',p:30,y0:.42,g:['ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','nnnnnnnnn']},
- clock:{n:'Horloge',p:25,y0:.3,g:['..ooo..','.owwwo.','owwkwwo','owwkkwo','owwwwwo','.owwwo.','..ooo..']},
- flags:{n:'Fanions',p:20,y0:.16,g:['oooooooooooooooo','.rr.yy.bb.pp.gg.','.rr.yy.bb.pp.gg.','..r..y..b..p..g.']},
- poster:{n:'Poster étoile',p:25,y0:.36,g:['oooooo','okkkko','okkyko','okyyko','okkyko','okkkko','oooooo']}
+ frame:{n:'Cadre cœur',p:30,y0:.34,g:['ooooooo','oqqqqqo','oqrqrqo','oqrrrqo','oqqrqqo','oqqqqqo','ooooooo']},
+ window:{n:'Fenêtre',p:60,y0:.42,g:['ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','nnnnnnnnn']},
+ clock:{n:'Horloge',p:50,y0:.3,g:['..ooo..','.owwwo.','owwkwwo','owwkkwo','owwwwwo','.owwwo.','..ooo..']},
+ flags:{n:'Fanions',p:40,y0:.16,g:['oooooooooooooooo','.rr.yy.bb.pp.gg.','.rr.yy.bb.pp.gg.','..r..y..b..p..g.']},
+ poster:{n:'Poster étoile',p:50,y0:.36,g:['oooooo','okkkko','okkyko','okyyko','okkyko','okkkko','oooooo']}
 };
 const RUG={
  r0:{n:'Tapis rose',p:0,a:'#ffb3c6',b:'#ff8fab'},
- r1:{n:'Tapis bleu',p:30,a:'#bde0fe',b:'#8ec5f5'},
- r2:{n:'Tapis menthe',p:35,a:'#c7f0d2',b:'#8fd9a8'},
- r3:{n:'Tapis soleil',p:40,a:'#ffe9a8',b:'#ffd23f'}
+ r1:{n:'Tapis bleu',p:60,a:'#bde0fe',b:'#8ec5f5'},
+ r2:{n:'Tapis menthe',p:70,a:'#c7f0d2',b:'#8fd9a8'},
+ r3:{n:'Tapis soleil',p:80,a:'#ffe9a8',b:'#ffd23f'}
 };
 const CLO={
- bow:{n:'Nœud',p:15,s:'hat',x:8,y:-1,g:['rr.rr','rrorr','rr.rr']},
- flower:{n:'Fleur',p:20,s:'hat',x:9,y:0,g:['.p.','pyp','.p.']},
- beanie:{n:'Bonnet',p:25,s:'hat',x:2,y:-2,g:['...yy...','.bbbbbb.','bbbbbbbb','bwbwbwbw']},
- wizard:{n:'Magicien',p:45,s:'hat',x:2,y:-3,g:['...uu...','..uuuu..','..uyuu..','.uuuuuu.','oooooooo']},
- crown:{n:'Couronne',p:60,s:'hat',x:3,y:-2,g:['y.yy.y','yyyyyy','yryyry']},
- glasses:{n:'Lunettes',p:25,s:'face',x:2,y:3,g:['kkkkkkkk','k.k..k.k','kkk..kkk']},
- shades:{n:'Soleil',p:30,s:'face',x:2,y:3,g:['kkkkkkkk','kkkkkkkk','.kk..kk.']},
- mustache:{n:'Moustache',p:20,s:'face',x:3,y:6,g:['kk..kk','.kkkk.']},
- scarf:{n:'Écharpe',p:25,s:'body',x:2,y:8,g:['rrrrrrrr','..rrr...','..rr....']},
- sweater:{n:'Pull',p:35,s:'body',x:2,y:8,g:['pppppppp','pqpqpqpq']},
- bowtie:{n:'Papillon',p:20,s:'body',x:3,y:8,g:['rr..rr','rrkkrr','rr..rr']},
- collar:{n:'Clochette',p:20,s:'body',x:2,y:8,g:['bbbbbbbb','...yy...','...yo...']},
- cape:{n:'Cape',p:55,s:'body',x:1,y:8,g:['rrrrrrrrrr','.rrrrrrrr.','.rrryyrrr.','..rrrrrr..']}
+ bow:{n:'Nœud',p:30,s:'hat',x:8,y:-1,g:['rr.rr','rrorr','rr.rr']},
+ flower:{n:'Fleur',p:40,s:'hat',x:9,y:0,g:['.p.','pyp','.p.']},
+ beanie:{n:'Bonnet',p:50,s:'hat',x:2,y:-2,g:['...yy...','.bbbbbb.','bbbbbbbb','bwbwbwbw']},
+ wizard:{n:'Magicien',p:90,s:'hat',x:2,y:-3,g:['...uu...','..uuuu..','..uyuu..','.uuuuuu.','oooooooo']},
+ crown:{n:'Couronne',p:120,s:'hat',x:3,y:-2,g:['y.yy.y','yyyyyy','yryyry']},
+ glasses:{n:'Lunettes',p:50,s:'face',x:2,y:3,g:['kkkkkkkk','k.k..k.k','kkk..kkk']},
+ shades:{n:'Soleil',p:60,s:'face',x:2,y:3,g:['kkkkkkkk','kkkkkkkk','.kk..kk.']},
+ mustache:{n:'Moustache',p:40,s:'face',x:3,y:6,g:['kk..kk','.kkkk.']},
+ scarf:{n:'Écharpe',p:50,s:'body',x:2,y:8,g:['rrrrrrrr','..rrr...','..rr....']},
+ sweater:{n:'Pull',p:70,s:'body',x:2,y:8,g:['pppppppp','pqpqpqpq']},
+ bowtie:{n:'Papillon',p:40,s:'body',x:3,y:8,g:['rr..rr','rrkkrr','rr..rr']},
+ collar:{n:'Clochette',p:40,s:'body',x:2,y:8,g:['bbbbbbbb','...yy...','...yo...']},
+ cape:{n:'Cape',p:110,s:'body',x:1,y:8,g:['rrrrrrrrrr','.rrrrrrrr.','.rrryyrrr.','..rrrrrr..']}
 };
 const ALL={};
 function reg(o,k,ex){Object.keys(o).forEach(id=>{ALL[id]=Object.assign({k},ex,o[id])})}
@@ -1993,8 +1993,6 @@ function dcat(i,s,fr){
 }
 function upW(){['mzCoins','bqCoins'].forEach(id=>$(id).textContent=H.c)}
 $('mzCI').innerHTML=pix(FISHG,3,FP);$('bqCI').innerHTML=pix(FISHG,3,FP);
-$('ghome').innerHTML=pix(HOUSE,4)+'<br>Ma maison';
-$('gcafe').innerHTML=pix(CUP,4,FP2)+'<br>Café des<br>chatons';
  
 /* --- La maison --- */
 const room=$('mzRoom'),rugEl=$('mzRug');
@@ -2089,8 +2087,10 @@ $('mzShop').onclick=()=>bqOpen();
 $('mzDress').onclick=()=>ctOpen();
 $('mzCafe').onclick=()=>cfOpen();
 $('mzClose').onclick=mzClose;
-$('ghome').onclick=()=>{$('menuOvl').classList.remove('on');mzOpen()};
-$('gcafe').onclick=()=>{$('menuOvl').classList.remove('on');cfOpen()};
+/* entrées du menu du haut */
+const mnClose=()=>{$('menuList').classList.remove('on');const m=document.querySelector('[aria-controls="menuList"]');if(m)m.setAttribute('aria-expanded','false')};
+document.querySelector('[data-act="home"]').onclick=()=>{mnClose();mzOpen()};
+document.querySelector('[data-act="cafe"]').onclick=()=>{mnClose();cfOpen()};
  
 /* --- Boutique --- */
 let bqT='f';
