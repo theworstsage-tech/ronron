@@ -80,6 +80,27 @@ footer{position:fixed;bottom:0;left:0;right:0;text-align:center;padding:8px 10px
 .avbub{position:absolute;top:10px;left:50%;transform:translateX(-50%);max-width:78%;width:max-content;background:#fffaf5;color:#7a4a5a;border:4px solid #7a4a5a;padding:5px 10px;font-size:20px;line-height:1.1;z-index:2}
 .avtxt{font-size:22px;margin:14px 0 12px}
 .avdone{font-family:var(--px);font-size:12px;line-height:1.6;margin:10px 0}
+.hpbunt{display:flex;justify-content:space-between;align-items:flex-start;border-top:3px solid var(--line);margin:0 4px 6px;padding:0 2px}
+.hpbunt svg{display:block;margin-top:-1px}
+.hpday{font-family:var(--px);font-size:clamp(34px,13vw,60px);line-height:1.2;margin:4px 0 0;text-shadow:4px 4px 0 var(--pink);animation:bob 1.4s steps(2) infinite}
+.hpwel{font-size:clamp(22px,5vw,28px);margin:0 0 2px}
+.hpsub{font-size:22px;margin:0 0 10px;opacity:.9}
+.hpscene{position:relative;height:210px;margin:8px 0 14px;border:4px solid var(--line);box-shadow:4px 4px 0 var(--pink2);overflow:hidden;background:linear-gradient(#ffb3c6 0%,#ffd2c4 55%,#ffe9c7 100%)}
+.hpfloor{position:absolute;left:0;right:0;bottom:0;height:38px;background:repeating-linear-gradient(90deg,#fffaf5 0 24px,#ffc2d4 24px 48px);border-top:6px solid #7a4a5a}
+.hpcrowd{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:space-around;align-items:flex-end;line-height:0;padding:0 4px}
+.hpk{cursor:pointer;transform-origin:50% 100%;animation:hpd .7s steps(2) infinite;animation-delay:var(--d)}
+@keyframes hpd{0%{transform:translateY(0) rotate(-5deg)}100%{transform:translateY(-9px) rotate(5deg)}}
+.hpcake{margin-bottom:2px}
+.hpbal{position:absolute;top:10px;line-height:0;text-align:center;animation:hpfl 2.4s steps(6) infinite alternate;animation-delay:var(--d)}
+.hpbal i{display:block;width:3px;height:26px;background:#7a4a5a;margin:0 auto}
+@keyframes hpfl{to{transform:translateY(-12px)}}
+.hpcf{position:absolute;top:-10px;width:7px;height:7px;animation:hpfall linear infinite;pointer-events:none}
+@keyframes hpfall{to{transform:translateY(230px) rotate(360deg)}}
+.hpbub{position:absolute;top:8px;left:50%;transform:translateX(-50%);max-width:62%;width:max-content;background:#fffaf5;color:#7a4a5a;border:4px solid #7a4a5a;padding:4px 8px;font-size:18px;line-height:1.1;z-index:2}
+.hpgo{display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:22px;background:var(--pink2);color:#3b2030;border:4px solid var(--line);box-shadow:5px 5px 0 var(--line);padding:8px 16px;margin:14px 0 8px;cursor:pointer;animation:bob 1.6s steps(2) infinite}
+.hpgo:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--line);animation:none}
+.hplink{display:block;margin:6px auto 0}
+@media (max-width:480px){.avpage .hpcount .unit{min-width:0}}
 @media (max-width:480px){.avpage .count{flex-wrap:nowrap;gap:6px}.avpage .unit{min-width:0;flex:1 1 0;padding:8px 4px}.avpage .unit span{font-size:16px}}
 .heartfloat{position:fixed;bottom:-30px;z-index:1;pointer-events:none;animation:up linear infinite}
 @keyframes up{to{transform:translateY(-110vh) rotate(0)}}
@@ -467,8 +488,18 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
 <button class="menubtn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList"><span class="mb"></span><span>Menu</span></button>
-<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="poste" type="button">♡ La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button></div>
+<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button></div>
 <button class="themebtn" id="themeBtn" aria-label="Changer de thème"><span id="themeIcon"></span><span id="themeLbl">Sombre</span></button>
+<div class="avpage on" id="homePage" aria-hidden="false"><div class="avwrap">
+<div class="hpbunt" id="hpBunt"></div>
+<div class="hpday" id="hpDay">J-1</div>
+<p class="hpwel" id="hpWel"></p>
+<p class="hpsub" id="hpSub">Samedi 7 novembre · 19h00</p>
+<div class="hpscene" id="hpScene"><div class="hpbub" id="hpBub">Les chatons préparent la fête ♡</div><div class="hpbal" id="hpB0" style="left:7%;--d:0s"></div><div class="hpbal" id="hpB1" style="left:46%;top:66px;--d:-.8s"></div><div class="hpbal" id="hpB2" style="right:7%;--d:-1.6s"></div><div class="hpcrowd" id="hpCrowd"></div><div class="hpfloor"></div></div>
+<div class="count hpcount" aria-live="off"><div class="unit"><b id="hpD">00</b><span>jours</span></div><div class="unit"><b id="hpH">00</b><span>heures</span></div><div class="unit"><b id="hpM">00</b><span>minutes</span></div><div class="unit"><b id="hpS">00</b><span>secondes</span></div></div>
+<button class="hpgo" id="hpGo" type="button"><span id="hpGoIcon" style="line-height:0"></span>Aller à la lettre ♡</button>
+<button class="btn hplink" id="hpAv" type="button">Calendrier de l’avent</button>
+</div></div>
 <div class="avpage" id="avPage" aria-hidden="true"><div class="avwrap">
 <div class="avtape"></div>
 <h2 class="avtitle">Calendrier de l’avent</h2>
@@ -1743,14 +1774,49 @@ applyColors(data.colors);
    $('avD').textContent=p2(Math.floor(s/86400));$('avH').textContent=p2(Math.floor(s%86400/3600));$('avM').textContent=p2(Math.floor(s%3600/60));$('avS').textContent=p2(s%60);
    if(d===0)$('avTxt').textContent='Le chantier est fini : le calendrier arrive très vite ♡'}
  avTick();setInterval(avTick,1000);
- function showPage(n){const on=n==='avent';av.classList.toggle('on',on);av.setAttribute('aria-hidden',on?'false':'true');
-   if(on)av.scrollTop=0;
+ function showPage(n){const pg={accueil:$('homePage'),avent:av};
+   Object.keys(pg).forEach(k=>{const on=k===n,el=pg[k];el.classList.toggle('on',on);el.setAttribute('aria-hidden',on?'false':'true');if(on)el.scrollTop=0});
    ml.querySelectorAll('.menuitem').forEach(b=>{const c=b.dataset.page===n;b.classList.toggle('cur',c);b.textContent=(c?'♡ ':'')+b.textContent.replace(/^♡ /,'')})}
  function menu(open){ml.classList.toggle('on',open);mb.setAttribute('aria-expanded',open?'true':'false')}
  mb.onclick=e=>{e.stopPropagation();try{sfxPop()}catch(_){}menu(!ml.classList.contains('on'))};
  ml.querySelectorAll('.menuitem').forEach(b=>b.onclick=()=>{showPage(b.dataset.page);menu(false)});
  document.addEventListener('click',e=>{if(!ml.contains(e.target)&&e.target!==mb)menu(false)});
  document.addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+ /* ---- page d'accueil : fête des chatons, jour J ---- */
+ {const PEN=['ooooooo','offfffo','.offfo.','..ofo..','...o...'],COL=['#ff8fab','#ffd23f','#bde0fe','#cdb4db','#b5ead7','#ffd6a5','#ff8fab'];
+  $('hpBunt').innerHTML=COL.map(c=>pix(PEN,5,{o:'#7a4a5a',f:c})).join('');
+  const HATP=['.....xx.....','....oyyo....','...oyvvyo...','..oyyyyyyo..','.oyvvyyvvyo.'];
+  const KIT=CAT_A.slice(3);
+  const HC=['#ff8fab','#ffd23f','#7fb8ff','#b79cff'],KP=[catPal(0),catPal(1),catPal(2),Object.assign({},PAL,{w:'#e8d9ff'})];
+  const CAKE=['....y....','....q....','..ooooo..','.onnnnno.','.opppppo.','.onnnnno.','.obbbbbo.','.obbbbbo.','.ooooooo.'];
+  const BAL=['.ooo.','oxxxo','oxhxo','oxxxo','.oxo.'];
+  const mk=i=>'<div class="hpk" data-i="'+i+'" style="--d:'+(i*-.17)+'s">'+pix(HATP.concat(KIT),5,Object.assign({},KP[i],{o:'#7a4a5a',x:'#ff8fab',y:HC[i],v:'#fffaf5'}))+'</div>';
+  const cake='<div class="hpcake">'+pix(CAKE,6,{o:'#7a4a5a',y:'#ffd23f',q:'#ff6f91',n:'#fffaf5',p:'#ff8fab',b:'#b07a4a'})+'</div>';
+  $('hpCrowd').innerHTML=mk(0)+mk(1)+cake+mk(2)+mk(3);
+  ['#ff8fab','#7fb8ff','#ffd23f'].forEach((c,i)=>{$('hpB'+i).innerHTML=pix(BAL,6,{o:'#7a4a5a',x:c,h:'#ffffff'})+'<i></i>'});
+  $('hpGoIcon').innerHTML=pix(['ooooooooo','owwwwwwwo','ooowwwooo','owoowoowo','owwwoowwo','ooooooooo'],4,{o:'#7a4a5a',w:'#fffaf5'});
+  const sc=$('hpScene'),CF=['#ff8fab','#ffd23f','#7fb8ff','#b79cff','#b5ead7','#ffffff'];
+  for(let i=0;i<22;i++){const c=document.createElement('span');c.className='hpcf';c.style.left=(Math.random()*96)+'%';c.style.background=CF[i%CF.length];c.style.animationDuration=(3+Math.random()*3)+'s';c.style.animationDelay=(-Math.random()*6)+'s';sc.appendChild(c)}
+  const SAY=['Les chatons préparent la fête ♡','Chut… ne dis rien à Léo !','Qui a goûté la crème du gâteau ?','On a gonflé tous les ballons !','Miaou-miaou, joyeuses retrouvailles !','Plus que quelques dodos… ♡'];
+  let si=0;const sayH=t=>{$('hpBub').textContent=t};
+  setInterval(()=>{if($('homePage').classList.contains('on')){si=(si+1)%SAY.length;sayH(SAY[si])}},3200);
+  document.querySelectorAll('#hpCrowd .hpk').forEach(k=>k.onclick=()=>{try{meow();burst()}catch(e){}si=(si+2)%SAY.length;sayH(SAY[si])});
+  const pd=d=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris'}).format(d),pad2=n=>String(n).padStart(2,'0');
+  function hpTick(){
+    const now=Date.now(),diff=Math.max(0,TARGET-now),t=Math.floor(diff/1000);
+    $('hpD').textContent=pad2(Math.floor(t/86400));$('hpH').textContent=pad2(Math.floor(t%86400/3600));$('hpM').textContent=pad2(Math.floor(t%3600/60));$('hpS').textContent=pad2(t%60);
+    const n=Math.round((Date.parse(pd(new Date(TARGET)))-Date.parse(pd(new Date(now))))/86400000);
+    let day,sub;
+    if(now>=TARGET){day='ON Y EST ♡';sub='Les ronrons sont enfin réunis !'}
+    else if(n<=0){day='JOUR J';sub='C’est aujourd’hui, ce soir à 19h00 !'}
+    else{day='J-'+n;sub=n===1?'C’est demain, samedi à 19h00 ♡':'Samedi 7 novembre · 19h00'}
+    if($('hpDay').textContent!==day)$('hpDay').textContent=day;
+    if($('hpSub').textContent!==sub)$('hpSub').textContent=sub;
+    $('hpWel').textContent=data.welcome}
+  hpTick();setInterval(hpTick,1000);
+  $('hpGo').onclick=()=>{try{sfxPop()}catch(e){}showPage('poste')};
+  $('hpAv').onclick=()=>showPage('avent');
+ }
 }
 function buildColors(src){cdraft=Object.assign({},src);const box=$('aColors');box.innerHTML='';CVARS.forEach(([k,l,d])=>{const lb=document.createElement('label');lb.textContent=l;const i=document.createElement('input');i.type='color';i.value=cdraft[k]||d;i.oninput=()=>{cdraft[k]=i.value;applyColors(cdraft)};box.append(lb,i)})}
 $('resetColors').onclick=()=>{buildColors({});applyColors(cdraft)};
