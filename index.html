@@ -451,7 +451,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 .fu-skip{position:absolute;top:8px;right:8px;z-index:10;font-size:16px!important;padding:2px 8px!important}
 .fu-close{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);z-index:10;display:none}
 .fu-close.on{display:block}
-.srow{display:flex;align-items:center;gap:8px;margin:12px 0;text-align:left}.srow b{width:92px;font-weight:normal;font-size:21px}.srow input[type=range]{flex:1;min-width:0}.srow .btn{margin:0;min-width:96px}
+.srow{display:flex;align-items:center;gap:8px;margin:12px 0;text-align:left}.srow b{width:92px;font-weight:normal;font-size:21px}.srow input[type=range]{flex:1;min-width:0}.srow .btn{margin:0;min-width:96px}#trkRow .btn{min-width:0;white-space:nowrap;font-size:19px;padding:5px 6px}
 .credcats{display:grid;grid-template-columns:1fr 1fr;gap:10px 4px;margin:10px 0}.credroll .credcat{display:flex;align-items:center;justify-content:center;gap:6px;margin:0}.credcat svg{flex:none}
 .cc{opacity:0}.cc.y{opacity:1}.pend{visibility:hidden}
 @keyframes credroll{to{transform:translateY(var(--d))}}
@@ -647,6 +647,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <button class="btn" id="hClose">Fermer</button></div></div>
 <div class="ovl" id="setOvl"><div class="box" style="text-align:center"><h2>Réglages ♡</h2>
 <div class="srow"><b>Musique</b><button class="btn" id="pp" aria-label="Lecture ou pause">▶</button><input type="range" id="vol" min="0" max="1" step="0.05" value="0.5" aria-label="Volume de la musique"></div>
+<div class="srow"><b>Titre</b><div id="trkRow" style="display:flex;flex-direction:column;gap:6px;flex:1;min-width:0"><button class="btn" type="button" data-t="fete">Fête du jour J</button><button class="btn" type="button" data-t="boite">Boîte à musique</button></div></div>
 <div class="srow"><b>Bruitages</b><button class="btn" id="sfxT">Activés</button><input type="range" id="sfxVol" min="0" max="1" step="0.05" value="0.75" aria-label="Volume des bruitages"></div>
 <p style="margin:10px 0 2px;font-size:18px;opacity:.8">Tes réglages sont gardés quand tu redémarres le site ♡</p>
 <button class="btn main" id="restartBtn">Redémarrer</button>
@@ -902,16 +903,32 @@ const mf=m=>440*Math.pow(2,(m-69)/12);
 const CH=[[60,64,67],[57,60,64],[53,57,60],[55,59,62]];
 const AR=[0,1,2,1,2,1,2,1];
 const ML=[76,0,79,0,76,0,72,0, 72,0,76,0,81,0,79,0, 77,0,81,0,79,0,77,0, 74,0,79,0,76,0,74,0];
-let SET={mv:.5,sv:.75,sfx:true,music:true};try{Object.assign(SET,JSON.parse(localStorage.getItem('ronron-set')||'{}'))}catch(e){}
+let SET={mv:.5,sv:.75,sfx:true,music:true,track:'fete'};try{Object.assign(SET,JSON.parse(localStorage.getItem('ronron-set')||'{}'))}catch(e){}
 function saveSet(){try{localStorage.setItem('ronron-set',JSON.stringify(SET))}catch(e){}}
 $('vol').value=SET.mv;$('sfxVol').value=SET.sv;
 function sfxLevel(){return Math.pow(SET.sv,2)*1.2}
 function vol(){return Math.pow(+$('vol').value,2)*.6}
 function bell(f,t,g,d,dest){const o=ac.createOscillator(),o2=ac.createOscillator(),e=ac.createGain(),e2=ac.createGain();o.type='sine';o2.type='triangle';o.frequency.value=f;o2.frequency.value=f*3;e2.gain.value=.22;o2.connect(e2);e2.connect(e);o.connect(e);e.connect(dest||master);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.01);e.gain.exponentialRampToValueAtTime(.0001,t+d);o.start(t);o2.start(t);o.stop(t+d+.05);o2.stop(t+d+.05)}
-function sched(){while(nt<ac.currentTime+.4){const b=Math.floor(st/8)%4,k=st%8;bell(mf(CH[b][AR[k]]),nt,.16,.9);if(k===0)bell(mf(CH[b][0]-12),nt,.2,1.8);const m=ML[st%32];if(m)bell(mf(m),nt,.28,1.4);nt+=.34;st++}}
+function pluck(f,t,g,d,type,dest){const o=ac.createOscillator(),e=ac.createGain();o.type=type;o.frequency.value=f;o.connect(e);e.connect(dest||master);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.008);e.gain.exponentialRampToValueAtTime(.0001,t+d);o.start(t);o.stop(t+d+.05)}
+let nbuf=null;
+function noiseHit(t,g,d,hp){if(!nbuf){nbuf=ac.createBuffer(1,Math.floor(ac.sampleRate*.3),ac.sampleRate);const a=nbuf.getChannelData(0);for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1}const sr=ac.createBufferSource(),f=ac.createBiquadFilter(),e=ac.createGain();sr.buffer=nbuf;f.type='highpass';f.frequency.value=hp;sr.connect(f);f.connect(e);e.connect(master);e.gain.setValueAtTime(g,t);e.gain.exponentialRampToValueAtTime(.0001,t+d);sr.start(t);sr.stop(t+d+.02)}
+function kick(t){const o=ac.createOscillator(),e=ac.createGain();o.type='sine';o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);o.connect(e);e.connect(master);e.gain.setValueAtTime(.35,t);e.gain.exponentialRampToValueAtTime(.0001,t+.2);o.start(t);o.stop(t+.22)}
+const ML2=[76,0,79,0,84,0,79,76, 74,0,79,0,83,0,79,74, 72,0,76,0,81,0,76,72, 77,0,81,0,84,81,79,77];
+function fete(t,n){const b=Math.floor(n/8)%4,k=n%8,lp=Math.floor(n/32)%2;
+  if(k===0||k===4)kick(t);
+  if(k===2||k===6){noiseHit(t,.12,.12,1800);CH[b].forEach(x=>pluck(mf(x),t,.04,.14,'square'))}
+  if(k%2===1)noiseHit(t,.04,.04,7000);
+  if(k===0||k===3||k===4||k===7)pluck(mf(CH[b][0]-24),t,.2,.3,'triangle');
+  const m=ML2[n%32];if(m){bell(mf(m),t,.26,.9);if(lp)bell(mf(m+12),t,.08,.6)}
+  if(lp&&k%4===0)bell(mf(CH[b][2]+12),t,.07,.5)}
+function sched(){while(nt<ac.currentTime+.4){if(SET.track==='boite'){const b=Math.floor(st/8)%4,k=st%8;bell(mf(CH[b][AR[k]]),nt,.16,.9);if(k===0)bell(mf(CH[b][0]-12),nt,.2,1.8);const m=ML[st%32];if(m)bell(mf(m),nt,.28,1.4);nt+=.34}else{fete(nt,st);nt+=.21}st++}}
 function play(){try{if(!ac){const A=window.AudioContext||window.webkitAudioContext;ac=new A();master=ac.createGain();master.gain.value=vol();master.connect(ac.destination)}ac.resume();nt=ac.currentTime+.1;clearInterval(mt);mt=setInterval(sched,100);musicOn=true;$('pp').textContent='❚❚'}catch(e){}}
 function pause(){clearInterval(mt);musicOn=false;$('pp').textContent='▶'}
 $('pp').onclick=()=>{musicOn?pause():play();SET.music=musicOn;saveSet()};
+const TN={fete:'Fête du jour J',boite:'Boîte à musique'};
+function trkUi(){document.querySelectorAll('#trkRow .btn').forEach(b=>{const on=b.dataset.t===SET.track;b.classList.toggle('main',on);b.textContent=(on?'♡ ':'')+TN[b.dataset.t]})}
+document.querySelectorAll('#trkRow .btn').forEach(b=>b.onclick=()=>{SET.track=b.dataset.t;SET.music=true;saveSet();st=0;if(ac)nt=ac.currentTime+.1;if(!musicOn)play();trkUi();try{sfxPop()}catch(e){}});
+trkUi();
  
 /* ---------- Bruitages et vibrations ---------- */
 function audio(){if(!ac){const A=window.AudioContext||window.webkitAudioContext;ac=new A();master=ac.createGain();master.gain.value=vol();master.connect(ac.destination)}if(ac.state==='suspended')ac.resume();return ac}
