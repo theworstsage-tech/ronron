@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Les retrouvailles des ronrons</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -15,7 +15,8 @@
 <style>
 :root{--bg:#E5C0F1;--bg2:#EFD3F7;--card:#fffaf5;--ink:#7a4a5a;--pink:#ffb3c6;--pink2:#ff8fab;--line:#7a4a5a;--px:'Press Start 2P',ui-monospace,monospace;--tx:'VT323',ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme="dark"]{--bg:#2b1a24;--bg2:#35202c;--card:#432836;--ink:#ffd9e4;--pink:#c9708b;--pink2:#ff8fab;--line:#ffb3c6}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{touch-action:manipulation}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--tx);font-size:22px;background:var(--bg);overflow-x:hidden;image-rendering:pixelated}
 main{max-width:720px;margin:0 auto;padding:70px 16px 150px;text-align:center;position:relative;z-index:2}
@@ -682,6 +683,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <div id="rotate"><div id="rotIcon" style="line-height:0"></div><div>Tourne ton téléphone en mode vertical ♡</div></div>
 <div id="boot"><div class="col" id="bgate"><div class="bootcat" id="bgcat"></div><div class="bootmsg">La poste ronron</div><div class="bootmsg gatehint">Touche pour entrer ♡</div><p style="margin:0;font-size:22px">♪ Active le son de ton téléphone (et coupe le mode silencieux) ♡</p></div><div class="col" id="bload" style="display:none"><div class="pscene" id="pscene"><div class="psun" id="psun"></div><div class="pcl" id="pcl1" style="top:30vh;animation-duration:16s"></div><div class="pcl" id="pcl2" style="top:40vh;animation-duration:24s;animation-delay:-9s"></div><div class="pcl" id="pcl3" style="top:20vh;animation-duration:30s;animation-delay:-18s"></div><div class="phills" id="ph1"></div><div class="phills" id="ph2"></div><div class="pstrip" id="pstrip"></div><div class="phouse" id="phouse"></div><div class="proad"></div><div class="pvan" id="pvan"></div><div class="penv" id="penv"></div></div><div class="ptop"><div class="bootmsg">La poste ronron</div><div id="bpct">0%</div><div id="bline">Chargement…</div></div><div class="bsecret pbot">Psst… il y a plein de secrets cachés sur ce site ♡</div></div><div class="col" id="bwel" style="display:none"><div class="rays"></div><div class="wheart" id="wheart"></div><div class="wtitle" id="wtitle"></div></div><div class="col" id="bpick" style="display:none"><div class="bootmsg">Léo, choisis ton petit chat ♡</div><p style="margin:0;font-size:24px">Qui va te tenir compagnie ?</p><div class="bsecret">Psst… il y a plein de secrets cachés sur ce site, ouvre l’œil ♡</div><p class="sound"><span id="megaCat"></span><span>Active le son de ton iPhone (et coupe le mode silencieux) ♡</span></p><div class="cats" id="cats"></div><button class="btn main" id="cconfirm" style="font-size:26px;padding:10px 26px;margin-top:14px">Confirmer ♡</button></div></div>
  
+<script>['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault()})})</script>
 <script>try{if(localStorage.getItem('ronron-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
 <script>
 (function(){
