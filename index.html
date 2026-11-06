@@ -535,13 +535,14 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 .ibgnd{display:flex;gap:10px;padding:10px 12px;border-top:4px solid var(--line);background:#b07a4a}
 .ibdoor{flex:1;font:inherit;font-size:20px;line-height:1.05;color:var(--ink);background:var(--card);border:3px solid var(--line);box-shadow:3px 3px 0 var(--pink2);padding:6px 4px;cursor:pointer}
 .ibdoor:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--pink2)}
+.menusub{display:none;flex-direction:column;background:var(--bg2)}.menusub.on{display:flex}.menusub .menuitem{padding-left:26px;font-size:19px}.menusub .menuitem:last-child{border-bottom:0}.menulist{max-height:calc(100vh - 70px);overflow-y:auto}
 </style>
 </head>
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
 <button class="menubtn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList"><span class="mb"></span><span>Menu</span></button>
-<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Ma maison</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button></div>
+<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Résidence ronron</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button><button class="menuitem" role="menuitem" data-act="spa" type="button">Spa des ronrons</button><button class="menuitem" role="menuitem" data-act="games" type="button">Mini-jeux +</button><div class="menusub" id="mnGames"></div></div>
 <button class="themebtn" id="themeBtn" aria-label="Changer de thème"><span id="themeIcon"></span><span id="themeLbl">Sombre</span></button>
 <div class="avpage on" id="homePage" aria-hidden="false"><div class="avwrap">
 <div class="hpbunt" id="hpBunt"></div>
@@ -713,7 +714,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <div class="police" id="police"><div class="pbox" id="pbox"><p style="margin:0 0 8px">Miaou-miaou, police des câlins ! L’enveloppe a explosé de tendresse… On la fait réapparaître ?</p><button class="btn main" id="pyes">Oui, s’il te plaît ♡</button><button class="btn" id="pno">Plus tard</button></div><div id="pcar" style="line-height:0"></div></div>
 <div class="fu" id="fu"><div class="fu-stage" id="fuStage"><div class="fu-sun"></div><div class="fu-g"></div><div class="fu-grave" id="fuGrave"></div><div class="fu-name" id="fuName"></div><div class="fu-main" id="fuMain"></div><div class="fu-body" id="fuBody"></div><div class="fu-amb" id="fuAmb"><div class="cargo"></div><div class="cab"></div><div class="win"></div><div class="cx1"></div><div class="cx2"></div><div class="lt"></div><div class="wh" style="left:10px"></div><div class="wh" style="left:96px"></div></div><div class="fu-cats" id="fuCats"></div><div class="fu-rain" id="fuRain"></div></div><div class="fu-boom" id="fuBoom">BOUM !</div><div class="fu-msg" id="fuMsg"></div><div class="fu-flash" id="fuFlash"></div><button class="btn fu-skip" id="fuSkip">Passer</button><button class="btn main fu-close" id="fuClose">Fermer ♡</button></div>
 <div class="clown" id="clown"><div class="cl-msg" id="clMsg"></div><div class="cl-car" id="clCar"></div><div class="cl-cats" id="clCats"></div><button class="btn main cl-close" id="clClose">Fin du spectacle ♡</button></div>
-<div class="ovl" id="ibOvl"><div class="box" style="text-align:center"><h2>Mon immeuble des ronrons</h2>
+<div class="ovl" id="ibOvl"><div class="box" style="text-align:center"><h2>Résidence ronron</h2>
 <div class="mzw"><span id="ibCI"></span><b id="ibCoins">0</b> croquettes</div>
 <div class="ib"><div class="ibroof"></div><div class="ibgrid" id="ibGrid"></div><div class="ibgnd"><button class="ibdoor" id="ibDoorCafe"></button><button class="ibdoor" id="ibDoorShop"></button></div></div>
 <div class="fbub" id="ibBub">Touche une fenêtre pour rendre visite à un chat ♡</div>
@@ -723,7 +724,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <div class="mzroom" id="mzRoom"><div class="mzrug" id="mzRug"></div></div>
 <div class="fbub" id="mzBub"></div>
 <div class="cats" id="mzTray" style="display:none"></div>
-<div><button class="btn main" id="mzShop">Boutique</button><button class="btn" id="mzDeco">Décorer</button><button class="btn" id="mzDress">Cabine</button><button class="btn" id="mzCafe">Café</button><button class="btn" id="mzClose">Immeuble</button></div></div></div>
+<div><button class="btn main" id="mzShop">Boutique</button><button class="btn" id="mzDeco">Décorer</button><button class="btn" id="mzDress">Cabine</button><button class="btn" id="mzCafe">Café</button><button class="btn" id="mzClose">Résidence</button></div></div></div>
 <div class="ovl" id="bqOvl"><div class="box" style="text-align:center"><h2>La boutique des chatons</h2>
 <div class="mzw"><span id="bqCI"></span><b id="bqCoins">0</b> croquettes</div>
 <div class="cats" id="bqTabs" style="margin:6px 0"></div><div class="bqg" id="bqGrid"></div>
@@ -2110,6 +2111,16 @@ $('mzClose').onclick=mzClose;
 const mnClose=()=>{$('menuList').classList.remove('on');const m=document.querySelector('[aria-controls="menuList"]');if(m)m.setAttribute('aria-expanded','false')};
 document.querySelector('[data-act="home"]').onclick=()=>{mnClose();ibOpen()};
 document.querySelector('[data-act="cafe"]').onclick=()=>{mnClose();cfOpen()};
+document.querySelector('[data-act="spa"]').onclick=()=>{mnClose();$('gspa').click()};
+const mnG=$('mnGames'),mnGb=document.querySelector('[data-act="games"]');
+mnGb.style.borderBottom='0';
+function mnGamesBuild(){
+  mnG.innerHTML='';
+  const L=[['Memory des ronrons',()=>$('g1').click()],['Nourris le chat',()=>$('g2').click()]];
+  GAMES.forEach((g,k)=>L.push([unlocked(g)?g.n.replace(/<br>/g,' '):'??? ('+g.when+')',()=>{refreshMenu();$('gcats3').children[k].click()}]));
+  L.forEach(a=>{const b=document.createElement('button');b.className='menuitem';b.setAttribute('role','menuitem');b.type='button';b.textContent=a[0];b.onclick=()=>{mnClose();a[1]()};mnG.appendChild(b)});
+}
+mnGb.onclick=()=>{const on=!mnG.classList.contains('on');if(on)mnGamesBuild();mnG.classList.toggle('on',on);mnGb.textContent='Mini-jeux '+(on?'-':'+');mnGb.style.borderBottom=on?'':'0'};
  
 
 /* --- L'immeuble : un appartement par chat --- */
