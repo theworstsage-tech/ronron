@@ -535,14 +535,15 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 .ibgnd{display:flex;gap:10px;padding:10px 12px;border-top:4px solid var(--line);background:#b07a4a}
 .ibdoor{flex:1;font:inherit;font-size:20px;line-height:1.05;color:var(--ink);background:var(--card);border:3px solid var(--line);box-shadow:3px 3px 0 var(--pink2);padding:6px 4px;cursor:pointer}
 .ibdoor:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--pink2)}
-.menusub{display:none;flex-direction:column;background:var(--bg2)}.menusub.on{display:flex}.menusub .menuitem{padding-left:26px;font-size:19px}.menusub .menuitem:last-child{border-bottom:0}.menulist{max-height:calc(100vh - 70px);overflow-y:auto}
+.menulist{max-height:calc(100vh - 70px);overflow-y:auto}
+.skipbtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:10px;z-index:30;font:inherit;font-size:20px;color:var(--ink);background:var(--card);border:3px solid var(--line);box-shadow:3px 3px 0 var(--pink2);padding:4px 10px;cursor:pointer}.skipbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--pink2)}
 </style>
 </head>
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
 <button class="menubtn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList"><span class="mb"></span><span>Menu</span></button>
-<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Résidence ronron</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button><button class="menuitem" role="menuitem" data-act="spa" type="button">Spa des ronrons</button><button class="menuitem" role="menuitem" data-act="games" type="button">Mini-jeux +</button><div class="menusub" id="mnGames"></div></div>
+<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="poste" type="button">La poste</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Résidence ronron</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button><button class="menuitem" role="menuitem" data-act="spa" type="button">Spa des ronrons</button><button class="menuitem" role="menuitem" data-act="games" type="button">Mini-jeux</button></div>
 <button class="themebtn" id="themeBtn" aria-label="Changer de thème"><span id="themeIcon"></span><span id="themeLbl">Sombre</span></button>
 <div class="avpage on" id="homePage" aria-hidden="false"><div class="avwrap">
 <div class="hpbunt" id="hpBunt"></div>
@@ -564,7 +565,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <p class="target">Ouverture du chantier le 1er décembre ♡</p>
 <div class="avtape"></div>
 </div></div>
-<div class="player" id="player"><button class="coin" id="coin" aria-label="Mini-jeu"></button><button class="btn" id="setBtn" aria-label="Réglages"></button><span id="note" style="cursor:pointer">♪</span></div>
+<div class="player" id="player"><button class="btn" id="setBtn" aria-label="Réglages"></button><span id="note" style="cursor:pointer">♪</span></div>
 <div id="sky"></div><canvas id="fx"></canvas><div class="gacha" id="gacha"></div>
 <main>
   <h1>La poste ronron</h1>
@@ -623,8 +624,9 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
     <li>Taper sur le ♪ du lecteur : le chat saute de joie trois fois.</li>
     <li>Ne rien toucher pendant 30 secondes : le chat s’endort (Zzz…) et se réveille au toucher.</li>
     <li>Écrire « miaou » comme mot de passe : le chat répond. Écrire « je t’aime » : confettis et réponse tendre.</li>
+    <li>Écrire « skip » comme mot de passe : affiche (ou cache, si on le réécrit) un bouton Skip sur l’écran de chargement.</li>
     <li>Taper sur le chat : il miaule et dit un de ses petits mots.</li>
-    <li>Taper sur la pièce d’or : mini-jeu de mémoire. En gagnant, on reçoit l’indice pour l’œuf caché du mot de passe « miaou ».</li>
+    <li>Menu, puis Mini-jeux : mini-jeu de mémoire. En gagnant, on reçoit l’indice pour l’œuf caché du mot de passe « miaou ».</li>
     <li>Mini-jeu « Spa des ronrons » : savon, rinçage, brossage et petit look pour chouchouter ton chat.</li>
     <li>Mini-jeu « Nourris le chat » : remplir la gamelle sans déborder. Récompense : le secret « je t’aime » à écrire dans le mot de passe.</li>
     <li>Taper 3 fois sur le texte d’accueil : confettis.</li>
@@ -1026,7 +1028,6 @@ const STAR=['...y...','...y...','yyyyyyy','.yyyyy.','..yyy..','.yy.yy.','yy...yy
 const ENV=['oooooooo','opwwwwpo','owpwwpwo','owwppwwo','owwwwwwo','oooooooo'];
 const PAW=['pp...pp','pp.p.pp','..ppp..','.ppppp.','.ppppp.','..p.p..'];
 const IC=[HEART,CAT_ICON,COINPIX,STAR,ENV,PAW];
-$('coin').innerHTML=pix(COINPIX,3,GP);
 let gFirst=null,gLock=false,gMoves=0,gDone=0;
 function newGame(){
   const ids=[0,1,2,3,4,5,0,1,2,3,4,5].sort(()=>Math.random()-.5);
@@ -1044,7 +1045,7 @@ function flipCard(b){
   else{gLock=true;setTimeout(()=>{a.classList.remove('up');b.classList.remove('up');gLock=false;sfx(t=>blip(260,t,.12,'triangle',.1,200))},750)}
 }
 function gameWin(){victory();buzz([80,40,80,40,200]);burst();rainHearts(10);setTimeout(()=>{$('clue').style.display='block'},600)}
-$('coin').onclick=()=>{refreshMenu();$('menuOvl').classList.add('on');sfx(t=>{blip(988,t,.08,'square',.1);blip(1319,t+.08,.4,'square',.1)})};
+const openMini=()=>{refreshMenu();$('menuOvl').classList.add('on');sfx(t=>{blip(988,t,.08,'square',.1);blip(1319,t+.08,.4,'square',.1)})};
 $('gnew').onclick=newGame;
 $('gclose').onclick=()=>$('gameOvl').classList.remove('on');
  
@@ -1175,7 +1176,7 @@ function mkScene(keys){
   return '<div class="mk">'
    +box('admin','left:4px;top:4px;width:56px;height:20px',pix(CAT_ICON,1,catPal(0))+'Admin','b')
    +box('aide','left:4px;top:28px;width:40px;height:18px',pix(iQ,1,{o:'#7a4a5a'})+'Aide','b')
-   +'<div class="b" style="right:4px;top:4px;width:90px;height:20px"><span class="'+h('coin').trim()+'" style="display:block;width:12px;height:12px;background:#ffd23f;border:2px solid #7a4a5a"></span><span class="'+h('music').trim()+'" style="display:flex;gap:3px;align-items:center;padding:1px 2px">▶<i style="display:block;width:22px;height:3px;background:#ff8fab"></i>♪</span></div>'
+   +'<div class="b" style="right:4px;top:4px;width:90px;height:20px"><span class="'+h('music').trim()+'" style="display:flex;gap:3px;align-items:center;padding:1px 2px">▶<i style="display:block;width:22px;height:3px;background:#ff8fab"></i>♪</span></div>'
    +'<div style="left:0;right:0;top:52px;font-size:14px">La poste ronron</div>'
    +box('count','left:6px;right:6px;top:70px;height:26px;gap:4px;padding:0','<div class="cnt">02</div><div class="cnt">15</div><div class="cnt">36</div><div class="cnt">31</div>')
    +box('route','left:6px;right:6px;top:102px;height:24px;gap:2px;padding:0 2px',pix(iHOUSE,2,IP)+'<i style="flex:1;height:0;border-top:3px dotted #ff8fab"></i>'+pix(CAT_ICON,1,catPal(0))+'<i style="flex:1;height:0;border-top:3px dotted #ff8fab"></i>'+pix(iHOUSE,2,IP))
@@ -1187,13 +1188,13 @@ function mkScene(keys){
    +box('appli','right:4px;bottom:4px;width:46px;height:18px','Appli','b')
    +'</div>';
 }
-const HALL=['admin','aide','music','coin','count','route','env','hug','ticket','cat','credits','appli'];
+const HALL=['admin','aide','music','count','route','env','hug','ticket','cat','credits','appli'];
 const HELP=[
   {k:[],t:'Miaou ! Je te fais visiter le site, bouton par bouton. Suis-moi, ça va être rigolo ♡'},
   {k:['admin'],t:'En haut à gauche : l’espace Administrateur ronron. Il faut un mot de passe pour entrer… et certains mots magiques font des surprises !'},
   {k:['aide'],t:'Juste en dessous : le bouton Aide. Touche-le quand tu veux et je te refais la visite ♡'},
   {k:['music'],t:'En haut à droite : la musique. Tu peux la lancer, la mettre en pause et régler le volume.'},
-  {k:['coin'],t:'La petite pièce dorée ouvre les petits jeux : des défis, des chats bonus, un spa pour me chouchouter et ton carnet secret.'},
+  {k:[],t:'En haut au milieu : le Menu. « Mini-jeux » ouvre les petits jeux : des défis, des chats bonus, un spa pour me chouchouter et ton carnet secret.'},
   {k:['count'],t:'Le compte à rebours : il te dit combien de temps il reste avant les retrouvailles, samedi 7 novembre à 19h.'},
   {k:['route'],t:'La petite route relie chez Kevin et chez Léo, avec un chat qui voyage entre les deux maisons.'},
   {k:['env'],t:'L’enveloppe : elle s’ouvre à 19h le grand soir. Ensuite, touche-la pour relire ta lettre.'},
@@ -1376,7 +1377,7 @@ function openBook(){
 function checkUnlocks(){
   let seen={};try{seen=JSON.parse(localStorage.getItem('ronron-seen'))||{}}catch(e){}
   const nw=GAMES.filter(g=>Date.now()>=g.t&&!seen[g.id]);
-  if(nw.length){nw.forEach(g=>seen[g.id]=1);try{localStorage.setItem('ronron-seen',JSON.stringify(seen))}catch(e){}toast('Nouveau jeu et petit mot du jour ! Touche la pièce ♡',4000);jingle()}
+  if(nw.length){nw.forEach(g=>seen[g.id]=1);try{localStorage.setItem('ronron-seen',JSON.stringify(seen))}catch(e){}toast('Nouveau jeu et petit mot du jour ! Ouvre le menu, puis Mini-jeux ♡',4000);jingle()}
 }
 setInterval(checkUnlocks,20000);setTimeout(checkUnlocks,6500);
  
@@ -1529,6 +1530,7 @@ function bootLeave(){
     let k=0,st=0;
     const lines=['Pliage de la lettre…','Collage du timbre en forme de cœur…','Course à travers la ville…','Dernière ligne droite…'];
     const T=(f,ms)=>{tm.push(setTimeout(f,ms))};
+    window.__skipBoot=()=>{started=true;tm.forEach(x=>{clearTimeout(x);clearInterval(x)});bootLeave()};
     function go(n){
       st=n;
       $('bgate').style.display='none';
@@ -2112,15 +2114,7 @@ const mnClose=()=>{$('menuList').classList.remove('on');const m=document.querySe
 document.querySelector('[data-act="home"]').onclick=()=>{mnClose();ibOpen()};
 document.querySelector('[data-act="cafe"]').onclick=()=>{mnClose();cfOpen()};
 document.querySelector('[data-act="spa"]').onclick=()=>{mnClose();$('gspa').click()};
-const mnG=$('mnGames'),mnGb=document.querySelector('[data-act="games"]');
-mnGb.style.borderBottom='0';
-function mnGamesBuild(){
-  mnG.innerHTML='';
-  const L=[['Memory des ronrons',()=>$('g1').click()],['Nourris le chat',()=>$('g2').click()]];
-  GAMES.forEach((g,k)=>L.push([unlocked(g)?g.n.replace(/<br>/g,' '):'??? ('+g.when+')',()=>{refreshMenu();$('gcats3').children[k].click()}]));
-  L.forEach(a=>{const b=document.createElement('button');b.className='menuitem';b.setAttribute('role','menuitem');b.type='button';b.textContent=a[0];b.onclick=()=>{mnClose();a[1]()};mnG.appendChild(b)});
-}
-mnGb.onclick=()=>{const on=!mnG.classList.contains('on');if(on)mnGamesBuild();mnG.classList.toggle('on',on);mnGb.textContent='Mini-jeux '+(on?'-':'+');mnGb.style.borderBottom=on?'':'0'};
+document.querySelector('[data-act="games"]').onclick=()=>{mnClose();openMini()};
  
 
 /* --- L'immeuble : un appartement par chat --- */
@@ -2282,6 +2276,26 @@ CIT.forEach((it,k)=>{
   b.addEventListener('pointerdown',e=>{e.preventDefault();cfPick(k)});$('cfBtns').appendChild(b)});
 $('cfStart').onclick=cfGo;
 $('cfClose').onclick=()=>{cfStop();ovl('cfOvl').remove('on')};
+
+/* --- Easter egg admin : code SKIP --- */
+const SKK='ronron-skip';
+const skipOn=()=>{try{return localStorage.getItem(SKK)==='1'}catch(e){return false}};
+function skipBtn(){
+  const b=$('boot');if(!b||$('skipBtn'))return;
+  const k=document.createElement('button');k.id='skipBtn';k.className='skipbtn';k.type='button';k.textContent='Skip >>';
+  k.addEventListener('pointerdown',e=>e.stopPropagation());
+  k.onclick=e=>{e.stopPropagation();try{audio()}catch(_){}if(window.__skipBoot)window.__skipBoot();else bootLeave()};
+  b.appendChild(k);
+}
+function skipToggle(){
+  const on=!skipOn();try{localStorage.setItem(SKK,on?'1':'0')}catch(e){}
+  $('pw').value='';$('err').textContent=on?'Code SKIP activé : le bouton Skip apparaît au chargement ♡':'Code SKIP désactivé ♡';
+  jingle();rainHearts(8);
+}
+const isSkip=()=>$('pw').value.trim().toLowerCase()==='skip';
+$('loginOvl').addEventListener('click',e=>{if(e.target.closest('#loginGo')&&isSkip()){e.stopPropagation();e.preventDefault();skipToggle()}},true);
+$('loginOvl').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target===$('pw')&&isSkip()){e.stopPropagation();e.preventDefault();skipToggle()}},true);
+if(skipOn())skipBtn();
 })();
 </script>
 </body>
