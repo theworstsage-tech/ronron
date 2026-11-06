@@ -85,21 +85,39 @@ footer{position:fixed;bottom:0;left:0;right:0;text-align:center;padding:8px 10px
 .hpday{font-family:var(--px);font-size:clamp(34px,13vw,60px);line-height:1.2;margin:4px 0 0;text-shadow:4px 4px 0 var(--pink);animation:bob 1.4s steps(2) infinite}
 .hpwel{font-size:clamp(22px,5vw,28px);margin:0 0 2px}
 .hpsub{font-size:22px;margin:0 0 10px;opacity:.9}
-.hpscene{position:relative;height:210px;margin:8px 0 14px;border:4px solid var(--line);box-shadow:4px 4px 0 var(--pink2);overflow:hidden;background:linear-gradient(#ffb3c6 0%,#ffd2c4 55%,#ffe9c7 100%)}
+.hpscene{position:relative;height:200px;margin:8px 0 14px;border:4px solid var(--line);box-shadow:4px 4px 0 var(--pink2);overflow:hidden;background:linear-gradient(#ffb3c6 0%,#ffd2c4 55%,#ffe9c7 100%)}
 .hpfloor{position:absolute;left:0;right:0;bottom:0;height:38px;background:repeating-linear-gradient(90deg,#fffaf5 0 24px,#ffc2d4 24px 48px);border-top:6px solid #7a4a5a}
 .hpcrowd{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:space-around;align-items:flex-end;line-height:0;padding:0 4px}
 .hpk{cursor:pointer;transform-origin:50% 100%;animation:hpd .7s steps(2) infinite;animation-delay:var(--d)}
 @keyframes hpd{0%{transform:translateY(0) rotate(-5deg)}100%{transform:translateY(-9px) rotate(5deg)}}
 .hpcake{margin-bottom:2px}
-.hpbal{position:absolute;top:10px;line-height:0;text-align:center;animation:hpfl 2.4s steps(6) infinite alternate;animation-delay:var(--d)}
+.hpbal{position:absolute;top:44px;line-height:0;text-align:center;animation:hpfl 2.4s steps(6) infinite alternate;animation-delay:var(--d)}
 .hpbal i{display:block;width:3px;height:26px;background:#7a4a5a;margin:0 auto}
 @keyframes hpfl{to{transform:translateY(-12px)}}
 .hpcf{position:absolute;top:-10px;width:7px;height:7px;animation:hpfall linear infinite;pointer-events:none}
-@keyframes hpfall{to{transform:translateY(230px) rotate(360deg)}}
-.hpbub{position:absolute;top:8px;left:50%;transform:translateX(-50%);max-width:62%;width:max-content;background:#fffaf5;color:#7a4a5a;border:4px solid #7a4a5a;padding:4px 8px;font-size:18px;line-height:1.1;z-index:2}
+@keyframes hpfall{to{transform:translateY(200px) rotate(360deg)}}
+.hpbub{position:absolute;top:6px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#fffaf5;color:#7a4a5a;border:4px solid #7a4a5a;padding:3px 8px;font-size:18px;line-height:1.1;z-index:2}
 .hpgo{display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:22px;background:var(--pink2);color:#3b2030;border:4px solid var(--line);box-shadow:5px 5px 0 var(--line);padding:8px 16px;margin:14px 0 8px;cursor:pointer;animation:bob 1.6s steps(2) infinite}
 .hpgo:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--line);animation:none}
 .hplink{display:block;margin:6px auto 0}
+.hpbtns{display:flex;flex-direction:column;align-items:center;gap:12px;margin:16px 0 4px}
+.hpbtns .hpgo,.hpbtns .hplink{margin:0}
+.route{display:none!important}
+main .count{gap:8px}
+main .unit{min-width:0;padding:5px 3px;box-shadow:3px 3px 0 var(--pink2);border-width:3px}
+main .unit b{font-size:clamp(12px,3.6vw,18px);margin-bottom:4px}
+main .unit span{font-size:15px}
+.target{font-size:19px}
+.env{z-index:1}
+.env.dday:not(.open):not(.shy){animation:bob 1.6s steps(2) infinite,wig 2s steps(1) infinite}
+@keyframes wig{0%{rotate:0deg}6%{rotate:-3deg}12%{rotate:3deg}18%{rotate:-3deg}24%{rotate:3deg}30%{rotate:-2deg}36%{rotate:0deg}100%{rotate:0deg}}
+.peeks{position:absolute;left:10px;top:0;width:220px;height:100px;z-index:0;pointer-events:none}
+.peek{position:absolute;top:34px;line-height:0;pointer-events:auto;cursor:pointer;animation:peek 2.6s steps(4) infinite;animation-delay:var(--d)}
+.peek.fl{transform-origin:center}
+.peek .pq{position:absolute;left:50%;top:-24px;margin-left:-8px;animation:pqb 1.2s steps(1) infinite;animation-delay:var(--d)}
+@keyframes peek{0%,45%{transform:translateY(12px)}55%,100%{transform:translateY(-4px)}}
+@keyframes pqb{0%{opacity:1}50%{opacity:.2}}
+.stage:has(.env.open) .peeks{display:none}
 @media (max-width:480px){.avpage .hpcount .unit{min-width:0}}
 @media (max-width:480px){.avpage .count{flex-wrap:nowrap;gap:6px}.avpage .unit{min-width:0;flex:1 1 0;padding:8px 4px}.avpage .unit span{font-size:16px}}
 .heartfloat{position:fixed;bottom:-30px;z-index:1;pointer-events:none;animation:up linear infinite}
@@ -495,10 +513,10 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 <div class="hpday" id="hpDay">J-1</div>
 <p class="hpwel" id="hpWel"></p>
 <p class="hpsub" id="hpSub">Samedi 7 novembre · 19h00</p>
-<div class="hpscene" id="hpScene"><div class="hpbub" id="hpBub">Les chatons préparent la fête ♡</div><div class="hpbal" id="hpB0" style="left:7%;--d:0s"></div><div class="hpbal" id="hpB1" style="left:46%;top:66px;--d:-.8s"></div><div class="hpbal" id="hpB2" style="right:7%;--d:-1.6s"></div><div class="hpcrowd" id="hpCrowd"></div><div class="hpfloor"></div></div>
+<div class="hpscene" id="hpScene"><div class="hpbub" id="hpBub">Les chatons préparent la fête ♡</div><div class="hpbal" id="hpB0" style="left:7%;--d:0s"></div><div class="hpbal" id="hpB1" style="left:46%;top:58px;--d:-.8s"></div><div class="hpbal" id="hpB2" style="right:7%;--d:-1.6s"></div><div class="hpcrowd" id="hpCrowd"></div><div class="hpfloor"></div></div>
 <div class="count hpcount" aria-live="off"><div class="unit"><b id="hpD">00</b><span>jours</span></div><div class="unit"><b id="hpH">00</b><span>heures</span></div><div class="unit"><b id="hpM">00</b><span>minutes</span></div><div class="unit"><b id="hpS">00</b><span>secondes</span></div></div>
-<button class="hpgo" id="hpGo" type="button"><span id="hpGoIcon" style="line-height:0"></span>Aller à la lettre ♡</button>
-<button class="btn hplink" id="hpAv" type="button">Calendrier de l’avent</button>
+<div class="hpbtns"><button class="hpgo" id="hpGo" type="button"><span id="hpGoIcon" style="line-height:0"></span>Aller à la lettre ♡</button>
+<button class="btn hplink" id="hpAv" type="button">Calendrier de l’avent</button></div>
 </div></div>
 <div class="avpage" id="avPage" aria-hidden="true"><div class="avwrap">
 <div class="avtape"></div>
@@ -524,7 +542,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
   <div class="target">Samedi 7 novembre 2026 · 19h00 (heure de Paris)</div>
   <div class="since" id="since"></div>
   <div class="route" id="route"><div class="ep"><span id="rh1"></span><small>chez Kevin</small></div><div class="rtrack" id="rtrack"><div class="rcat" id="rcat"><span id="rcatSp"></span><small>Léo</small></div></div><div class="ep"><span id="rh2"></span><small>chez Léo</small></div></div>
-  <div class="stage"><div class="combo" id="combo"></div>
+  <div class="stage"><div class="combo" id="combo"></div><div class="peeks" id="peeks"></div>
     <div class="env" id="env" role="button" tabindex="0" aria-label="Enveloppe">
       <div class="back"></div>
       <div class="letter" id="miniLetter"><span id="miniHeart"></span></div>
@@ -1797,7 +1815,7 @@ applyColors(data.colors);
   $('hpGoIcon').innerHTML=pix(['ooooooooo','owwwwwwwo','ooowwwooo','owoowoowo','owwwoowwo','ooooooooo'],4,{o:'#7a4a5a',w:'#fffaf5'});
   const sc=$('hpScene'),CF=['#ff8fab','#ffd23f','#7fb8ff','#b79cff','#b5ead7','#ffffff'];
   for(let i=0;i<22;i++){const c=document.createElement('span');c.className='hpcf';c.style.left=(Math.random()*96)+'%';c.style.background=CF[i%CF.length];c.style.animationDuration=(3+Math.random()*3)+'s';c.style.animationDelay=(-Math.random()*6)+'s';sc.appendChild(c)}
-  const SAY=['Les chatons préparent la fête ♡','Chut… ne dis rien à Léo !','Qui a goûté la crème du gâteau ?','On a gonflé tous les ballons !','Miaou-miaou, joyeuses retrouvailles !','Plus que quelques dodos… ♡'];
+  const SAY=['Les chatons préparent la fête ♡','Chut… ne dis rien à Léo !','Qui a goûté la crème du gâteau ?','On a gonflé tous les ballons !','Miaou, joyeuses retrouvailles !','Plus que quelques dodos… ♡'];
   let si=0;const sayH=t=>{$('hpBub').textContent=t};
   setInterval(()=>{if($('homePage').classList.contains('on')){si=(si+1)%SAY.length;sayH(SAY[si])}},3200);
   document.querySelectorAll('#hpCrowd .hpk').forEach(k=>k.onclick=()=>{try{meow();burst()}catch(e){}si=(si+2)%SAY.length;sayH(SAY[si])});
@@ -1807,13 +1825,18 @@ applyColors(data.colors);
     $('hpD').textContent=pad2(Math.floor(t/86400));$('hpH').textContent=pad2(Math.floor(t%86400/3600));$('hpM').textContent=pad2(Math.floor(t%3600/60));$('hpS').textContent=pad2(t%60);
     const n=Math.round((Date.parse(pd(new Date(TARGET)))-Date.parse(pd(new Date(now))))/86400000);
     let day,sub;
-    if(now>=TARGET){day='ON Y EST ♡';sub='Les ronrons sont enfin réunis !'}
-    else if(n<=0){day='JOUR J';sub='C’est aujourd’hui, ce soir à 19h00 !'}
-    else{day='J-'+n;sub=n===1?'C’est demain, samedi à 19h00 ♡':'Samedi 7 novembre · 19h00'}
+    if(now>=TARGET){day='ON Y EST ♡';sub='Les ronrons sont réunis ♡'}
+    else if(n<=0){day='JOUR J';sub='C’est aujourd’hui, 19h00 ♡'}
+    else{day='J-'+n;sub=n===1?'C’est demain, samedi 19h00 ♡':'Samedi 7 novembre · 19h00'}
     if($('hpDay').textContent!==day)$('hpDay').textContent=day;
     if($('hpSub').textContent!==sub)$('hpSub').textContent=sub;
-    $('hpWel').textContent=data.welcome}
+    $('hpWel').textContent=data.welcome;
+    $('env').classList.toggle('dday',now<TARGET&&n<=1)}
   hpTick();setInterval(hpTick,1000);
+  {const HD=CAT_BASE,QQ=['.ooo.','o...o','....o','...o.','..o..','.....','..o..'];
+   const pk=[[4,0],[84,-.9],[164,-1.7]];
+   $('peeks').innerHTML=pk.map((q,i)=>'<div class="peek" data-i="'+i+'" style="left:'+q[0]+'px;--d:'+q[1]+'s"><span class="pq">'+pix(QQ,3,{o:'#ff6f91'})+'</span>'+pix(HD,4,Object.assign({},catPal(i),{o:'#7a4a5a'}))+'</div>').join('');
+   $('peeks').querySelectorAll('.peek').forEach(k=>k.onclick=()=>{try{meow()}catch(e){}})}
   $('hpGo').onclick=()=>{try{sfxPop()}catch(e){}showPage('poste')};
   $('hpAv').onclick=()=>showPage('avent');
  }
