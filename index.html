@@ -1151,6 +1151,21 @@ body:not(:has(#homePage.on)) .homebtn{display:flex}
 .cav{flex:none;width:50px;height:50px;border-radius:50%;background:linear-gradient(#ffd1df,#ff8fab);border:2px solid #fff;box-shadow:0 2px 0 rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden}.cav svg{width:34px;height:auto}
 .cr b{display:block;font-size:17px}.cr small{display:block;opacity:.7;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62vw}
 .chh{position:relative}.chb{position:absolute;left:0;top:2px;background:none;border:0;color:var(--xc);font-size:15px;font-weight:600;padding:0}
+#relock{position:fixed;inset:0;z-index:60;overflow:hidden;color:#fff;touch-action:none;-webkit-user-select:none;user-select:none;cursor:grab;outline:0;-webkit-tap-highlight-color:transparent;transition:transform .4s steps(7);background:linear-gradient(rgba(90,53,68,.5),rgba(90,53,68,0) 34%,rgba(90,53,68,0) 50%,rgba(90,53,68,.55)),linear-gradient(#0e1b4d 0%,#24387a 40%,#4b6cb7 70%,#a9c3ee 100%)}
+#relock.drag{transition:none;cursor:grabbing}#relock.nudge .lk-sw{animation:lkNudge .5s steps(5)}
+#relock .rlc{position:relative;z-index:4;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
+#ccLock{margin-left:auto;margin-right:8px}
+.x-f{--xc:#7b6cf0}
+:root[data-wp] #homePage{background:var(--wpg)}
+:root[data-wp] #relock{background:linear-gradient(rgba(90,53,68,.5),rgba(90,53,68,0) 34%,rgba(90,53,68,0) 50%,rgba(90,53,68,.55)),var(--wpg)}
+:root[data-wp="day"] .xsky,:root[data-wp="salon"] .hpwall,:root[data-wp="bonbon"] .hpwall{display:none}
+:root[data-wp="bonbon"] #homePage{background:var(--pat) 0 0/160px 160px,var(--wpg)}
+:root[data-wp="bonbon"] #relock{background:linear-gradient(rgba(90,53,68,.35),rgba(90,53,68,0) 34%,rgba(90,53,68,0) 50%,rgba(90,53,68,.4)),var(--pat) 0 0/160px 160px,var(--wpg)}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wpc{border:0;background:none;padding:0;text-align:center;color:inherit;font-size:15px;font-weight:600}
+.wpc i{display:block;aspect-ratio:9/16;max-height:210px;width:100%;border-radius:20px;border:4px solid #fff;box-shadow:0 4px 0 rgba(0,0,0,.2);margin-bottom:6px;position:relative}
+.wpc.on i{border-color:var(--xc);box-shadow:0 0 0 3px var(--xc),0 4px 0 rgba(0,0,0,.2)}
+.wpc.on i::after{content:"✓";position:absolute;right:8px;top:6px;color:#fff;background:var(--xc);border-radius:50%;width:26px;height:26px;line-height:26px;font-style:normal}
 </style>
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
@@ -1170,7 +1185,7 @@ body:not(:has(#homePage.on)) .homebtn{display:flex}
 <div class="count hpcount" aria-live="off"><div class="unit"><b id="hpD">00</b><span>jours</span></div><div class="unit"><b id="hpH">00</b><span>heures</span></div><div class="unit"><b id="hpM">00</b><span>minutes</span></div><div class="unit"><b id="hpS">00</b><span>secondes</span></div></div>
 </div>
 <div class="hpgrid"><button class="app a-cal" type="button" aria-label="Calendrier de l’avent" data-page="avent"><span class="ic"><span class="cdow" id="calDow"></span><span class="cday" id="calDay"></span></span><span class="lb">Calendrier</span></button><button class="app a-home" type="button" aria-label="Résidence" data-act="home"><span class="ic" id="icHome"></span><span class="lb">Résidence</span></button><button class="app a-cafe" type="button" aria-label="Café" data-act="cafe"><span class="ic" id="icCafe"></span><span class="lb">Café</span></button><button class="app a-garden" type="button" aria-label="Potager" data-act="garden"><span class="ic" id="icGarden"><i class="gdbadge" id="gdBadge"></i></span><span class="lb">Potager</span></button><button class="app a-casino" type="button" aria-label="Casino" data-act="casino"><span class="ic" id="icCasino"></span><span class="lb">Casino</span></button><button class="app a-spa" type="button" aria-label="Spa" data-act="spa"><span class="ic" id="icSpa"></span><span class="lb">Spa</span></button><button class="app a-theme" type="button" aria-label="Sombre" data-click="themeBtn"><span class="ic" id="icTheme"></span><span class="lb" id="lbTheme">Sombre</span></button><button class="app a-admin" type="button" aria-label="Admin" data-click="adminBtn"><span class="ic" id="icAdmin"></span><span class="lb">Admin</span></button><button class="app a-set" type="button" aria-label="Paramètres" data-click="setBtn"><span class="ic" id="icSet"></span><span class="lb">Paramètres</span></button></div>
-</div><div class="hppg"><div class="hpgrid" id="hpPage2"><button class="app" type="button" aria-label="Wallet" data-x="w" style="--c1:#6ee7b7;--c2:#10b981;--sh:#0a7a58"><span class="ic"><span class="em">💳</span></span><span class="lb">Wallet</span></button><button class="app" type="button" aria-label="Messages" data-x="m" style="--c1:#7ee787;--c2:#2ea043;--sh:#1d6b2e"><span class="ic"><span class="em">💬</span></span><span class="lb">Messages</span></button><button class="app" type="button" aria-label="Notes" data-x="n" style="--c1:#ffe27a;--c2:#f5b82e;--sh:#b07d12"><span class="ic"><span class="em">📝</span></span><span class="lb">Notes</span></button><button class="app" type="button" aria-label="Photos" data-x="p" style="--c1:#ffd1df;--c2:#ff8fab;--sh:#d6567a"><span class="ic"><span class="em">🖼️</span></span><span class="lb">Photos</span></button><button class="app" type="button" aria-label="Horloge" data-x="h" style="--c1:#555d78;--c2:#1c2030;--sh:#0c0f1a"><span class="ic"><span class="em">⏰</span></span><span class="lb">Horloge</span></button><button class="app" type="button" aria-label="App Store" data-x="s" style="--c1:#7cc4ff;--c2:#2b7bf0;--sh:#1a54b0"><span class="ic"><span class="em">🛍️</span></span><span class="lb">App Store</span></button><button class="app" type="button" aria-label="Banque" data-x="b" style="--c1:#ffb86b;--c2:#ff7a3d;--sh:#c24a15"><span class="ic"><span class="em">🏦</span></span><span class="lb">Banque</span></button><button class="app" type="button" aria-label="Appareil photo" data-x="c" style="--c1:#d3dae5;--c2:#8a98ad;--sh:#5f6d83"><span class="ic"><span class="em">📷</span></span><span class="lb">Appareil photo</span></button></div></div></div>
+</div><div class="hppg"><div class="hpgrid" id="hpPage2"><button class="app" type="button" aria-label="Wallet" data-x="w" style="--c1:#6ee7b7;--c2:#10b981;--sh:#0a7a58"><span class="ic"><span class="em">💳</span></span><span class="lb">Wallet</span></button><button class="app" type="button" aria-label="Messages" data-x="m" style="--c1:#7ee787;--c2:#2ea043;--sh:#1d6b2e"><span class="ic"><span class="em">💬</span></span><span class="lb">Messages</span></button><button class="app" type="button" aria-label="Notes" data-x="n" style="--c1:#ffe27a;--c2:#f5b82e;--sh:#b07d12"><span class="ic"><span class="em">📝</span></span><span class="lb">Notes</span></button><button class="app" type="button" aria-label="Photos" data-x="p" style="--c1:#ffd1df;--c2:#ff8fab;--sh:#d6567a"><span class="ic"><span class="em">🖼️</span></span><span class="lb">Photos</span></button><button class="app" type="button" aria-label="Horloge" data-x="h" style="--c1:#555d78;--c2:#1c2030;--sh:#0c0f1a"><span class="ic"><span class="em">⏰</span></span><span class="lb">Horloge</span></button><button class="app" type="button" aria-label="App Store" data-x="s" style="--c1:#7cc4ff;--c2:#2b7bf0;--sh:#1a54b0"><span class="ic"><span class="em">🛍️</span></span><span class="lb">App Store</span></button><button class="app" type="button" aria-label="Banque" data-x="b" style="--c1:#ffb86b;--c2:#ff7a3d;--sh:#c24a15"><span class="ic"><span class="em">🏦</span></span><span class="lb">Banque</span></button><button class="app" type="button" aria-label="Appareil photo" data-x="c" style="--c1:#d3dae5;--c2:#8a98ad;--sh:#5f6d83"><span class="ic"><span class="em">📷</span></span><span class="lb">Appareil photo</span></button><button class="app" type="button" aria-label="Fond d’écran" data-x="f" style="--c1:#b9a7ff;--c2:#7b6cf0;--sh:#4c3fb0"><span class="ic"><span class="em">🌄</span></span><span class="lb">Fond d’écran</span></button></div></div></div>
 <div class="hpbottom"><div class="hpdots" id="hpDots"><i class="on"></i><i></i></div><div class="hpdock"><button class="app a-poste" type="button" aria-label="La poste ronron" data-page="poste"><span class="ic" id="icPoste"></span></button><button class="app a-games" type="button" aria-label="Mini-jeux" data-act="games"><span class="ic" id="icGames"></span></button><button class="app a-chat" type="button" aria-label="Choisir mon chat" data-act="cat"><span class="ic" id="appCatIc"></span></button><button class="app a-prof" type="button" aria-label="Mon profil" data-act="prof"><span class="ic" id="appProfIc"></span></button></div></div>
 <button class="btn hplink" id="catBtn" type="button" aria-label="Choisir mon chat" style="display:none!important"></button>
 </div></div>
@@ -1196,7 +1211,7 @@ body:not(:has(#homePage.on)) .homebtn{display:flex}
 <div class="cctile"><div class="ccnow"><span class="ccico" id="ccSfxIc"></span><div><small>Bruitages</small><b id="ccSfxT"></b></div></div><label class="ccsl"><input type="range" id="ccSfxVol" min="0" max="1" step="0.05" aria-label="Volume des bruitages"></label></div>
 <div style="display:grid;gap:10px;grid-template-rows:1fr 1fr"><button class="cctile" id="ccTheme" type="button"><span class="ccico" id="ccThIc"></span><b id="ccThT">Sombre</b></button><button class="cctile" id="ccSet" type="button"><span class="ccico" id="ccSetIc"></span><b>Réglages</b></button></div>
 </div>
-<div class="ccnh"><b>Notifications</b><button id="ccClear" type="button">Tout effacer</button></div>
+<div class="ccnh"><b>Notifications</b><button id="ccLock" type="button">🔒 Verrouiller</button><button id="ccClear" type="button">Tout effacer</button></div>
 <div class="ccnl" id="ccNl"></div>
 <i class="ccbar" id="ccBar" role="button" aria-label="Fermer"></i>
 </div></div>
@@ -1325,6 +1340,7 @@ body:not(:has(#homePage.on)) .homebtn{display:flex}
 <div class="srow"><b>Bruitages</b><button class="btn" id="sfxT">Activés</button><input type="range" id="sfxVol" min="0" max="1" step="0.05" value="0.75" aria-label="Volume des bruitages"></div>
 <p style="margin:10px 0 2px;font-size:18px;opacity:.8">Tes réglages sont gardés quand tu redémarres le site ♡</p>
 <div class="srow"><b>Générique</b><button class="btn" id="creditsBtn" type="button" style="display:inline-flex;align-items:center;gap:8px"><span id="creditsIcon" style="line-height:0"></span>Crédits</button></div>
+<div class="srow"><b>Dépannage</b><button class="btn" id="muteAll" type="button">🔇 Couper tous les sons</button></div>
 <button class="btn main" id="restartBtn">Redémarrer</button>
 <button class="btn" id="setClose">Fermer</button></div></div>
 <div class="ovl" id="instOvl"><div class="box" style="text-align:center"><h2>Mon appli ♡</h2>
@@ -4227,6 +4243,7 @@ function render(){
     d.querySelector('b').textContent=x.h;d.querySelector('.nt span').textContent=x.b;d.querySelector('time').textContent=x.live?'maintenant':ago(x.t);box.appendChild(d)})}
 $('ccClear').onclick=()=>{CC.clear=Date.now();hideLive=true;ccSave();render();dot();try{sfxPop()}catch(e){}};
 
+window.__ccList=()=>({L:list(),ago,ICO});
 /* ouvrir / fermer */
 let iv=null;
 function open(){if(wrap.classList.contains('on'))return;sync();render();CC.seen=Date.now();ccSave();dot();
@@ -4350,6 +4367,13 @@ c(){const av=CATS.map((c,i)=>i).filter(okCat);let s={c:av.includes(catIdx)?catId
    wait(()=>{$('cmN').textContent='';$('cmF').classList.add('go');q(meow);const p=ls('ronron-pics',[]);p.unshift({c:s.c,b:s.b,a:s.a.slice()});sv('ronron-pics',p.slice(0,30));toast('Photo ajoutée dans Photos ♡',2500);b.disabled=false;wait(()=>$('cmF').classList.remove('go'),400)},2500);return}
   q(sfxPop);R()};R()}
 };
+
+const WP={night:['Nuit de Noël',null],day:['Jour de neige','linear-gradient(#4f8fd8,#7db5ec 55%,#cfe6fb)'],salon:['Salon cosy','radial-gradient(circle at 50% 100%,rgba(255,170,60,.6),transparent 60%),linear-gradient(#3b2418,#6b3f26 50%,#b86f33)'],aurore:['Aurore','linear-gradient(#0b1030,#1d2f6b 35%,#1f8a7a 72%,#7be0b0)'],bonbon:['Bonbon','linear-gradient(#ff8fb8,#ffc2d4 55%,#ffe3ec)']};
+const wpApply=k=>{const R=document.documentElement;if(!WP[k]||!WP[k][1]){R.removeAttribute('data-wp');R.style.removeProperty('--wpg')}else{R.setAttribute('data-wp',k);R.style.setProperty('--wpg',WP[k][1])}};
+wpApply(ls('ronron-wp','night'));
+A.f=function(){const cur=ls('ronron-wp','night');
+ B.innerHTML='<div class="wpg">'+Object.keys(WP).map(k=>`<button class="wpc ${k===cur?'on':''}" data-k="${k}"><i style="background:${WP[k][1]||'linear-gradient(#0e1b4d,#24387a 40%,#4b6cb7 70%,#a9c3ee)'}"></i>${WP[k][0]}</button>`).join('')+'</div><p>Le fond change aussi sur l’écran de verrouillage ♡</p>';
+ B.onclick=e=>{const b=e.target.closest('.wpc');if(!b)return;sv('ronron-wp',b.dataset.k);wpApply(b.dataset.k);q(sfxPop);A.f()}};
 const open=k=>{tm.forEach(clearTimeout);tm=[];clearInterval(xi);xc=k;B.onclick=B.onchange=null;B.innerHTML='';TT.textContent=document.querySelector('[data-x="'+k+'"] .lb').textContent;T.className='xov on x-'+k;T.setAttribute('aria-hidden','false');A[k]();B.scrollTop=0};
 const close=()=>{tm.forEach(clearTimeout);tm=[];clearInterval(xi);xc='';T.className='xov';T.setAttribute('aria-hidden','true')};
 $('xBk').onclick=close;document.addEventListener('keydown',e=>{if(e.key==='Escape'&&xc)close()});
@@ -4362,7 +4386,38 @@ window.__welBanner=function(){const e=document.createElement('div');e.className=
  setTimeout(bye,5500);e.onclick=bye;
  e.addEventListener('touchstart',t=>{y0=t.touches[0].clientY},{passive:true});
  e.addEventListener('touchmove',t=>{if(y0!==null&&y0-t.touches[0].clientY>24){y0=null;bye()}},{passive:true})};
+$('muteAll').onclick=()=>{
+ try{pause()}catch(e){}
+ try{clearInterval(epT);epOn=false}catch(e){}
+ try{clearInterval(rmT);rmOn=false;rmWas=false;bgWas=false}catch(e){}
+ try{if(ac)ac.close()}catch(e){}
+ try{ac=null;master=null;sfxG=null}catch(e){}
+ try{SET.music=false;saveSet()}catch(e){}
+ toast('Tous les sons sont coupés et remis à zéro ♡ Relance la musique avec ▶',3500)};
 $('homeBtn').onclick=()=>{q(sfxPop);window.__showPage('accueil');window.scrollTo(0,0)};
+
+const LK=($('lock')||{}).innerHTML||'',E=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));let hid=0,rl=null;
+function relock(){if(!LK||rl||$('boot'))return;
+ const r=rl=document.createElement('div');r.id='relock';r.tabIndex=0;r.setAttribute('role','button');r.setAttribute('aria-label','Glisse vers le haut pour déverrouiller');
+ let nb='';try{const o=window.__ccList();nb=o.L.filter(x=>!x.live).slice(0,3).map(x=>{const c=o.ICO[x.i];return `<div class="lk-n"><span class="lk-ni">${pix(c[2],c[3],c[4])}</span><span class="lk-nt"><div class="lk-nh"><b>${E(x.h)}</b><small>${o.ago(x.t)}</small></div><div class="lk-nb">${E(x.b)}</div></span></div>`}).join('')}catch(e){}
+ if(!nb)nb='<div class="lk-n"><span class="lk-nt"><div class="lk-nb">Aucune notification ♡</div></span></div>';
+ r.innerHTML='<div class="hpwall" aria-hidden="true"><div class="xsky"></div><div class="xhill"></div><div class="xground"></div><div class="xsnow"></div></div><div class="rlc">'+LK.replace('<div class="lk-notifs"></div>','<div class="lk-notifs">'+nb+'</div>')+'</div>';
+ const sk=r.querySelector('.xsky');for(let i=0;i<36;i++){const e=document.createElement('i'),z=i%5===0?3:2;e.className='xst';e.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*70+'%;width:'+z+'px;height:'+z+'px;animation-delay:'+-Math.random()*1.4+'s';sk.appendChild(e)}
+ document.body.appendChild(r);
+ r.querySelector('#lkDate').textContent=new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
+ const clk=()=>{const d=new Date();r.querySelector('#lkTime').innerHTML=P(d.getHours())+'<i class="lk-c">:</i>'+P(d.getMinutes())},iv=setInterval(clk,1000);clk();
+ let sy=0,dy=0,drag=false,t0=0,done=false;
+ const unlock=()=>{if(done)return;done=true;drag=false;clearInterval(iv);q(()=>{audio();sfx(t=>{blip(mf(72),t,.08,'square',.1,mf(84));blip(mf(79),t+.09,.12,'square',.1,mf(91))})});q(()=>buzz([30,20,70]));
+  r.classList.remove('drag');r.style.pointerEvents='none';r.style.transition='transform .5s steps(8)';r.style.transform='translateY(-112%)';setTimeout(()=>{r.remove();rl=null},520)};
+ r.addEventListener('pointerdown',e=>{if(done)return;q(audio);drag=true;sy=e.clientY;dy=0;t0=performance.now();r.classList.add('drag');r.classList.remove('nudge');try{r.setPointerCapture(e.pointerId)}catch(_){}});
+ r.addEventListener('pointermove',e=>{if(!drag)return;dy=Math.max(0,sy-e.clientY);r.style.transform='translateY('+-dy+'px)';if(dy>innerHeight*.34)unlock()});
+ const end=()=>{if(!drag)return;drag=false;r.classList.remove('drag');if(dy>innerHeight*.2&&dy/Math.max(1,performance.now()-t0)>.45){unlock();return}
+  r.style.transform='';if(dy<10){r.classList.remove('nudge');void r.offsetWidth;r.classList.add('nudge');q(()=>sfx(t=>blip(mf(76),t,.07,'triangle',.08)))}dy=0};
+ r.addEventListener('pointerup',end);r.addEventListener('pointercancel',end);
+ r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '||e.key==='ArrowUp'){e.preventDefault();unlock()}});
+ setTimeout(()=>r.focus(),50)}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)relock()});
+$('ccLock').onclick=()=>{$('ccBar').click();setTimeout(relock,350)};
 document.querySelectorAll('#hpPage2 [data-x]').forEach(a=>a.onclick=()=>open(a.dataset.x));
 })();
 
