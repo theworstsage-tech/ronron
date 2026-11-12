@@ -293,7 +293,7 @@ body::before,#boot::before{content:"";position:fixed;inset:0;z-index:0;pointer-e
 .pick.pcard:hover,.pick.pcard.sel{background:linear-gradient(var(--card),var(--pink))}
 .pick.pcard:hover .csp,.pick.pcard.sel .csp{animation:runhop .5s steps(2) infinite}
 .pick.pcard.sel{transform:translateY(-6px) scale(1.06)}
-.pick.pcard.sel::after{content:"⛧";position:absolute;top:-14px;right:-12px;width:30px;height:30px;line-height:24px;text-align:center;background:var(--pink2);border:3px solid var(--line);font-size:22px;color:#fff}
+.pick.pcard.sel::after{content:"♡";position:absolute;top:-14px;right:-12px;width:30px;height:30px;line-height:24px;text-align:center;background:var(--pink2);border:3px solid var(--line);font-size:22px;color:#fff}
 .pscene{position:relative;width:100%;max-width:340px;height:190px;margin:4px auto 0;border:4px solid var(--line);box-shadow:4px 4px 0 var(--pink2);overflow:hidden;background:linear-gradient(#ffb3c6 0%,#ffd2c4 50%,#ffe9c7 100%)}
 .psun{position:absolute;left:176px;bottom:56px;line-height:0;z-index:0;animation:bob 2.4s steps(2) infinite}
 .pcl{position:absolute;left:0;line-height:0;z-index:0;animation:pdrift linear infinite}
@@ -958,147 +958,24 @@ input[type=color]{border-radius:12px;padding:0;box-shadow:0 3px 0 var(--pink)}
 #bwel .wtitle{color:#fff;text-shadow:3px 3px 0 #d62839}
 #bwel .wtitle .wl2{line-height:1.15}
 </style>
-<style id="horreur">
-/* ===== NOËL HORRIFIQUE ===== */
-:root{--hzr:#8a0303}
-#homePage{background:radial-gradient(ellipse at 50% 25%,#3a0000,#080000 78%)!important}
-#homePage .hpscene,#bload .pscene.xmas{background:linear-gradient(#040000 0%,#240404 55%,#5a1010 100%)!important}
-#homePage .hpfloor{background:repeating-linear-gradient(90deg,#7a0000 0 24px,#3a0000 24px 48px)!important}
-#homePage .hpcf{background:#a00!important;box-shadow:0 0 4px #f00!important}
-#hpAv{background:linear-gradient(#5a0000,#1a0000)!important;box-shadow:0 4px 0 #000!important;color:#ff6b6b!important}
-#hpDay{color:#e01616!important;-webkit-text-stroke:9px #120000!important;filter:drop-shadow(0 4px 0 #4a0000) drop-shadow(0 10px 6px #a00)!important;animation:hzjit 3s steps(1) infinite}
-@keyframes hzjit{0%,100%{transform:none}30%{transform:translate(2px,-1px) skewX(2deg)}32%{transform:none}70%{transform:translate(-3px,1px)}72%{transform:none}}
-#boot.xmw,#bload .pscene{background:linear-gradient(#040000,#2a0505 60%,#5a1010)!important}
-#boot.xmw .rays{background:repeating-conic-gradient(rgba(160,0,0,.35) 0 7.5deg,rgba(0,0,0,.5) 7.5deg 15deg)!important}
-#bwel .wtitle{color:#ff2b2b!important;text-shadow:3px 3px 0 #000!important}
-.xmoon{filter:sepia(1) saturate(7) hue-rotate(-35deg) drop-shadow(0 0 22px #f00)!important}
-.xground{background:radial-gradient(circle,#a00 0 1.5px,transparent 2px) 0 0/34px 22px,linear-gradient(#5a0a0a,#2a0000)!important;border-top-color:#8a0303!important}
-.xhill{filter:sepia(1) saturate(5) hue-rotate(-40deg) brightness(.4)}
-.xsnow,#ibOvl::before,#cfOvl::before,.avsnow{filter:sepia(1) saturate(9) hue-rotate(-40deg)}
-.ovl .box{background:#1a0707!important;border-color:#8a0303!important;color:#ffb3b3!important}
-#ibOvl,#cfOvl{background:rgba(25,0,0,.82)!important}
-#ibOvl h2,#cfOvl h2{color:#ff2b2b!important;text-shadow:2px 2px 0 #000!important}
-#ibOvl .box::before,#cfOvl .box::before{background:repeating-linear-gradient(-45deg,#8a0303 0 8px,#120000 8px 16px)!important}
-/* chats morts (tous les sprites de chat) */
-span[style*="vertical-align:bottom"]{filter:grayscale(1) brightness(.55) contrast(1.25) drop-shadow(0 5px 0 #8a0303) drop-shadow(0 0 5px #a00);transform:rotate(90deg);transform-origin:50% 100%;animation:none!important}
-.hpk:nth-child(3n+1) span[style*="vertical-align:bottom"],.xc:nth-child(3n+1) span[style*="vertical-align:bottom"],.ibw:nth-child(3n+1) span[style*="vertical-align:bottom"]{transform:rotate(180deg) translateY(-6px)}
-.hpk:nth-child(even) span[style*="vertical-align:bottom"],.xc:nth-child(even) span[style*="vertical-align:bottom"]{transform:rotate(-90deg)}
-span[style*="vertical-align:bottom"]::after{content:"✖ ✖";position:absolute;left:50%;top:24%;transform:translateX(-50%);line-height:1;font:bold 11px monospace;letter-spacing:2px;color:#ff2020;text-shadow:0 0 3px #000;white-space:nowrap;pointer-events:none}
-.hpk,.xc .in{animation:none!important}
-.cfk,.hz-fc{filter:saturate(2.2) drop-shadow(0 0 6px #f00)}
-.cfk span[style*="vertical-align:bottom"],.hz-fc span[style*="vertical-align:bottom"]{filter:saturate(1.8) hue-rotate(-15deg);transform:none;animation:hzmad .16s steps(2) infinite!important}
-.cfk span[style*="vertical-align:bottom"]::after,.hz-fc span[style*="vertical-align:bottom"]::after{content:"> <";color:#ff0000;top:30%}
-@keyframes hzmad{50%{transform:translate(2px,-2px) rotate(3deg)}}
-/* sapin en feu */
-.xtreew,.xm-tree{filter:brightness(.4) sepia(1) hue-rotate(-25deg) drop-shadow(0 0 18px #ff5a00)}
-.xtreew::after,.xm-tree::after{content:"";position:absolute;left:-12%;right:-12%;bottom:0;height:115%;pointer-events:none;mix-blend-mode:screen;transform-origin:50% 100%;
-background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent 60%),radial-gradient(ellipse 18% 85% at 40% 100%,#ffe14a 0 35%,#ff3d00 40% 70%,transparent 74%),radial-gradient(ellipse 22% 70% at 62% 100%,#ff7a00 0 55%,transparent 60%),radial-gradient(ellipse 17% 90% at 85% 100%,#ffd23f 0 30%,#ff2a00 36% 68%,transparent 72%);animation:hzflame .32s steps(3) infinite}
-@keyframes hzflame{0%{transform:scaleY(1) skewX(0)}33%{transform:scaleY(1.18) skewX(4deg)}66%{transform:scaleY(.92) skewX(-4deg)}}
-.xl{--c:#ff2a00!important}
-/* résidence explosée */
-#ibOvl .ib{position:relative;animation:hzrum 2.4s steps(4) infinite}
-@keyframes hzrum{50%{transform:translate(1px,1px)}}
-.ibroof{background:repeating-linear-gradient(90deg,#2a0505 0 18px,#120000 18px 36px)!important;clip-path:polygon(0 30%,8% 0,15% 45%,24% 10%,33% 55%,45% 5%,55% 40%,66% 0,75% 50%,86% 8%,100% 35%,100% 100%,0 100%)}
-.ibroof::after,.ibw::after{display:none!important}
-.ibgrid{transform:rotate(-1.2deg) skewX(-2deg)}
-.ibw:not(.off){background:radial-gradient(ellipse at 50% 110%,#ffe14a 0 18%,#ff5a00 38%,#4a0000 80%)!important;animation:hzwf .5s steps(2) infinite}
-.ibw.off{background:#050000!important}
-@keyframes hzwf{50%{filter:brightness(1.35)}}
-.ibgnd{background:#2a0000!important}
-#ibDoorCafe,#ibDoorShop{background:#120000!important;border-color:#8a0303!important;box-shadow:3px 3px 0 #ff5a00!important}
-.hz-sm{position:absolute;bottom:40%;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#555,#222 70%,transparent 72%);opacity:0;pointer-events:none;animation:hzsmoke 4s linear infinite}
-@keyframes hzsmoke{0%{transform:translateY(0) scale(.6);opacity:.8}100%{transform:translateY(-130px) scale(2.4);opacity:0}}
-.hz-boom{position:fixed;inset:0;z-index:99999;pointer-events:none;background:radial-gradient(circle at 50% 45%,#fff 0,#ffe14a 18%,#ff5a00 40%,transparent 70%);animation:hzboom 1.1s ease-out forwards}
-@keyframes hzboom{0%{opacity:1;transform:scale(.5)}100%{opacity:0;transform:scale(2.2)}}
-.hz-shk{animation:hzshake .6s steps(8) 2!important}
-@keyframes hzshake{25%{transform:translate(-6px,4px)}50%{transform:translate(6px,-4px)}75%{transform:translate(-4px,-3px)}}
-/* café : bagarre générale */
-#cfOvl .cfs{position:relative;background:linear-gradient(transparent 0 58%,#3a0d0d 58%),repeating-linear-gradient(90deg,#2a0808 0 20px,#1a0404 20px 40px)!important}
-.cfcount{background:repeating-linear-gradient(90deg,#5a0000 0 24px,#2a0000 24px 48px)!important;box-shadow:inset 0 6px 0 #8a0303!important}
-.xm-win{background:linear-gradient(#300,#a00)!important}
-.hz-fight{position:absolute;left:3%;bottom:34px;width:60%;height:100px;z-index:2;pointer-events:none}
-.hz-fc{position:absolute;bottom:0;line-height:0;animation:hzbite .35s steps(2) infinite}
-.hz-fc.l{left:4%}.hz-fc.r{right:4%;scale:-1 1;animation-name:hzbite2}
-@keyframes hzbite{50%{translate:16px -12px;rotate:-8deg}}
-@keyframes hzbite2{50%{translate:-16px -12px;rotate:8deg}}
-.hz-cloud{position:absolute;left:50%;bottom:6px;width:64px;height:54px;margin-left:-32px;background:radial-gradient(circle at 25% 60%,#ddd 0 20%,transparent 21%),radial-gradient(circle at 55% 35%,#bbb 0 24%,transparent 25%),radial-gradient(circle at 75% 65%,#eee 0 22%,transparent 23%),radial-gradient(circle at 45% 70%,#999 0 20%,transparent 21%),radial-gradient(circle at 60% 55%,#a00 0 10%,transparent 11%);animation:hzspin .4s steps(4) infinite}
-@keyframes hzspin{to{transform:rotate(360deg)}}
-.hz-fx{position:absolute;left:50%;top:-8px;transform:translateX(-50%) rotate(-6deg);font:bold 22px 'VT323',monospace;color:#ff2b2b;text-shadow:2px 2px 0 #000;white-space:nowrap;animation:hzbl .5s steps(2) infinite}
-.hz-fx2{position:absolute;left:28%;top:6px;font-size:22px;animation:hzbl .4s steps(2) infinite}
-@keyframes hzbl{50%{opacity:.3}}
-/* couche globale : sang, brume, lumières qui grillent */
-#hz{position:fixed;inset:0;z-index:99990;pointer-events:none;overflow:hidden}
-.hz-vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 42%,rgba(70,0,0,.7) 100%)}
-.hz-fl{position:absolute;inset:0;background:#000;opacity:0;animation:hzfl 7s steps(1) infinite}
-@keyframes hzfl{0%,100%{opacity:0}62%{opacity:.55}63%{opacity:0}64%{opacity:.75}65%{opacity:0}90%{opacity:.4}91%{opacity:0}}
-.hz-band{position:absolute;left:0;right:0;top:0;height:26px;background:radial-gradient(circle at 14px 12px,#8a0303 0 13px,transparent 14px) 0 0/28px 26px repeat-x,linear-gradient(#8a0303,#8a0303) 0 0/100% 12px no-repeat}
-.hz-dr{position:absolute;top:10px;height:0;background:linear-gradient(#b00505,#5a0000);border-radius:0 0 8px 8px;animation:hzdr 9s ease-in infinite}
-@keyframes hzdr{0%{height:0;opacity:1}70%{height:var(--h);opacity:1}100%{height:var(--h);opacity:0}}
-.hz-sp{position:absolute;width:var(--s);height:var(--s);transform:rotate(var(--r));opacity:.5;background:radial-gradient(circle,#8a0303 0 28%,transparent 30%),radial-gradient(circle at 20% 25%,#8a0303 0 8%,transparent 9%),radial-gradient(circle at 80% 30%,#8a0303 0 6%,transparent 7%),radial-gradient(circle at 70% 80%,#8a0303 0 9%,transparent 10%),radial-gradient(circle at 25% 75%,#8a0303 0 5%,transparent 6%)}
-/* boutons retirés */
-.hz-pile{display:none!important}
-/* chats morts : écran d'entrée + chargement */
-.gcat{position:relative;transform-origin:50% 100%;transform:rotate(90deg);filter:grayscale(1) brightness(.55) contrast(1.25) drop-shadow(0 5px 0 #8a0303) drop-shadow(0 0 6px #a00)}
-.gcat .gb{display:none!important}
-.gcat::after{content:"✖ ✖";position:absolute;left:50%;top:26%;transform:translateX(-50%);font:bold 22px monospace;letter-spacing:6px;color:#ff2020;text-shadow:0 0 3px #000;white-space:nowrap;pointer-events:none}
-.xc .in{position:relative;filter:grayscale(1) brightness(.55) contrast(1.25) drop-shadow(0 5px 0 #8a0303) drop-shadow(0 0 5px #a00);transform:rotate(90deg)!important;animation:none!important}
-.xc:nth-child(even) .in{transform:rotate(-90deg)!important}
-.xc:nth-child(3n) .in{transform-origin:50% 50%;transform:rotate(180deg)!important}
-.xc .in::after{content:"✖ ✖";position:absolute;left:50%;top:22%;transform:translateX(-50%);font:bold 9px monospace;letter-spacing:2px;color:#ff2020;white-space:nowrap;pointer-events:none}
-#hpAv,#gdHome,.menuitem[data-page="avent"],.menuitem[data-act="garden"]{display:none!important}
-/* tas de chats morts */
-.hz-pile{position:absolute;left:0;right:0;bottom:0;pointer-events:none;z-index:3}
-.hz-dc{position:absolute;line-height:0;transform-origin:50% 50%;filter:grayscale(1) brightness(.5) contrast(1.25) drop-shadow(0 4px 0 #8a0303) drop-shadow(0 0 4px #a00)}
-.hz-dc::before{content:"";position:absolute;left:-30%;right:-30%;bottom:-3px;height:8px;background:radial-gradient(ellipse,#8a0303 0 60%,transparent 70%);z-index:-1}
-.hz-dc::after{content:"✖ ✖";position:absolute;left:50%;top:22%;transform:translateX(-50%);font:bold 8px monospace;color:#f22;white-space:nowrap}
-#ibOvl .ibgnd{position:relative}
-/* choix du chat : explosion */
-.pcard.hz-done{position:relative;overflow:visible!important;pointer-events:none}
-.hz-bm{position:absolute;left:50%;top:40%;font-size:60px;line-height:1;transform:translate(-50%,-50%);pointer-events:none;animation:hzbm .8s ease-out forwards;z-index:3}
-@keyframes hzbm{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}60%{opacity:1}100%{transform:translate(-50%,-50%) scale(2.6);opacity:0}}
-.hz-gib{position:absolute;left:50%;top:40%;width:8px;height:8px;background:#b00505;pointer-events:none;animation:hzgib .9s ease-out forwards;z-index:3}
-@keyframes hzgib{to{transform:translate(var(--x),var(--y)) rotate(240deg);opacity:0}}
-.hz-dead .csp{display:inline-block;filter:grayscale(1) brightness(.5) drop-shadow(0 4px 0 #8a0303);transform:rotate(180deg)}
-.hz-dead::after{content:"";position:absolute;left:10%;right:10%;bottom:-6px;height:12px;pointer-events:none;background:radial-gradient(ellipse,#8a0303 0 60%,transparent 70%)}
-.hz-dead .stars{opacity:.2}
-/* accueil : chats morts + sapin qui crame */
-.hpk{position:relative;transform-origin:50% 100%;filter:grayscale(1) brightness(.55) contrast(1.25) drop-shadow(0 5px 0 #8a0303) drop-shadow(0 0 5px #a00);animation:none!important}
-.hpk:nth-child(odd){transform:rotate(90deg)}
-.hpk:nth-child(even){transform:rotate(-90deg)}
-.hpk:nth-child(3n){transform-origin:50% 50%;transform:rotate(180deg)}
-.hpk::after{content:"✖ ✖";position:absolute;left:50%;top:22%;transform:translateX(-50%);line-height:1;font:bold 11px monospace;letter-spacing:2px;color:#ff2020;text-shadow:0 0 3px #000;white-space:nowrap;pointer-events:none}
-.hpcrowd::after{content:"";position:absolute;left:3%;right:3%;bottom:-8px;height:14px;pointer-events:none;background:radial-gradient(ellipse 50px 7px at 12% 50%,#8a0303 0 60%,transparent 70%),radial-gradient(ellipse 60px 8px at 38% 50%,#6a0000 0 60%,transparent 70%),radial-gradient(ellipse 50px 7px at 64% 50%,#8a0303 0 60%,transparent 70%),radial-gradient(ellipse 60px 8px at 88% 50%,#6a0000 0 60%,transparent 70%)}
-.hz-tw{position:absolute;left:50%;bottom:26px;width:80px;height:110px;margin-left:-40px;z-index:0;pointer-events:none}
-.hz-tree{position:absolute;inset:0;filter:brightness(.35) sepia(1) hue-rotate(-25deg) drop-shadow(0 0 16px #ff5a00)}
-.hz-tree i{position:absolute;left:50%;transform:translateX(-50%);background:#2a9d5c;clip-path:polygon(50% 0,100% 100%,0 100%)}
-.hz-tree i:nth-child(1){top:0;width:36px;height:40px}
-.hz-tree i:nth-child(2){top:24px;width:56px;height:46px}
-.hz-tree i:nth-child(3){top:50px;width:76px;height:48px}
-.hz-tree b{position:absolute;left:50%;bottom:0;width:12px;height:14px;margin-left:-6px;background:#8d5a30}
-.hz-fire{position:absolute;left:-18%;right:-18%;bottom:6px;height:120%;mix-blend-mode:screen;transform-origin:50% 100%;background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent 60%),radial-gradient(ellipse 18% 85% at 40% 100%,#ffe14a 0 35%,#ff3d00 40% 70%,transparent 74%),radial-gradient(ellipse 22% 70% at 62% 100%,#ff7a00 0 55%,transparent 60%),radial-gradient(ellipse 17% 90% at 85% 100%,#ffd23f 0 30%,#ff2a00 36% 68%,transparent 72%);animation:hzflame .32s steps(3) infinite}
-@media (prefers-reduced-motion:reduce){.hz-fire,.hz-fl,.hz-dr,.hz-fight *,.xtreew::after,.xm-tree::after{animation:none!important}}
-</style>
-
-<style id="horreur2">
-.fall svg,.tap svg,.heartfloat svg,.wsp svg,#seal svg,#miniHeart svg,#psHI svg,#hugBtn svg,#updIc svg,.gxe .s svg,.ch svg{filter:hue-rotate(-35deg) saturate(2.2) brightness(.7) drop-shadow(0 0 3px #f00)}
-</style>
 </head>
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
  
 <button class="menubtn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuList"><span class="mb"></span><span>Menu</span></button>
-<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">⛧ Accueil</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Résidence ronron</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button><button class="menuitem" role="menuitem" data-act="garden" type="button">Potager des ronrons<i class="gdbadge in" id="gdBadge2"></i></button><button class="menuitem" role="menuitem" data-act="spa" type="button">Spa des ronrons</button><button class="menuitem" role="menuitem" data-act="games" type="button">Mini-jeux</button><button class="menuitem" role="menuitem" data-act="cat" type="button">Choisir mon chat</button><button class="menuitem" role="menuitem" data-act="prof" type="button">Mon profil</button></div>
+<div class="menulist" id="menuList" role="menu"><button class="menuitem cur" role="menuitem" data-page="accueil" type="button">♡ Accueil</button><button class="menuitem" role="menuitem" data-page="avent" type="button">Calendrier de l’avent</button><button class="menuitem" role="menuitem" data-act="home" type="button">Résidence ronron</button><button class="menuitem" role="menuitem" data-act="cafe" type="button">Café des chatons</button><button class="menuitem" role="menuitem" data-act="garden" type="button">Potager des ronrons<i class="gdbadge in" id="gdBadge2"></i></button><button class="menuitem" role="menuitem" data-act="casino" type="button">Casino des chatons</button><button class="menuitem" role="menuitem" data-act="spa" type="button">Spa des ronrons</button><button class="menuitem" role="menuitem" data-act="games" type="button">Mini-jeux</button><button class="menuitem" role="menuitem" data-act="cat" type="button">Choisir mon chat</button><button class="menuitem" role="menuitem" data-act="prof" type="button">Mon profil</button></div>
 <button class="profbtn" id="profBtn" type="button" aria-label="Mon profil"></button>
 <button class="themebtn" id="themeBtn" aria-label="Changer de thème"><span id="themeIcon"></span><span id="themeLbl">Sombre</span></button>
 <div class="avpage on" id="homePage" aria-hidden="false"><div class="avwrap">
 <div class="hpbunt" id="hpBunt"></div>
 <div class="hpday" id="hpDay">Joyeux Noël</div>
 <p class="hpwel" id="hpWel"></p>
-<p class="hpsub" id="hpSub">Noël approche ⛧</p>
-<div class="hpscene" id="hpScene"><div class="hpbub" id="hpBub">Les chatons ont sorti leurs costumes de Noël ⛧</div><div class="hpbal" id="hpB0" style="left:7%;--d:0s"></div><div class="hpbal" id="hpB1" style="left:46%;top:58px;--d:-.8s"></div><div class="hpbal" id="hpB2" style="right:7%;--d:-1.6s"></div><div class="hpcrowd" id="hpCrowd"></div><div class="hpfloor"></div></div>
+<p class="hpsub" id="hpSub">Noël approche ♡</p>
+<div class="hpscene" id="hpScene"><div class="hpbub" id="hpBub">Les chatons ont sorti leurs costumes de Noël ♡</div><div class="hpbal" id="hpB0" style="left:7%;--d:0s"></div><div class="hpbal" id="hpB1" style="left:46%;top:58px;--d:-.8s"></div><div class="hpbal" id="hpB2" style="right:7%;--d:-1.6s"></div><div class="hpcrowd" id="hpCrowd"></div><div class="hpfloor"></div></div>
 <div class="count hpcount" aria-live="off"><div class="unit"><b id="hpD">00</b><span>jours</span></div><div class="unit"><b id="hpH">00</b><span>heures</span></div><div class="unit"><b id="hpM">00</b><span>minutes</span></div><div class="unit"><b id="hpS">00</b><span>secondes</span></div></div>
 <div class="hpbtns"><button class="hpgo" id="hpAv" type="button"><span id="hpAvIcon" style="line-height:0"></span>Calendrier de l’avent</button>
 <button class="hpgo gdgo" id="gdHome" type="button"><span id="gdHomeIcon" style="line-height:0"></span>Le Potager des ronrons<i class="gdbadge" id="gdBadge"></i></button>
+<button class="hpgo casgo" id="casHome" type="button"><span id="casHomeIcon" style="line-height:0"></span>Le Casino des chatons</button>
 <button class="btn hplink" id="catBtn" type="button" aria-label="Choisir mon chat"></button></div>
 </div></div>
 <div class="avpage" id="avPage" aria-hidden="true"><div class="avwrap">
@@ -1106,9 +983,9 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 <h2 class="avtitle">Calendrier de l’avent</h2>
 <div class="avsign">PAGE EN CONSTRUCTION</div>
 <div class="avscene" id="avScene"><div class="avground"></div><div class="avsnow"></div><div class="avstage"><div class="avsun" id="avSun"></div><div class="avbub" id="avBub">Chut, on installe le sapin !</div><div class="avmast"></div><div class="avarm"></div><div class="avhook"><div class="avcable"></div><div class="avstar" id="avStar"></div></div><div class="avtree" id="avTree"></div><div class="avlad"></div><div class="avcone" id="avCone1" style="left:70px"></div><div class="avcone" id="avCone2" style="left:190px"></div><div class="avwork" id="avW0" style="left:2px;--d:0s"></div><div class="avwork" id="avW1" style="left:226px;--d:-.2s"></div><div class="avwork" id="avW2" style="left:64px;bottom:118px;--d:-.4s"></div></div></div>
-<p class="avtxt" id="avTxt">Mes petits chats de chantier installent le grand sapin de Noël de la ville ⛧</p>
+<p class="avtxt" id="avTxt">Mes petits chats de chantier installent le grand sapin de Noël de la ville ♡</p>
 <div class="count" aria-live="off"><div class="unit"><b id="avD">00</b><span>jours</span></div><div class="unit"><b id="avH">00</b><span>heures</span></div><div class="unit"><b id="avM">00</b><span>minutes</span></div><div class="unit"><b id="avS">00</b><span>secondes</span></div></div>
-<p class="target">Inauguration du sapin le 1er décembre ⛧</p>
+<p class="target">Inauguration du sapin le 1er décembre ♡</p>
 <div class="avtape"></div>
 </div></div>
 <div class="player" id="player"><button class="btn" id="setBtn" aria-label="Réglages"></button><span id="note" style="cursor:pointer">♪</span></div>
@@ -1135,14 +1012,14 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
       <div class="seal" id="seal"></div>
     </div>
   </div>
-  <div class="hint" id="hint">Elle s’ouvrira à 19h… ⛧</div>
+  <div class="hint" id="hint">Elle s’ouvrira à 19h… ♡</div>
 
 </main>
  
 <div class="walk"><div class="cat" id="cat"><div class="bubble" id="bubble"></div><div id="catSprite"></div></div><div class="cat" id="kit" style="display:none"><div id="kitSprite"></div></div></div>
-<footer>créé avec amour, par ton ronron pour son ronron ⛧</footer>
+<footer>créé avec amour, par ton ronron pour son ronron ♡</footer>
  
-<div class="ovl" id="letterOvl"><div class="box"><div class="stars">★ ★ ★ ★ ★</div><h2>💌 Pour Léo, mon ronron</h2><div class="msg" id="letterText"></div><button class="btn main" id="closeLetter">Fermer ⛧</button></div></div>
+<div class="ovl" id="letterOvl"><div class="box"><div class="stars">★ ★ ★ ★ ★</div><h2>💌 Pour Léo, mon ronron</h2><div class="msg" id="letterText"></div><button class="btn main" id="closeLetter">Fermer ♡</button></div></div>
  
 <div class="ovl" id="loginOvl"><div class="box"><h2>Administrateur ronron</h2><p style="margin:0 0 8px">Mot de passe :</p><input type="password" id="pw" autocomplete="off"><div class="err" id="err"></div><div class="angry" id="angry"><span id="angryCat"></span><div class="abub">Tu es un vilain filou &gt;:(</div></div><button class="btn main" id="loginGo">Entrer</button><button class="btn" id="loginCancel">Annuler</button></div></div>
  
@@ -1153,19 +1030,19 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
   <h3>Couleurs</h3><div class="colors" id="aColors"></div><button class="btn" id="resetColors">Couleurs d’origine</button>
   <h3>Les petits mots du chat</h3><div id="aMsgs"></div>
   <button class="btn" id="addMsg">+ Ajouter un mot</button>
-  <h3>Jeux du soir ⛧</h3>
+  <h3>Jeux du soir ♡</h3>
   <p style="margin:0 0 6px;font-size:20px">Coupons gagnés (1 par jeu : jeudi, vendredi, samedi) :</p><div id="aCoupons"></div>
   <p style="margin:8px 0 6px;font-size:20px">Petits mots du jour (1 par soir à 20h, visibles dans le carnet) :</p><div id="aNotes"></div>
   <p style="margin:8px 0 6px;font-size:20px">Message du billet (visible une fois le mot de passe donné) :</p><textarea id="aTicket" style="min-height:80px"></textarea>
   <button class="btn" id="skyBtn">Ciel : automatique</button><button class="btn" id="testBtn">Mode test (jeux, mots, ciel plein d’étoiles) : NON</button><button class="btn" id="resetRw">Effacer mes récompenses</button>
   <h3>Petits secrets cachés 🥚</h3>
   <ul class="eggs">
-    <li>Taper 7 fois sur le chat : il ronronne et une pluie de âmes tombe.</li>
-    <li>Taper sur le titre « La poste ronron » : pluie de âmes.</li>
+    <li>Taper 7 fois sur le chat : il ronronne et une pluie de cœurs tombe.</li>
+    <li>Taper sur le titre « La poste ronron » : pluie de cœurs.</li>
     <li>Taper sur un cadran du compte à rebours : il rebondit avec un petit tic.</li>
     <li>Taper 3 fois sur la signature : mot doux, confettis et jingle.</li>
     <li>Taper 5 fois sur l’enveloppe fermée : elle te taquine (« même en tapant… »).</li>
-    <li>Taper sur le fond de la page : un petit âme pixel s’envole.</li>
+    <li>Taper sur le fond de la page : un petit cœur pixel s’envole.</li>
     <li>Taper sur le ♪ du lecteur : le chat saute de joie trois fois.</li>
     <li>Ne rien toucher pendant 30 secondes : le chat s’endort (Zzz…) et se réveille au toucher.</li>
     <li>Écrire « miaou » comme mot de passe : le chat répond. Écrire « je t’aime » : confettis et réponse tendre.</li>
@@ -1176,11 +1053,11 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
     <li>Mini-jeu « Nourris le chat » : remplir la gamelle sans déborder. Récompense : le secret « je t’aime » à écrire dans le mot de passe.</li>
     <li>Taper 3 fois sur le texte d’accueil : confettis.</li>
     <li>Taper sur la date des retrouvailles : petit mot doux.</li>
-    <li>Appuyer longtemps sur le chat : câlin, ronron et âmes.</li>
+    <li>Appuyer longtemps sur le chat : câlin, ronron et cœurs.</li>
     <li>Sur ordinateur, écrire « ronron », « miaou » ou « leo » au clavier : le chat réagit.</li>
     <li>Mots de passe secrets « léo », « ronron » ou « chat » : le chat répond.</li>
-    <li>Rester 2 minutes sur la page : pluie de âmes surprise.</li>
-    <li>Jeudi 20h : « Attrape les âmes » se débloque (15 âmes). Récompense : le chat Cacao + le coupon n°1.</li>
+    <li>Rester 2 minutes sur la page : pluie de cœurs surprise.</li>
+    <li>Jeudi 20h : « Attrape les cœurs » se débloque (15 cœurs). Récompense : le chat Cacao + le coupon n°1.</li>
     <li>Vendredi 20h : « Chasse à la souris » se débloque (12 souris en 20 s). Récompense : le chat Praline + le coupon n°2.</li>
     <li>Ouverture de la lettre : le chat noir et blanc « Ash » est débloqué (à retrouver dans « Mon carnet »).</li>
     <li>Samedi 20h : « Carte à gratter » se débloque. Récompense : le chat Étoile + le coupon n°3.</li>
@@ -1190,25 +1067,25 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
     <li>Mot de passe secret « popup » : réaffiche le pop-up de bienvenue de la version, même si « Ne plus afficher » a été touché.</li>
     <li>Le ciel change avec l’heure de Paris : de 6h à 19h, ciel de jour (soleil et nuages qui passent) ; le reste du temps, ciel étoilé.</li>
     <li>La nuit : des étoiles pixel brillent en permanence, et il y en a de plus en plus pendant les 24 dernières heures. À l’ouverture de l’enveloppe, un lever de soleil rose et doré éclaire la page.</li>
-    <li>Écran d’accueil : toucher pour entrer (ça active le son), puis une barre de âmes se remplit avec des petits bruitages, puis le chat saute et dit « Bienvenue mon ronron ⛧ ».</li>
+    <li>Écran d’accueil : toucher pour entrer (ça active le son), puis une barre de cœurs se remplit avec des petits bruitages, puis le chat saute et dit « Bienvenue mon ronron ♡ ».</li>
     <li>« Ça fait N jours sans câlin… » : le compteur monte jusqu’à 21, puis devient « 0 jour sans câlin » à l’ouverture.</li>
     <li>Petite route : Léo (le chat) avance de chez lui jusque chez Kevin au fil du temps.</li>
-    <li>Bouton « Envoyer un câlin » : âmes, ronron et compteur de câlins.</li>
+    <li>Bouton « Envoyer un câlin » : cœurs, ronron et compteur de câlins.</li>
     <li>Bouton « Mon billet » : verrouillé, le mot de passe est « adorable » (à lui dire en face à face samedi soir). Il tamponne le billet et affiche ton message.</li>
     <li>Le chat parle selon l’heure (matin, journée, nuit), laisse des traces de pattes, et un chaton le suit quand les 3 jeux sont gagnés.</li>
     <li>Humeur du chat dans « Mon carnet » (selon les câlins, les jeux gagnés et les caresses).</li>
     <li>Menu des petits jeux, « Mon carnet » : retrouver ses chats bonus (on peut en changer) et ses coupons.</li>
     <li>Taper 100 fois sur l’enveloppe fermée : un COMBO s’affiche à chaque coup, puis elle explose en confettis. Un chaton en voiture de police arrive alors et propose de la faire réapparaître (la page se recharge).</li>
   </ul>
-  <div style="margin-top:14px"><button class="btn main" id="save">Enregistrer ⛧</button><button class="btn main" id="exportBtn">Exporter le site ⛧</button><button class="btn" id="preview">Voir l’animation : débloquer la lettre</button><button class="btn" id="adminClose">Fermer</button></div>
+  <div style="margin-top:14px"><button class="btn main" id="save">Enregistrer ♡</button><button class="btn main" id="exportBtn">Exporter le site ♡</button><button class="btn" id="preview">Voir l’animation : débloquer la lettre</button><button class="btn" id="adminClose">Fermer</button></div>
   <p style="margin:10px 0 0;font-size:19px;line-height:1.1">« Enregistrer » garde tes changements sur cet appareil seulement. « Exporter » télécharge un index.html à jour : remplace-le là où ton site est hébergé pour que tout le monde voie tes changements.</p>
   <textarea id="expOut" readonly style="display:none;min-height:110px;margin-top:8px;font-size:16px"></textarea>
 </div></div>
-<div class="ovl" id="creditsOvl"><div class="box" style="text-align:center"><h2>Générique ⛧</h2>
+<div class="ovl" id="creditsOvl"><div class="box" style="text-align:center"><h2>Générique ♡</h2>
 <div class="credview" id="credView"><div class="credroll" id="credRoll">
 <div class="credgap"></div>
 <h3>LA POSTE RONRON</h3>
-<h4>Créé par</h4><p class="big">Kevin</p><p>avec amour ⛧</p>
+<h4>Créé par</h4><p class="big">Kevin</p><p>avec amour ♡</p>
 <h4>Écrit en</h4><p>HTML5 · CSS3 · JavaScript</p><p>(à la main, sans aucun framework)</p>
 <h4>Éditeur de code</h4><p>Visual Studio Code</p>
 <h4>Avec la participation des</h4><p>petits chats ronron</p><div class="credcats" id="credCats"></div>
@@ -1216,35 +1093,35 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 <h4>Direction artistique</h4><p>Pixel art kawaii, rose et mauve</p><p>Polices : Press Start 2P et VT323</p>
 <h4>Bande-son</h4><p>Boîte à musique et ronrons<br>fabriqués dans le navigateur<br>(Web Audio, zéro fichier audio)</p>
 <h4>Avertissement</h4><p>Aucun chat n’a été blessé<br>pendant la conception de ce site</p>
-<h4>Pour</h4><p class="big">Léo</p><p>mon ronron ⛧</p>
-<div class="credfin" id="credFin">JE T’AIME<br>LÉO ⛧</div>
-<p style="margin-top:56px">P.S. Si tu te demandes pourquoi il y a des crédits :<br>c’est obligatoire.</p><p>On ne sait jamais, si le propriétaire<br>de la police d’écriture passait par ici,<br>par hasard… hé hé ⛧</p><p style="margin-top:28px">P.P.S. Si tu trouves un bug,<br>ce n’est pas un bug :<br>c’est une fonctionnalité surprise.</p><p>Et si ça ne marche pas chez toi…<br>chez moi, ça marchait. ⛧</p>
+<h4>Pour</h4><p class="big">Léo</p><p>mon ronron ♡</p>
+<div class="credfin" id="credFin">JE T’AIME<br>LÉO ♡</div>
+<p style="margin-top:56px">P.S. Si tu te demandes pourquoi il y a des crédits :<br>c’est obligatoire.</p><p>On ne sait jamais, si le propriétaire<br>de la police d’écriture passait par ici,<br>par hasard… hé hé ♡</p><p style="margin-top:28px">P.P.S. Si tu trouves un bug,<br>ce n’est pas un bug :<br>c’est une fonctionnalité surprise.</p><p>Et si ça ne marche pas chez toi…<br>chez moi, ça marchait. ♡</p>
 <div class="credend"></div>
 </div></div>
 <div><button class="btn credspd" id="credX1">×1</button><button class="btn credspd" id="credX2">×2</button><button class="btn credspd" id="credX4">×4</button></div>
 <button class="btn" id="credClose">Fermer</button></div></div>
-<div class="ovl" id="helpOvl"><div class="box" style="text-align:center"><h2>Visite du site ⛧</h2>
+<div class="ovl" id="helpOvl"><div class="box" style="text-align:center"><h2>Visite du site ♡</h2>
 <div class="instscene" id="hScene"></div>
 <div class="instcat"><div class="me" id="hCat"></div><div class="fbub" id="hBub"></div></div>
 <div class="inststep" id="hStep"></div>
 <div><button class="btn" id="hPrev">‹ Retour</button><button class="btn main" id="hNext">Suivant ›</button></div>
 <button class="btn" id="hClose">Fermer</button></div></div>
-<div class="ovl" id="setOvl"><div class="box" style="text-align:center"><h2>Réglages ⛧</h2>
+<div class="ovl" id="setOvl"><div class="box" style="text-align:center"><h2>Réglages ♡</h2>
 <div class="srow"><b>Musique</b><button class="btn" id="pp" aria-label="Lecture ou pause">▶</button><input type="range" id="vol" min="0" max="1" step="0.05" value="0.5" aria-label="Volume de la musique"></div>
 <div class="srow"><b>Titre</b><div id="trkRow" style="display:flex;flex-direction:column;gap:6px;flex:1;min-width:0"><button class="btn" type="button" data-t="noel">Noël</button><button class="btn" type="button" data-t="fete">Fête du jour J</button><button class="btn" type="button" data-t="boite">Boîte à musique</button></div></div>
 <div class="srow"><b>Bruitages</b><button class="btn" id="sfxT">Activés</button><input type="range" id="sfxVol" min="0" max="1" step="0.05" value="0.75" aria-label="Volume des bruitages"></div>
-<p style="margin:10px 0 2px;font-size:18px;opacity:.8">Tes réglages sont gardés quand tu redémarres le site ⛧</p>
+<p style="margin:10px 0 2px;font-size:18px;opacity:.8">Tes réglages sont gardés quand tu redémarres le site ♡</p>
 <div class="srow"><b>Générique</b><button class="btn" id="creditsBtn" type="button" style="display:inline-flex;align-items:center;gap:8px"><span id="creditsIcon" style="line-height:0"></span>Crédits</button></div>
 <button class="btn main" id="restartBtn">Redémarrer</button>
 <button class="btn" id="setClose">Fermer</button></div></div>
-<div class="ovl" id="instOvl"><div class="box" style="text-align:center"><h2>Mon appli ⛧</h2>
+<div class="ovl" id="instOvl"><div class="box" style="text-align:center"><h2>Mon appli ♡</h2>
 <div class="instscene" id="instScene"></div>
 <div class="instcat"><div class="me" id="instCat"></div><div class="fbub" id="instBub"></div></div>
 <div class="inststep" id="instStep"></div>
 <div><button class="btn" id="instPrev">‹ Retour</button><button class="btn main" id="instNext">Suivant ›</button></div>
 <button class="btn" id="instClose">Fermer</button></div></div>
-<div class="ovl" id="gameOvl"><div class="box"><h2>Memory des ronrons</h2><p style="margin:0">Retrouve les 6 paires · Coups : <b id="gmoves">0</b></p><div class="mem" id="mem"></div><div class="clue" id="clue">Bravo mon ronron ! ⛧ Indice secret : c’est le mot que le chat dit si bien (5 lettres). Va l’écrire dans le mot de passe de l’Administrateur ronron…</div><button class="btn main" id="gnew">Rejouer</button><button class="btn" id="gclose">Fermer</button></div></div>
-<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ⛧</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button><button class="pick" id="gspa"></button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
+<div class="ovl" id="gameOvl"><div class="box"><h2>Memory des ronrons</h2><p style="margin:0">Retrouve les 6 paires · Coups : <b id="gmoves">0</b></p><div class="mem" id="mem"></div><div class="clue" id="clue">Bravo mon ronron ! ♡ Indice secret : c’est le mot que le chat dit si bien (5 lettres). Va l’écrire dans le mot de passe de l’Administrateur ronron…</div><button class="btn main" id="gnew">Rejouer</button><button class="btn" id="gclose">Fermer</button></div></div>
+<div class="ovl" id="menuOvl"><div class="box" style="text-align:center"><h2>Petits jeux ♡</h2><div class="cats"><button class="pick" id="g1">Memory<br>des ronrons</button><button class="pick" id="g2">Nourris<br>le chat</button><button class="pick" id="gspa"></button></div><div class="cats" id="gcats3"></div><div class="cats"><button class="pick" id="gcas"></button></div><div class="cats"><button class="pick" id="gbook"></button></div><button class="btn" id="mclose">Fermer</button></div></div>
 <div class="ovl" id="spaOvl"><div class="box" style="text-align:center"><h2 id="spaTitle">Spa des ronrons</h2>
 <div class="fbub" id="spaBub"></div>
 <div class="spa" id="spaArea"><div class="spacat" id="spaCat"></div><div class="tub"></div></div>
@@ -1252,22 +1129,22 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 <div class="cats" id="spaTools"></div>
 <div class="cats" id="spaLooks" style="display:none"></div>
 <button class="btn" id="spaNew">Recommencer</button><button class="btn" id="spaClose">Fermer</button></div></div>
-<div class="ovl" id="feedOvl"><div class="box"><h2>Nourris le chat</h2><div class="fbub" id="fbub"></div><div class="feed"><div class="fcat" id="fcat"></div><div class="bowlwrap"><div class="stream" id="stream"></div><div class="bowl"><div class="bowlin"><div class="food" id="food"></div><div class="mk"></div></div></div></div></div><button class="btn main can" id="can">Maintiens pour verser la pâtée</button><div class="clue" id="fclue">Le chat ronronne de bonheur et te murmure son secret : « je t’aime ». Va l’écrire dans le mot de passe de l’Administrateur ronron ⛧</div><button class="btn" id="fnew">Rejouer</button><button class="btn" id="fclose">Fermer</button></div></div>
-<div class="ovl" id="catchOvl"><div class="box"><h2>Attrape les âmes</h2><div class="hud"><span>Âmes : <b id="cscore">0</b>/15</span><span>Vies : <b id="clives">5</b></span></div><canvas class="hgame" id="ccv" width="300" height="380"></canvas><div class="fbub" id="cbub"></div><div class="clue" id="cclue"></div><button class="btn main" id="cnew">Rejouer</button><button class="btn" id="cclose">Fermer</button></div></div>
+<div class="ovl" id="feedOvl"><div class="box"><h2>Nourris le chat</h2><div class="fbub" id="fbub"></div><div class="feed"><div class="fcat" id="fcat"></div><div class="bowlwrap"><div class="stream" id="stream"></div><div class="bowl"><div class="bowlin"><div class="food" id="food"></div><div class="mk"></div></div></div></div></div><button class="btn main can" id="can">Maintiens pour verser la pâtée</button><div class="clue" id="fclue">Le chat ronronne de bonheur et te murmure son secret : « je t’aime ». Va l’écrire dans le mot de passe de l’Administrateur ronron ♡</div><button class="btn" id="fnew">Rejouer</button><button class="btn" id="fclose">Fermer</button></div></div>
+<div class="ovl" id="catchOvl"><div class="box"><h2>Attrape les cœurs</h2><div class="hud"><span>Cœurs : <b id="cscore">0</b>/15</span><span>Vies : <b id="clives">5</b></span></div><canvas class="hgame" id="ccv" width="300" height="380"></canvas><div class="fbub" id="cbub"></div><div class="clue" id="cclue"></div><button class="btn main" id="cnew">Rejouer</button><button class="btn" id="cclose">Fermer</button></div></div>
 <div class="ovl" id="mouseOvl"><div class="box"><h2>Chasse à la souris</h2><div class="hud"><span>Souris : <b id="mscore">0</b>/12</span><span>Temps : <b id="mleft">20</b></span></div><div class="holes" id="holes"></div><div class="fbub" id="mbub"></div><div class="clue" id="mclue"></div><button class="btn main" id="mstart">Jouer</button><button class="btn" id="mclose2">Fermer</button></div></div>
-<div class="ovl" id="scrOvl"><div class="box"><h2>Carte à gratter</h2><div class="fbub" id="sbub">Gratte avec ton doigt pour découvrir ta surprise ⛧</div><div class="scratch"><div class="under" id="sunder"></div><canvas id="scv" width="300" height="150"></canvas></div><div class="clue" id="sclue"></div><button class="btn main" id="snew">Rejouer</button><button class="btn" id="sclose">Fermer</button></div></div>
-<div class="ovl" id="bookOvl"><div class="box" style="text-align:center"><h2>Mon carnet ⛧</h2><p id="rwMood" style="margin:0 0 10px"></p><p style="margin:0">Mes chats :</p><div class="cats" id="rwCats"></div><p style="margin:12px 0 0">Mes petits mots :</p><div id="rwNotes"></div><p style="margin:12px 0 0">Mes coupons :</p><div id="rwList"></div><button class="btn" id="bclose">Fermer</button></div></div>
-<div class="ovl" id="ticketOvl"><div class="box" style="text-align:center"><h2>Ton billet ⛧</h2>
-<div id="tlock"><p style="margin:8px 0">Ce billet est verrouillé…<br>Le mot de passe, je te le dirai en face à face samedi soir ⛧</p><input id="tpw" type="password" autocomplete="off" placeholder="Mot de passe"><div class="err" id="terr"></div><button class="btn main" id="tgo">Ouvrir</button></div>
-<div id="topen" style="display:none"><div class="tick"><div class="tkt">BILLET POUR LES RETROUVAILLES</div><div class="tkrow"><div><small>DESTINATION</small><b>Mes bras ⛧</b></div><div><small>DATE</small><b>Sam. 7 nov.</b></div><div><small>HEURE</small><b>19h00</b></div></div><div class="tkmsg" id="tmsg"></div><div class="tkstamp" id="tstamp">VALIDÉ ⛧</div></div></div>
+<div class="ovl" id="scrOvl"><div class="box"><h2>Carte à gratter</h2><div class="fbub" id="sbub">Gratte avec ton doigt pour découvrir ta surprise ♡</div><div class="scratch"><div class="under" id="sunder"></div><canvas id="scv" width="300" height="150"></canvas></div><div class="clue" id="sclue"></div><button class="btn main" id="snew">Rejouer</button><button class="btn" id="sclose">Fermer</button></div></div>
+<div class="ovl" id="bookOvl"><div class="box" style="text-align:center"><h2>Mon carnet ♡</h2><p id="rwMood" style="margin:0 0 10px"></p><p style="margin:0">Mes chats :</p><div class="cats" id="rwCats"></div><p style="margin:12px 0 0">Mes petits mots :</p><div id="rwNotes"></div><p style="margin:12px 0 0">Mes coupons :</p><div id="rwList"></div><button class="btn" id="bclose">Fermer</button></div></div>
+<div class="ovl" id="ticketOvl"><div class="box" style="text-align:center"><h2>Ton billet ♡</h2>
+<div id="tlock"><p style="margin:8px 0">Ce billet est verrouillé…<br>Le mot de passe, je te le dirai en face à face samedi soir ♡</p><input id="tpw" type="password" autocomplete="off" placeholder="Mot de passe"><div class="err" id="terr"></div><button class="btn main" id="tgo">Ouvrir</button></div>
+<div id="topen" style="display:none"><div class="tick"><div class="tkt">BILLET POUR LES RETROUVAILLES</div><div class="tkrow"><div><small>DESTINATION</small><b>Mes bras ♡</b></div><div><small>DATE</small><b>Sam. 7 nov.</b></div><div><small>HEURE</small><b>19h00</b></div></div><div class="tkmsg" id="tmsg"></div><div class="tkstamp" id="tstamp">VALIDÉ ♡</div></div></div>
 <button class="btn" id="tclose">Fermer</button></div></div>
-<div class="police" id="police"><div class="pbox" id="pbox"><p style="margin:0 0 8px">Miaou-miaou, police des câlins ! L’enveloppe a explosé de tendresse… On la fait réapparaître ?</p><button class="btn main" id="pyes">Oui, s’il te plaît ⛧</button><button class="btn" id="pno">Plus tard</button></div><div id="pcar" style="line-height:0"></div></div>
-<div class="fu" id="fu"><div class="fu-stage" id="fuStage"><div class="fu-sun"></div><div class="fu-g"></div><div class="fu-grave" id="fuGrave"></div><div class="fu-name" id="fuName"></div><div class="fu-main" id="fuMain"></div><div class="fu-body" id="fuBody"></div><div class="fu-amb" id="fuAmb"><div class="cargo"></div><div class="cab"></div><div class="win"></div><div class="cx1"></div><div class="cx2"></div><div class="lt"></div><div class="wh" style="left:10px"></div><div class="wh" style="left:96px"></div></div><div class="fu-cats" id="fuCats"></div><div class="fu-rain" id="fuRain"></div></div><div class="fu-boom" id="fuBoom">BOUM !</div><div class="fu-msg" id="fuMsg"></div><div class="fu-flash" id="fuFlash"></div><button class="btn fu-skip" id="fuSkip">Passer</button><button class="btn main fu-close" id="fuClose">Fermer ⛧</button></div>
-<div class="clown" id="clown"><div class="cl-msg" id="clMsg"></div><div class="cl-car" id="clCar"></div><div class="cl-cats" id="clCats"></div><button class="btn main cl-close" id="clClose">Fin du spectacle ⛧</button></div>
+<div class="police" id="police"><div class="pbox" id="pbox"><p style="margin:0 0 8px">Miaou-miaou, police des câlins ! L’enveloppe a explosé de tendresse… On la fait réapparaître ?</p><button class="btn main" id="pyes">Oui, s’il te plaît ♡</button><button class="btn" id="pno">Plus tard</button></div><div id="pcar" style="line-height:0"></div></div>
+<div class="fu" id="fu"><div class="fu-stage" id="fuStage"><div class="fu-sun"></div><div class="fu-g"></div><div class="fu-grave" id="fuGrave"></div><div class="fu-name" id="fuName"></div><div class="fu-main" id="fuMain"></div><div class="fu-body" id="fuBody"></div><div class="fu-amb" id="fuAmb"><div class="cargo"></div><div class="cab"></div><div class="win"></div><div class="cx1"></div><div class="cx2"></div><div class="lt"></div><div class="wh" style="left:10px"></div><div class="wh" style="left:96px"></div></div><div class="fu-cats" id="fuCats"></div><div class="fu-rain" id="fuRain"></div></div><div class="fu-boom" id="fuBoom">BOUM !</div><div class="fu-msg" id="fuMsg"></div><div class="fu-flash" id="fuFlash"></div><button class="btn fu-skip" id="fuSkip">Passer</button><button class="btn main fu-close" id="fuClose">Fermer ♡</button></div>
+<div class="clown" id="clown"><div class="cl-msg" id="clMsg"></div><div class="cl-car" id="clCar"></div><div class="cl-cats" id="clCats"></div><button class="btn main cl-close" id="clClose">Fin du spectacle ♡</button></div>
 <div class="ovl" id="ibOvl"><div class="box" style="text-align:center"><h2>Résidence ronron</h2>
 <div class="mzw"><span id="ibCI"></span><b id="ibCoins">0</b> croquettes</div>
 <div class="ib"><div class="ibroof"></div><div class="ibgrid" id="ibGrid"></div><div class="ibgnd"><button class="ibdoor" id="ibDoorCafe"></button><button class="ibdoor" id="ibDoorShop"></button></div></div>
-<div class="fbub" id="ibBub">Touche une fenêtre pour rendre visite à un chat ⛧</div>
+<div class="fbub" id="ibBub">Touche une fenêtre pour rendre visite à un chat ♡</div>
 <button class="btn" id="ibClose">Fermer</button></div></div>
 <div class="ovl" id="mzOvl"><div class="box" style="text-align:center"><h2 id="mzTitle">Ma maison des ronrons</h2>
 <div class="mzw"><span id="mzCI"></span><b id="mzCoins">0</b> croquettes</div>
@@ -1284,23 +1161,24 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 <div class="fbub" id="ctBub"></div><div id="ctSlots"></div>
 <button class="btn main" id="ctShop">Boutique</button><button class="btn" id="ctClose">Fermer</button></div></div>
 <div class="ovl" id="ptOvl"><div class="box" style="text-align:center"><h2>Câlins sur le tapis</h2>
-<div class="fbub" id="ptBub">Glisse ton doigt sur les chats pour les caresser ⛧</div>
+<div class="fbub" id="ptBub">Glisse ton doigt sur les chats pour les caresser ♡</div>
 <div class="ptarea" id="ptArea"></div><button class="btn" id="ptClose">Fermer</button></div></div>
 <div class="ovl" id="cfOvl"><div class="box" style="text-align:center"><h2>Le Café des Chatons</h2>
 <div class="hud"><span>Gagné : <b id="cfScore">0</b></span><span>Temps : <b id="cfTime">30</b></span></div>
 <div class="cfs"><div class="xm-gl"></div><div class="xm-win"></div><div class="xm-tree"></div><div class="cfb" id="cfB"></div><div class="cfk" id="cfK"></div><div class="cfcount"></div></div>
 <div class="cats" id="cfBtns" style="margin:8px 0"></div><div class="fbub" id="cfBub"></div>
 <button class="btn main" id="cfStart">Jouer</button><button class="btn" id="cfClose">Fermer</button></div></div>
-<div class="upd" id="updOvl" aria-hidden="true"><div class="upd-sky" id="updSky"></div><div class="upd-floor"><i></i></div><div class="upd-cat" id="updCat"><div class="in" id="updCatIn"></div></div><div class="upd-say" id="updSay">Aïe !</div><div class="upd-paper" id="updPaper"></div><div class="upd-lines" id="updLines"></div><div class="upd-fl" id="updFl"></div><div class="upd-win" id="updWin" role="dialog" aria-modal="true" aria-labelledby="updTt"><div class="upd-bar"><span class="ic" id="updIc"></span><span class="tt" id="updTt">Version 1.0 - ronron.exe</span><button class="upd-x" id="updX" type="button" aria-label="Fermer">X</button></div><div class="upd-body" id="updBody"></div><div class="upd-ft"><button class="btn main upd-go" id="updGo" type="button">Crée mon profil ⛧</button><button class="btn" id="updHide" type="button">Ne plus afficher jusqu’à la prochaine mise à jour</button></div></div></div>
+<div class="upd" id="updOvl" aria-hidden="true"><div class="upd-sky" id="updSky"></div><div class="upd-floor"><i></i></div><div class="upd-cat" id="updCat"><div class="in" id="updCatIn"></div></div><div class="upd-say" id="updSay">Aïe !</div><div class="upd-paper" id="updPaper"></div><div class="upd-lines" id="updLines"></div><div class="upd-fl" id="updFl"></div><div class="upd-win" id="updWin" role="dialog" aria-modal="true" aria-labelledby="updTt"><div class="upd-bar"><span class="ic" id="updIc"></span><span class="tt" id="updTt">Version 1.0 - ronron.exe</span><button class="upd-x" id="updX" type="button" aria-label="Fermer">X</button></div><div class="upd-body" id="updBody"></div><div class="upd-ft"><button class="btn main upd-go" id="updGo" type="button">Crée mon profil ♡</button><button class="btn" id="updHide" type="button">Ne plus afficher jusqu’à la prochaine mise à jour</button></div></div></div>
 <div class="achbn" id="achBn" role="status" aria-live="polite"><span class="achic" id="achIc"></span><span class="achtx"><small>Succès débloqué !</small><b id="achTt"></b><small id="achDs"></small></span></div>
-<div class="toast" id="toast">Enregistré ⛧</div>
-<div class="ovl" id="catOvl"><div class="box" style="text-align:center"><h2>Choisis ton petit chat ⛧</h2><div class="cats" id="catsOvl"></div><button class="btn main" id="catOk">Confirmer ⛧</button></div></div>
-<div class="ovl" id="profOvl"><div class="box" style="text-align:center"><h2>Crée mon profil ⛧</h2><input id="profName" maxlength="14" placeholder="Mon prénom" autocomplete="off"><h3>Ma photo de profil</h3><div class="cats" id="profAv"></div><h3>Couleur du site</h3><div class="cats" id="profBg"></div><h3>Mes stats</h3><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><div class="mzw"><span id="psHI"></span><b id="psHugs">0</b> <span id="psHL" style="line-height:inherit">câlins envoyés</span></div><div class="mzw"><span id="psCI"></span><b id="psCoins">0</b> <span id="psCL" style="line-height:inherit">croquettes</span></div></div><h3>Mes petits plaisirs</h3><div class="cats"><button class="pick" id="hugBtn"></button><button class="pick" id="ticketBtn"></button><button class="pick" id="profLetter" type="button"></button></div><button class="btn" id="profAch" type="button" style="margin-top:12px"></button><div style="margin-top:12px"><button class="btn main" id="profOk" type="button">Enregistrer ⛧</button><button class="btn" id="profReset" type="button">Réinitialiser</button></div></div></div>
-<div class="ovl" id="achOvl"><div class="box" style="text-align:center"><h2>Succès ⛧</h2><div class="mzw" id="achCount">0 / 0</div><div class="achbar"><i id="achBarI"></i></div><div id="achList"></div><button class="btn" id="achClose" type="button">Fermer</button></div></div>
+<div class="toast" id="toast">Enregistré ♡</div>
+<div class="ovl" id="catOvl"><div class="box" style="text-align:center"><h2>Choisis ton petit chat ♡</h2><div class="cats" id="catsOvl"></div><button class="btn main" id="catOk">Confirmer ♡</button></div></div>
+<div class="ovl" id="profOvl"><div class="box" style="text-align:center"><h2>Crée mon profil ♡</h2><input id="profName" maxlength="14" placeholder="Mon prénom" autocomplete="off"><h3>Ma photo de profil</h3><div class="cats" id="profAv"></div><h3>Couleur du site</h3><div class="cats" id="profBg"></div><h3>Mes stats</h3><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><div class="mzw"><span id="psHI"></span><b id="psHugs">0</b> <span id="psHL" style="line-height:inherit">câlins envoyés</span></div><div class="mzw"><span id="psCI"></span><b id="psCoins">0</b> <span id="psCL" style="line-height:inherit">croquettes</span></div></div><h3>Mes petits plaisirs</h3><div class="cats"><button class="pick" id="hugBtn"></button><button class="pick" id="ticketBtn"></button><button class="pick" id="profLetter" type="button"></button></div><button class="btn" id="profAch" type="button" style="margin-top:12px"></button><div style="margin-top:12px"><button class="btn main" id="profOk" type="button">Enregistrer ♡</button><button class="btn" id="profReset" type="button">Réinitialiser</button></div></div></div>
+<div class="ovl" id="achOvl"><div class="box" style="text-align:center"><h2>Succès ♡</h2><div class="mzw" id="achCount">0 / 0</div><div class="achbar"><i id="achBarI"></i></div><div id="achList"></div><button class="btn" id="achClose" type="button">Fermer</button></div></div>
 <style id="gd-style">
 .gdbox{background:linear-gradient(var(--bg2),var(--card) 40%);color:var(--ink);border:4px solid var(--line);border-radius:22px;box-shadow:0 6px 0 var(--pink2);width:100%;max-width:520px;height:min(92vh,780px);display:flex;flex-direction:column;position:relative;overflow:hidden;text-align:left}
 .gdhd{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-bottom:3px dashed var(--line)}
-.gdhd h2{margin:0;font-family:var(--px);font-size:12px;line-height:1.5}
+.gdhd .gdx+.gdx{margin-left:-2px}
+.gdhd h2{margin:0;flex:1;font-family:var(--px);font-size:12px;line-height:1.5}
 .gdcoin{font-size:19px;font-weight:600;white-space:nowrap}
 .gdx{font:inherit;font-size:20px;background:var(--pink);color:var(--ink);border:3px solid var(--edge);border-radius:12px;padding:0 10px;cursor:pointer}
 .gdbody{flex:1;overflow-y:auto;padding:12px;-webkit-overflow-scrolling:touch}
@@ -1351,12 +1229,65 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 .gdbadge{position:absolute;top:-9px;right:-7px;min-width:22px;height:22px;padding:0 5px;box-sizing:border-box;border-radius:99px;background:#e5485c;color:#fff;border:3px solid #fff;font-size:15px;font-weight:600;line-height:16px;text-align:center;animation:gdr .8s steps(2) infinite}
 .gdbadge:empty{display:none}
 .gdbadge.in{position:static;display:inline-block;margin-left:8px;vertical-align:middle;animation:none}
+.hpbtns .hpgo.casgo{background:linear-gradient(#a874f0,#6a3fb5);box-shadow:0 4px 0 #4b2a88}
 .hpbtns .hpgo.gdgo{position:relative;background:linear-gradient(#5fc487,#2a9d5c);box-shadow:0 4px 0 #1f7a46}
 </style>
-<div class="ovl" id="gdOvl"><div class="gdbox" role="dialog" aria-modal="true" aria-labelledby="gdTt"><div class="gdhd"><h2 id="gdTt">Le Potager des ronrons</h2><span class="gdcoin"><b id="gdCoins">0</b> croquettes</span><button class="gdx" id="gdClose" type="button" aria-label="Fermer">×</button></div><div class="gdbody" id="gdBody"></div><div class="gdtabs" id="gdTabs"><button data-a="tab" data-t="g" type="button">Jardin<i></i></button><button data-a="tab" data-t="k" type="button">Cuisine<i></i></button><button data-a="tab" data-t="s" type="button">Graines<i></i></button><button data-a="tab" data-t="c" type="button">Cadeaux<i></i></button></div><div class="gdsheet" id="gdSheet"><div class="gdsp" id="gdSp"></div></div></div></div>
-<div class="ovl" id="notifOvl"><div class="box" style="text-align:center"><h2>Nouveau ⛧</h2><p style="margin:0 0 14px">Des notifications ont été ajoutées, alors ne ferme pas l’appli complètement !</p><button class="btn main" id="notifOk">OK</button></div></div>
+<div class="ovl" id="gdOvl"><div class="gdbox" role="dialog" aria-modal="true" aria-labelledby="gdTt"><div class="gdhd"><h2 id="gdTt">Le Potager des ronrons</h2><span class="gdcoin"><b id="gdCoins">0</b> croquettes</span><button class="gdx" id="gdHelp" type="button" aria-label="Aide">?</button><button class="gdx" id="gdClose" type="button" aria-label="Fermer">×</button></div><div class="gdbody" id="gdBody"></div><div class="gdtabs" id="gdTabs"><button data-a="tab" data-t="g" type="button">Jardin<i></i></button><button data-a="tab" data-t="k" type="button">Cuisine<i></i></button><button data-a="tab" data-t="s" type="button">Graines<i></i></button><button data-a="tab" data-t="c" type="button">Cadeaux<i></i></button></div><div class="gdsheet" id="gdSheet"><div class="gdsp" id="gdSp"></div></div></div></div>
+<style id="cas-style">
+.casbox{background:linear-gradient(var(--bg2),var(--card) 40%);color:var(--ink);border:4px solid var(--line);border-radius:22px;box-shadow:0 6px 0 var(--pink2);width:100%;max-width:460px;max-height:94vh;overflow-y:auto;text-align:left}
+.casfelt{margin:10px;padding:10px;border:4px solid #7a4a2a;border-radius:20px;background:radial-gradient(ellipse at 50% 40%,#2a9d5c,#1f7a46 55%,#14492b);color:#fff;box-shadow:inset 0 0 0 3px rgba(255,255,255,.18)}
+.casdl{display:flex;align-items:flex-end;gap:10px}
+.casca{line-height:0;flex:none;animation:bob 1.6s steps(2) infinite}
+.casrow{display:flex;justify-content:center;align-items:center;min-height:76px;margin:8px 0 2px}
+.bjc{display:flex;flex-direction:column;align-items:center;justify-content:center;width:46px;height:64px;margin-left:-14px;background:#fffaf5;border:3px solid #7a4a5a;border-radius:8px;font-size:22px;line-height:1;box-shadow:2px 2px 0 rgba(0,0,0,.25);animation:bjin .3s steps(4) both}
+.bjc:first-child{margin-left:0}
+.bjc b{font-weight:600}.bjc span{font-size:22px}
+.bjc.red{color:#e63946}.bjc.blk{color:#2b2b2b}
+.bjc.back{background:repeating-linear-gradient(45deg,#e5485c 0 6px,#ff8a95 6px 12px)}
+@keyframes bjin{from{transform:translateY(-34px) rotate(-10deg);opacity:0}}
+.castot{text-align:center;font-size:19px;font-weight:600;min-height:24px}
+.casmid{text-align:center;margin:4px auto;font-family:var(--px);font-size:11px;line-height:1.6;background:rgba(0,0,0,.28);border-radius:999px;padding:4px 12px;width:max-content;max-width:100%}
+.casctl{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:4px 10px 8px;min-height:50px}
+.casctl .gdb{margin:0}
+.caschip{width:54px;height:54px;border-radius:50%;padding:0;font:inherit;font-size:19px;font-weight:600;color:#fff;background:#e5485c;border:4px dashed #fff;box-shadow:0 3px 0 #b3243a;cursor:pointer}
+.caschip:nth-child(2){background:#2a9d5c;box-shadow:0 3px 0 #1f7a46}.caschip:nth-child(3){background:#4d7fd6;box-shadow:0 3px 0 #2c5aa8}.caschip:nth-child(4){background:#7a4a5a;box-shadow:0 3px 0 #4a2a3a}.caschip:nth-child(5){background:#e0a21a;box-shadow:0 3px 0 #a87608}
+.caschip:disabled{opacity:.4;cursor:default}
+.casft{text-align:center;font-size:16px;opacity:.8;padding:0 12px 12px}
+.castabs{display:flex;gap:8px;justify-content:center;padding:10px 10px 0}.castabs .gdb{margin:0;flex:1}
+.slm{margin:10px;padding:12px;border:4px solid #4b2a88;border-radius:20px;background:linear-gradient(#a874f0,#6a3fb5);color:#fff;text-align:center;box-shadow:inset 0 0 0 3px rgba(255,255,255,.2)}
+.sltop{font-family:var(--px);font-size:12px;letter-spacing:1px;text-shadow:2px 2px 0 #4b2a88}
+.slwin{display:grid;grid-template-columns:repeat(3,76px);gap:8px;justify-content:center;background:#2b1a4a;padding:10px;border-radius:14px;border:3px solid #ffd23f;margin:10px 0}
+.slr{width:76px;height:80px;background:#fffaf5;border:3px solid #7a4a5a;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;line-height:0}
+.slr.spin{animation:slsh .12s steps(2) infinite;filter:blur(.6px)}
+@keyframes slsh{50%{transform:translateY(4px)}}
+.slr.win{animation:gdr .5s steps(2) infinite;border-color:#ffd23f;box-shadow:0 0 0 3px #ffd23f}
+.slmsg{font-size:21px;font-weight:600;min-height:28px;line-height:1.2}
+.slpay{display:grid;grid-template-columns:1fr;gap:6px;padding:0 14px 6px}
+.slpay div{display:flex;align-items:center;gap:6px;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:3px 8px;font-size:17px;line-height:1.1}
+.slpay div i{line-height:0;display:flex}
+.caschip.on{outline:4px solid #ffd23f}
+#jpOvl{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:radial-gradient(#5b33a3,#1a0f33 75%);cursor:pointer}
+#jpOvl.on{display:flex;animation:jpfl .25s steps(2) 4}
+@keyframes jpfl{50%{filter:brightness(2)}}
+.jprays{position:absolute;left:50%;top:50%;width:260vmax;height:260vmax;margin:-130vmax 0 0 -130vmax;background:repeating-conic-gradient(rgba(255,210,63,.28) 0 6deg,transparent 6deg 12deg);animation:jprot 14s linear infinite}
+@keyframes jprot{to{transform:rotate(360deg)}}
+.jpbox{position:relative;z-index:2;padding:16px;animation:jpsk .12s steps(2) 12}
+@keyframes jpsk{50%{transform:translate(4px,-3px)}}
+.jpcat{line-height:0;display:inline-block;animation:jpjump .5s steps(4) infinite}
+@keyframes jpjump{50%{transform:translateY(-22px) rotate(-6deg)}}
+.jptxt{font-family:var(--px);font-size:clamp(20px,7.5vw,34px);line-height:1.3;margin:14px 0 8px;color:#ffd23f;text-shadow:3px 3px 0 #b3243a,-2px -2px 0 #b3243a,3px -2px 0 #b3243a,-2px 3px 0 #b3243a}
+.jptxt span{display:inline-block;animation:jpbn .6s steps(3) infinite}
+@keyframes jpbn{50%{transform:translateY(-12px) scale(1.15)}}
+.jpamt{font-size:28px;font-weight:600;text-shadow:0 3px 0 #4b2a88}.jpamt b{font-size:44px;color:#fff3a8}
+.jpsub{margin-top:14px;font-size:17px;opacity:.8}
+.jpcoins{position:absolute;inset:0;pointer-events:none;z-index:3}
+.jpc{position:absolute;top:-40px;line-height:0;animation:jpfall linear forwards}
+@keyframes jpfall{to{transform:translateY(115vh) rotate(540deg)}}
+</style>
+<div id="jpOvl"><div class="jprays"></div><div class="jpcoins" id="jpCoins"></div><div class="jpbox" id="jpBox"><div class="jpcat" id="jpCat"></div><div class="jptxt" id="jpTxt"></div><div class="jpamt">+<b id="jpAmt">0</b> croquettes</div><div class="jpsub">Touche pour continuer</div></div></div><div class="ovl" id="casOvl"><div class="casbox" role="dialog" aria-modal="true" aria-labelledby="casTt"><div class="gdhd"><h2 id="casTt">Casino des chatons</h2><span class="gdcoin"><b id="casCoins">0</b> croquettes</span><button class="gdx" id="casClose" type="button" aria-label="Fermer">×</button></div><div class="castabs"><button class="gdb red" data-t="bj" type="button">Blackjack</button><button class="gdb" data-t="sl" type="button" style="background:var(--pink);box-shadow:0 3px 0 var(--line);color:var(--ink)">Machine à sous</button></div><div id="casBJ"><div class="casfelt"><div class="casdl"><div class="casca" id="casCat"></div><div class="gdsay" id="casBub"></div></div><div class="casrow" id="casD"></div><div class="castot" id="casDT"></div><div class="casmid" id="casMid"></div><div class="casrow" id="casP"></div><div class="castot" id="casPT"></div></div><div class="casctl" id="casCtl"></div><div class="casft" id="casFt"></div></div><div id="casSL" style="display:none"><div class="slm"><div class="sltop">MACHINE À SOUS</div><div class="slwin" id="slWin"></div><div class="slmsg" id="slMsg">Tente ta chance, miaou !</div></div><div class="casctl" id="slCtl"></div><div class="gdh" style="margin:2px 14px 6px">Table des gains</div><div class="slpay" id="slPay"></div><div class="casft" id="slFt"></div></div></div></div>
+<div class="ovl" id="notifOvl"><div class="box" style="text-align:center"><h2>Nouveau ♡</h2><p style="margin:0 0 14px">Des notifications ont été ajoutées, alors ne ferme pas l’appli complètement !</p><button class="btn main" id="notifOk">OK</button></div></div>
  
-<div id="rotate"><div id="rotIcon" style="line-height:0"></div><div>Tourne ton téléphone en mode vertical ⛧</div></div>
+<div id="rotate"><div id="rotIcon" style="line-height:0"></div><div>Tourne ton téléphone en mode vertical ♡</div></div>
 <div class="gx" id="gx" aria-hidden="true">
   <div class="gx-rays"></div>
   <div class="gx-stage" id="gxStage">
@@ -1370,20 +1301,20 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
       <div class="gx-badge myth">★★★★★ MYTHIQUE</div>
       <div id="gxCardEnv"></div>
       <div class="gx-name">LETTRE D’AMOUR</div>
-      <div class="gx-sub">de ton ronron ⛧</div>
-      <div class="gx-stat"><span>Câlins</span><b>⛧⛧⛧⛧⛧ MAX</b></div>
+      <div class="gx-sub">de ton ronron ♡</div>
+      <div class="gx-stat"><span>Câlins</span><b>♡♡♡♡♡ MAX</b></div>
       <div class="gx-stat"><span>Tendresse</span><b>∞</b></div>
       <div class="gx-stat"><span>Ronrons</span><b>★★★★★</b></div>
-      <div class="gx-stat"><span>Chat bonus</span><b>ASH ⛧</b></div>
+      <div class="gx-stat"><span>Chat bonus</span><b>ASH ♡</b></div>
     </div>
     <div class="gx-row" id="gxRowB"></div>
-    <button class="btn main gx-go" id="gxGo" type="button">Lire ma lettre ⛧</button>
+    <button class="btn main gx-go" id="gxGo" type="button">Lire ma lettre ♡</button>
   </div>
-  <div class="gx-wel" id="gxWel"><div class="gx-wt1">BIENVENUE À</div><div class="gx-ash" id="gxAsh"></div><div class="gx-wt2">ASH</div><div class="gx-wt3">⛧ le chat noir et blanc ⛧</div></div>
+  <div class="gx-wel" id="gxWel"><div class="gx-wt1">BIENVENUE À</div><div class="gx-ash" id="gxAsh"></div><div class="gx-wt2">ASH</div><div class="gx-wt3">♡ le chat noir et blanc ♡</div></div>
   <div class="gx-flash"></div>
   <button class="gx-skip" id="gxSkip" type="button">PASSER ›</button>
 </div>
-<div id="boot"><div class="col" id="bgate"><div class="gfx" id="gfx"></div><div class="gtag">La poste ronron</div><div class="gscene" id="bgcat"></div><div class="gsub">Une lettre t’attend…</div><button class="btn main gbtn" type="button" tabindex="-1">Touche pour entrer ⛧</button><div class="gsnd"><span class="gic" id="gsndic"></span><span>Active le son de ton téléphone<br><small>(et coupe le mode silencieux)</small></span></div></div><div class="col" id="bload" style="display:none"><div class="pscene xmas" id="pscene"><div class="xsky" id="xsky"></div><div class="xmoon" id="xmoon"></div><div class="xhill"></div><div class="xground"></div><div class="xtreew" id="xtreew"></div><div class="xcats" id="xcats"></div><div class="xsnow"></div></div><div class="ptop"><div class="bootmsg">La poste ronron</div><div class="bver">V1.0.2</div><div id="bpct">0%</div><div id="bline">Chargement…</div></div><div class="bsecret pbot">Psst… il y a plein de secrets cachés sur ce site ⛧</div><div id="lock" role="button" tabindex="0" aria-label="Glisse vers le haut pour déverrouiller"><div class="lk-top"><span>Ronron mobile</span><span class="r"><span id="lkSig"></span><span id="lkBat"></span></span></div><div class="lk-mid"><span class="lk-lock" id="lkLock"></span><div class="lk-date" id="lkDate"></div><div class="lk-time" id="lkTime"></div></div><div class="lk-notifs"></div><div class="lk-bot"><span class="lk-ic" id="lkFl"></span><div class="lk-sw"><span class="lk-arr" id="lkArr"></span><div class="lk-hint">Glisse vers le haut<br>pour déverrouiller</div><i class="lk-bar"></i></div><span class="lk-ic" id="lkCam"></span></div></div></div><div class="col" id="bwel" style="display:none"><div class="rays"></div><div class="wheart" id="wheart"></div><div class="wtitle" id="wtitle"></div></div><div class="col" id="bpick" style="display:none"><div class="bootmsg">Léo, choisis ton petit chat ⛧</div><p style="margin:0;font-size:24px">Qui va te tenir compagnie ?</p><div class="bsecret">Psst… il y a plein de secrets cachés sur ce site, ouvre l’œil ⛧</div><p class="sound"><span id="megaCat"></span><span>Active le son de ton iPhone (et coupe le mode silencieux) ⛧</span></p><div class="cats" id="cats"></div><button class="btn main" id="cconfirm" style="font-size:26px;padding:10px 26px;margin-top:14px">Confirmer ⛧</button></div></div>
+<div id="boot"><div class="col" id="bgate"><div class="gfx" id="gfx"></div><div class="gtag">La poste ronron</div><div class="gscene" id="bgcat"></div><div class="gsub">Une lettre t’attend…</div><button class="btn main gbtn" type="button" tabindex="-1">Touche pour entrer ♡</button><div class="gsnd"><span class="gic" id="gsndic"></span><span>Active le son de ton téléphone<br><small>(et coupe le mode silencieux)</small></span></div></div><div class="col" id="bload" style="display:none"><div class="pscene xmas" id="pscene"><div class="xsky" id="xsky"></div><div class="xmoon" id="xmoon"></div><div class="xhill"></div><div class="xground"></div><div class="xtreew" id="xtreew"></div><div class="xcats" id="xcats"></div><div class="xsnow"></div></div><div class="ptop"><div class="bootmsg">La poste ronron</div><div class="bver">V1.0.2</div><div id="bpct">0%</div><div id="bline">Chargement…</div></div><div class="bsecret pbot">Psst… il y a plein de secrets cachés sur ce site ♡</div><div id="lock" role="button" tabindex="0" aria-label="Glisse vers le haut pour déverrouiller"><div class="lk-top"><span>Ronron mobile</span><span class="r"><span id="lkSig"></span><span id="lkBat"></span></span></div><div class="lk-mid"><span class="lk-lock" id="lkLock"></span><div class="lk-date" id="lkDate"></div><div class="lk-time" id="lkTime"></div></div><div class="lk-notifs"></div><div class="lk-bot"><span class="lk-ic" id="lkFl"></span><div class="lk-sw"><span class="lk-arr" id="lkArr"></span><div class="lk-hint">Glisse vers le haut<br>pour déverrouiller</div><i class="lk-bar"></i></div><span class="lk-ic" id="lkCam"></span></div></div></div><div class="col" id="bwel" style="display:none"><div class="rays"></div><div class="wheart" id="wheart"></div><div class="wtitle" id="wtitle"></div></div><div class="col" id="bpick" style="display:none"><div class="bootmsg">Léo, choisis ton petit chat ♡</div><p style="margin:0;font-size:24px">Qui va te tenir compagnie ?</p><div class="bsecret">Psst… il y a plein de secrets cachés sur ce site, ouvre l’œil ♡</div><p class="sound"><span id="megaCat"></span><span>Active le son de ton iPhone (et coupe le mode silencieux) ♡</span></p><div class="cats" id="cats"></div><button class="btn main" id="cconfirm" style="font-size:26px;padding:10px 26px;margin-top:14px">Confirmer ♡</button></div></div>
  
 <script>['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault()})})</script>
 <script>try{if(localStorage.getItem('ronron-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
@@ -1393,12 +1324,12 @@ background:radial-gradient(ellipse 20% 60% at 18% 100%,#ff5a00 0 55%,transparent
 const $=id=>document.getElementById(id);
 const PASS='ronron88', KEY='ronron-v1';
 const DEFAULTS=/*D_START*/{colors:{},
-  welcome:'Les retrouvailles des ronrons ⛧',
-  letter:'Mon Léo, mon ronron,\n\nTrois semaines sans toi, c’était long… Ce soir, enfin, je te retrouve.\n\nJe t’aime de tout mon âme.\n\nTon ronron ⛧',
-  msgs:['Plus que quelques ronrons avant les câlins ⛧','Miaou… tu me manques aussi !','Un ronron, c’est un câlin qui fait du bruit.','Chut… il y a une surprise dans l’enveloppe 💌','Léo, tu es mon petit rayon de soleil ⛧','Léo, tu es le plus doux des ronrons ⛧'],
-  coupons:['Bon pour 1 câlin de 10 minutes, sans bouger et sans téléphone ⛧','Bon pour 1 soirée film au choix, avec couverture et popcorn ⛧','Bon pour 1 journée où ton ronron fait tout ce que tu veux ⛧'],
-  notes:['Plus que deux dodos, mon ronron… Je pense à toi dès que je me réveille ⛧','Demain, enfin ! Ce soir je compte les heures, et les ronrons aussi ⛧','Si tu lis ça, c’est que tu es dans mes bras. Merci d’être mon ronron ⛧'],
-  ticket:'Mon Léo, ce billet est valable pour une soirée rien qu’à nous deux.\nAller simple, sans retour, direction mes bras ⛧'
+  welcome:'Les retrouvailles des ronrons ♡',
+  letter:'Mon Léo, mon ronron,\n\nTrois semaines sans toi, c’était long… Ce soir, enfin, je te retrouve.\n\nJe t’aime de tout mon cœur.\n\nTon ronron ♡',
+  msgs:['Plus que quelques ronrons avant les câlins ♡','Miaou… tu me manques aussi !','Un ronron, c’est un câlin qui fait du bruit.','Chut… il y a une surprise dans l’enveloppe 💌','Léo, tu es mon petit rayon de soleil ♡','Léo, tu es le plus doux des ronrons ♡'],
+  coupons:['Bon pour 1 câlin de 10 minutes, sans bouger et sans téléphone ♡','Bon pour 1 soirée film au choix, avec couverture et popcorn ♡','Bon pour 1 journée où ton ronron fait tout ce que tu veux ♡'],
+  notes:['Plus que deux dodos, mon ronron… Je pense à toi dès que je me réveille ♡','Demain, enfin ! Ce soir je compte les heures, et les ronrons aussi ♡','Si tu lis ça, c’est que tu es dans mes bras. Merci d’être mon ronron ♡'],
+  ticket:'Mon Léo, ce billet est valable pour une soirée rien qu’à nous deux.\nAller simple, sans retour, direction mes bras ♡'
 }/*D_END*/;
 let data=load();
 try{if(localStorage.getItem('ronron-msgs-v2')!=='1'){if(localStorage.getItem(KEY)){data.msgs=DEFAULTS.msgs.slice();persist()}localStorage.setItem('ronron-msgs-v2','1')}}catch(e){}
@@ -1419,7 +1350,7 @@ function pix(grid,size,pal){const p=pal||PAL;if(p.tux)grid=tuxGrid(grid);let r='
     +'</svg>';
   document.documentElement.style.setProperty('--pat','url("data:image/svg+xml,'+encodeURIComponent(svg)+'")');
 })();
-const HEART=['xx.....xx','.hxx.xxx.','..xxxxx..','..xxxxx..','.xxxxxxx.','xxxxxxxxx','...xxx...','...xxx...','....x....'];
+const HEART=['.xx.xx.','xhxxxxx','xxxxxxx','.xxxxx.','..xxx..','...x...'];
 const CAT_BASE=['oo........oo','owo......owo','owwoooooowwo','owwwwwwwwwwo','owwewwwwewwo','owwwwppwwwwo','owpwwwwwwpwo','owwwwwwwwwwo','.owwwwwwwwo.','.owwwwwwwwo.'];
 const CAT_A=CAT_BASE.concat(['.owwo..owwo.','.oooo..oooo.']);
 const CAT_B=CAT_BASE.concat(['..owo..owo..','..ooo..ooo..']);
@@ -1458,7 +1389,7 @@ setInterval(tick,1000);setTimeout(tick,0);
 const env=$('env');
 let typer=null;
 function openEnv(){
-  opened=true;env.classList.add('open');document.body.classList.add('dawn');$('hint').textContent='Touche l’enveloppe pour relire ta lettre ⛧';
+  opened=true;env.classList.add('open');document.body.classList.add('dawn');$('hint').textContent='Touche l’enveloppe pour relire ta lettre ♡';
   setTimeout(()=>{gachaFx();burst();victory();buzz([90,50,90,50,260])},1500);setTimeout(burst,1900);setTimeout(showLetter,2300);
 }
 function showLetter(){try{if(typeof previewing==='undefined'||!previewing)setTimeout(()=>achU('letter'),2600)}catch(e){}
@@ -1470,14 +1401,14 @@ function envClick(){sfxPop();
   if(gxBusy)return;
   if(env.classList.contains('open')){showLetter();return}
   if(Date.now()>=TARGET||previewing){startGacha()}
-  else{env.classList.remove('shy');void env.offsetWidth;env.classList.add('shy');$('hint').textContent=(++envTaps%5===0)?'Même en tapant, elle ne s’ouvrira pas avant 19h 😸':'Chut… pas encore, patience mon ronron ⛧';comboHit()}
+  else{env.classList.remove('shy');void env.offsetWidth;env.classList.add('shy');$('hint').textContent=(++envTaps%5===0)?'Même en tapant, elle ne s’ouvrira pas avant 19h 😸':'Chut… pas encore, patience mon ronron ♡';comboHit()}
 }
 let previewing=false;
 env.addEventListener('click',envClick);
 env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();envClick()}});
 $('closeLetter').onclick=()=>{clearInterval(typer);$('letterOvl').classList.remove('on');try{romStop()}catch(e){}};
  
-/* ---------- Confettis, âmes et effet gacha ---------- */
+/* ---------- Confettis, cœurs et effet gacha ---------- */
 const fx=$('fx'),cx=fx.getContext('2d');let parts=[],running=false;
 function fit(){fx.width=innerWidth;fx.height=innerHeight}fit();addEventListener('resize',fit);
 const COL=['#ff8fab','#ffb3c6','#fff3e6','#ffd6a5','#cdb4db','#bde0fe','#ffffff'];
@@ -1542,8 +1473,8 @@ profApply();
 $('profBtn').onclick=()=>{sfxPop();profBuild();$('profName').value=PR.n;ovl('profOvl').add('on')};
 $('profName').oninput=()=>{PR.n=$('profName').value.trim().slice(0,14);profSave()};
 $('profReset').onclick=()=>{PR={n:PR.n,a:PR.a,bg:0,cb:'#ffd9de'};profSave();profBuild()};
-$('profOk').onclick=()=>{sfxPop();ovl('profOvl').remove('on');achCheck();toast(PR.n?'Coucou '+PR.n+' ⛧':'Profil enregistré ⛧',2200)};
-window.__profHi=()=>{if(PR.n)toast('Coucou '+PR.n+' ⛧',2500)};
+$('profOk').onclick=()=>{sfxPop();ovl('profOvl').remove('on');achCheck();toast(PR.n?'Coucou '+PR.n+' ♡':'Profil enregistré ♡',2200)};
+window.__profHi=()=>{if(PR.n)toast('Coucou '+PR.n+' ♡',2500)};
 setInterval(()=>{if(!talking){fr^=1;sprite.innerHTML=frames[fr]}},260);
 function frame(t){
   const dt=Math.min(.1,(t-lastT)/1000);lastT=t;
@@ -1566,22 +1497,22 @@ setInterval(speak,10000);
 let sleeping=false,lastAct=Date.now(),catTaps=0,catTapT=null,envTaps=0,sigTaps=0,sigT=null;
 function wake(){lastAct=Date.now();if(sleeping){sleeping=false;talking=false;bubble.classList.remove('on')}}
 ['pointerdown','keydown','touchstart'].forEach(ev=>addEventListener(ev,wake,{passive:true}));
-setInterval(()=>{if(!sleeping&&!talking&&Date.now()-lastAct>30000){sleeping=true;talking=true;bubble.textContent='Zzz… ⛧';bubble.classList.add('on')}},1000);
+setInterval(()=>{if(!sleeping&&!talking&&Date.now()-lastAct>30000){sleeping=true;talking=true;bubble.textContent='Zzz… ♡';bubble.classList.add('on')}},1000);
 function tapHeart(x,y){const d=document.createElement('div');d.className='tap';d.innerHTML=pix(HEART,3);d.style.left=(x-10)+'px';d.style.top=(y-10)+'px';document.body.appendChild(d);setTimeout(()=>d.remove(),950)}
 function rainHearts(n){for(let i=0;i<n;i++){const d=document.createElement('div');d.className='fall';d.innerHTML=pix(HEART,3+i%3);d.style.left=(Math.random()*95)+'%';d.style.animationDelay=(Math.random()*.9)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3600)}}
 document.addEventListener('pointerdown',e=>{const t=e.target;if(t===document.body||t.tagName==='MAIN'||(t.classList&&t.classList.contains('stage')))tapHeart(e.clientX,e.clientY)});
 cat.addEventListener('click',()=>{stat('taps');meow();buzz(25);speak();clearTimeout(catTapT);if(++catTaps>=7){catTaps=0;purr();rainHearts(14)}else catTapT=setTimeout(()=>{catTaps=0},2500)});
 document.querySelector('h1').addEventListener('click',()=>{sfx(t=>blip(660,t,.1,'triangle',.18,990));rainHearts(16)});
 document.querySelectorAll('.unit').forEach(u=>u.addEventListener('click',()=>{u.classList.remove('wig');void u.offsetWidth;u.classList.add('wig');sfx(t=>blip(1200,t,.05,'square',.08))}));
-document.querySelector('footer').addEventListener('click',()=>{clearTimeout(sigT);if(++sigTaps>=3){sigTaps=0;toast('Je t’aime mon ronron ⛧');burst();jingle()}else sigT=setTimeout(()=>{sigTaps=0},1500)});
+document.querySelector('footer').addEventListener('click',()=>{clearTimeout(sigT);if(++sigTaps>=3){sigTaps=0;toast('Je t’aime mon ronron ♡');burst();jingle()}else sigT=setTimeout(()=>{sigTaps=0},1500)});
 $('note').addEventListener('click',()=>{const s=$('catSprite');s.classList.remove('hop');void s.offsetWidth;s.classList.add('hop');jingle()});
 let wTaps=0,wT=null,lp=null,kb='';
 $('welcome').addEventListener('click',()=>{clearTimeout(wT);if(++wTaps>=3){wTaps=0;burst();jingle()}else wT=setTimeout(()=>{wTaps=0},1500)});
-document.querySelector('.target').addEventListener('click',()=>{toast('Plus que quelques dodos… ⛧');sfx(t=>blip(880,t,.08,'triangle',.12))});
+document.querySelector('.target').addEventListener('click',()=>{toast('Plus que quelques dodos… ♡');sfx(t=>blip(880,t,.08,'triangle',.12))});
 cat.addEventListener('pointerdown',()=>{lp=setTimeout(()=>{purr();buzz([40,30,40]);const r=cat.getBoundingClientRect();for(let i=0;i<5;i++)setTimeout(()=>tapHeart(r.left+10+Math.random()*40,r.top-Math.random()*30),i*150)},700)});
 ['pointerup','pointerleave','pointercancel'].forEach(ev=>cat.addEventListener(ev,()=>clearTimeout(lp)));
-addEventListener('keydown',e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName)||e.key.length!==1)return;kb=(kb+e.key.toLowerCase()).slice(-6);if(kb.endsWith('ronron')){purr();rainHearts(10)}else if(kb.endsWith('miaou')){meow();speak()}else if(kb.endsWith('leo')){jingle();rainHearts(14);toast('Léo ⛧')}});
-setTimeout(()=>{rainHearts(14);toast('Je suis content que tu restes ⛧')},120000);
+addEventListener('keydown',e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName)||e.key.length!==1)return;kb=(kb+e.key.toLowerCase()).slice(-6);if(kb.endsWith('ronron')){purr();rainHearts(10)}else if(kb.endsWith('miaou')){meow();speak()}else if(kb.endsWith('leo')){jingle();rainHearts(14);toast('Léo ♡')}});
+setTimeout(()=>{rainHearts(14);toast('Je suis content que tu restes ♡')},120000);
  
 /* ---------- Combo sur l’enveloppe ---------- */
 let comboN=0,comboT=null,envHits=0;
@@ -1630,9 +1561,9 @@ function comboHit(){
 }
 function explode(){
   clearTimeout(comboT);comboN=0;
-  showCombo('<small>K.O. !</small><b>⛧</b><em>trop de tendresse</em>');
+  showCombo('<small>K.O. !</small><b>♡</b><em>trop de tendresse</em>');
   env.classList.add('boom');victory();buzz([100,50,100,50,300]);burst();setTimeout(burst,200);setTimeout(burst,400);rainHearts(18);
-  $('hint').textContent='Oups… elle a explosé de tendresse ! Recharge la page pour la retrouver ⛧';
+  $('hint').textContent='Oups… elle a explosé de tendresse ! Recharge la page pour la retrouver ♡';
   setTimeout(()=>{env.classList.add('gone');$('combo').classList.remove('on')},1200);setTimeout(callPolice,2400);
 }
  
@@ -1682,7 +1613,7 @@ function play(){try{if(!ac){const A=window.AudioContext||window.webkitAudioConte
 function pause(){clearInterval(mt);musicOn=false;$('pp').textContent='▶'}
 $('pp').onclick=()=>{musicOn?pause():play();SET.music=musicOn;saveSet()};
 const TN={noel:'Noël',fete:'Fête du jour J',boite:'Boîte à musique'};
-function trkUi(){document.querySelectorAll('#trkRow .btn').forEach(b=>{const on=b.dataset.t===SET.track;b.classList.toggle('main',on);b.textContent=(on?'⛧ ':'')+TN[b.dataset.t]})}
+function trkUi(){document.querySelectorAll('#trkRow .btn').forEach(b=>{const on=b.dataset.t===SET.track;b.classList.toggle('main',on);b.textContent=(on?'♡ ':'')+TN[b.dataset.t]})}
 document.querySelectorAll('#trkRow .btn').forEach(b=>b.onclick=()=>{SET.track=b.dataset.t;SET.music=true;saveSet();st=0;if(ac)nt=ac.currentTime+.1;if(!musicOn)play();trkUi();try{sfxPop()}catch(e){}});
 trkUi();
 
@@ -1927,10 +1858,10 @@ const IP={o:'#7a4a5a',x:'#ff6f91',w:'#fff3e6',p:'#ff8fab',e:'#4a2a3a'};
 const IPK=Object.assign({},IP,{o:'#ff6f91'});
 
 const iBar=hl=>'<div class="bar"><span>'+pix(iBACK,3,IP)+'</span><span>'+pix(iFWD,3,IP)+'</span><span'+(hl?' class="hl"':'')+'>'+pix(iSHARE,3,IP)+'</span><span>'+pix(iBOOK,3,IP)+'</span><span>'+pix(iTABS,3,IP)+'</span></div>';
-const iPage=()=>'<div class="notch"></div><div class="url">ton-site ⛧</div><div class="pg">'+pix(CAT_ICON,5,catPal(0))+'<div>Les retrouvailles<br>des ronrons</div></div>';
+const iPage=()=>'<div class="notch"></div><div class="url">ton-site ♡</div><div class="pg">'+pix(CAT_ICON,5,catPal(0))+'<div>Les retrouvailles<br>des ronrons</div></div>';
 const iTile=sz=>'<div class="app" style="background:#ffb3c6;width:'+(sz||30)+'px;height:'+(sz||30)+'px">'+pix(APP_ICON,2,catPal(0))+'</div>';
 const INST=[
-  {t:'Miaou ! Je t’explique comment me mettre sur ton écran d’accueil. D’abord, ouvre ce site dans Safari ⛧',
+  {t:'Miaou ! Je t’explique comment me mettre sur ton écran d’accueil. D’abord, ouvre ce site dans Safari ♡',
    s:()=>'<div class="ph">'+iPage()+iBar(false)+'</div>'},
   {t:'Touche le bouton Partager : le petit carré avec une flèche vers le haut, tout en bas de l’écran.',
    s:()=>'<div class="ph">'+iPage()+'<div class="arrow">'+pix(iARROW,3,IPK)+'</div>'+iBar(true)+'</div>'},
@@ -1938,7 +1869,7 @@ const INST=[
    s:()=>'<div class="ph">'+iPage()+'<div class="dim"></div><div class="sheet"><div class="hd"></div><div class="row"><i></i>Copier</div><div class="row"><i></i>Favoris</div><div class="row hl"><span style="display:flex;flex:none">'+pix(iPLUS,2,IP)+'</span>Sur l’écran d’accueil</div><div class="row"><i></i>Plus…</div></div></div>'},
   {t:'Touche « Ajouter », en haut à droite. Tu peux même changer mon nom si tu veux !',
    s:()=>'<div class="ph"><div class="notch"></div><div class="hdr"><span>Annuler</span><b class="hl">Ajouter</b></div><div class="card">'+iTile(36)+'<div>Ronron<small>ton-site</small></div></div></div>'},
-  {t:'Et voilà ! Je suis sur ton écran d’accueil. Touche mon icône pour ouvrir le site comme une vraie appli ⛧',
+  {t:'Et voilà ! Je suis sur ton écran d’accueil. Touche mon icône pour ouvrir le site comme une vraie appli ♡',
    s:()=>{let a='';for(let i=0;i<11;i++){const c=['#bde0fe','#ffe066','#c7f0d2','#e4c1f9'][i%4];a+='<div class="app" style="background:'+c+'"></div>'}return '<div class="ph"><div class="notch"></div><div class="home">'+a+'<div class="me">'+iTile(30)+'<div class="lbl">Ronron</div><span class="spark">'+pix(HEART,2,IP)+'</span></div><div class="dock"></div></div></div>'}}
 ];
 let instI=0,instT=null;
@@ -1947,7 +1878,7 @@ function instShow(){
   $('instScene').innerHTML=st.s();
   $('instStep').textContent='Étape '+(instI+1)+' / '+INST.length;
   $('instPrev').style.visibility=instI?'visible':'hidden';
-  $('instNext').textContent=instI===INST.length-1?'Terminé ⛧':'Suivant ›';
+  $('instNext').textContent=instI===INST.length-1?'Terminé ♡':'Suivant ›';
   const el=$('instBub');el.textContent='';let i=0;clearInterval(instT);
   instT=setInterval(()=>{i++;el.textContent=st.t.slice(0,i);if(i%2===0&&st.t[i-1]!==' ')typeBlip();if(i>=st.t.length)clearInterval(instT)},28);
 }
@@ -1981,19 +1912,19 @@ function mkScene(keys){
 }
 const HALL=['admin','aide','music','count','route','env','hug','ticket','cat','credits','appli'];
 const HELP=[
-  {k:[],t:'Miaou ! Je te fais visiter le site, bouton par bouton. Suis-moi, ça va être rigolo ⛧'},
+  {k:[],t:'Miaou ! Je te fais visiter le site, bouton par bouton. Suis-moi, ça va être rigolo ♡'},
   {k:['admin'],t:'En haut à gauche : l’espace Administrateur ronron. Il faut un mot de passe pour entrer… et certains mots magiques font des surprises !'},
-  {k:['aide'],t:'Juste en dessous : le bouton Aide. Touche-le quand tu veux et je te refais la visite ⛧'},
+  {k:['aide'],t:'Juste en dessous : le bouton Aide. Touche-le quand tu veux et je te refais la visite ♡'},
   {k:['music'],t:'En haut à droite : la musique. Tu peux la lancer, la mettre en pause et régler le volume.'},
   {k:[],t:'En haut au milieu : le Menu. « Mini-jeux » ouvre les petits jeux : des défis, des chats bonus, un spa pour me chouchouter et ton carnet secret.'},
   {k:['count'],t:'Le compte à rebours : il te dit combien de temps il reste avant les retrouvailles, samedi 7 novembre à 19h.'},
   {k:['route'],t:'La petite route relie chez Kevin et chez Léo, avec un chat qui voyage entre les deux maisons.'},
   {k:['env'],t:'L’enveloppe : elle s’ouvre à 19h le grand soir. Ensuite, touche-la pour relire ta lettre.'},
-  {k:['hug'],t:'« Envoyer un câlin » : touche-le et il pleut des âmes. Ça rend le chat de bonne humeur !'},
+  {k:['hug'],t:'« Envoyer un câlin » : touche-le et il pleut des cœurs. Ça rend le chat de bonne humeur !'},
   {k:['ticket'],t:'« Mon billet » : il est verrouillé ! Il faut trouver le mot de passe secret pour l’ouvrir.'},
   {k:['cat'],t:'Et moi, je me promène en bas de l’écran. Touche-moi : je ronronne et je te parle !'},
   {k:['credits','appli'],t:'Tout en bas : « Appli » pour me mettre sur ton écran d’accueil. Et les « Crédits » du générique sont dans les réglages !'},
-  {k:HALL,t:'Et surtout : il y a plein de secrets cachés partout sur ce site. Touche tout, écris des mots magiques… ⛧'}
+  {k:HALL,t:'Et surtout : il y a plein de secrets cachés partout sur ce site. Touche tout, écris des mots magiques… ♡'}
 ];
 let helpI=0,helpT=null;
 function helpShow(){
@@ -2001,7 +1932,7 @@ function helpShow(){
   $('hScene').innerHTML=mkScene(st.k);
   $('hStep').textContent='Étape '+(helpI+1)+' / '+HELP.length;
   $('hPrev').style.visibility=helpI?'visible':'hidden';
-  $('hNext').textContent=helpI===HELP.length-1?'Terminé ⛧':'Suivant ›';
+  $('hNext').textContent=helpI===HELP.length-1?'Terminé ♡':'Suivant ›';
   const el=$('hBub');el.textContent='';let i=0;clearInterval(helpT);
   helpT=setInterval(()=>{i++;el.textContent=st.t.slice(0,i);if(i%2===0&&st.t[i-1]!==' ')typeBlip();if(i>=st.t.length)clearInterval(helpT)},28);
 }
@@ -2029,7 +1960,7 @@ function eat(){
   $('can').disabled=true;$('fbub').textContent='Miam miam…';$('fcat').classList.add('eat');
   const f=$('food');f.style.transition='height 3s steps(12)';void f.offsetWidth;f.style.height='0%';
   eatT=setInterval(()=>{sfx(t=>blip(280+Math.random()*120,t,.05,'square',.07));const r=$('fcat').getBoundingClientRect();tapHeart(r.left+Math.random()*r.width,r.top)},260);
-  eatTO=setTimeout(()=>{clearInterval(eatT);$('fcat').classList.remove('eat');$('fbub').textContent='Merci ⛧ Prrr…';achU('g_feed');victory();purr();buzz([80,40,80,40,200]);burst();$('fclue').style.display='block'},3200);
+  eatTO=setTimeout(()=>{clearInterval(eatT);$('fcat').classList.remove('eat');$('fbub').textContent='Merci ♡ Prrr…';achU('g_feed');victory();purr();buzz([80,40,80,40,200]);burst();$('fclue').style.display='block'},3200);
 }
 $('can').addEventListener('pointerdown',pourStart);
 $('can').oncontextmenu=e=>e.preventDefault();
@@ -2068,7 +1999,7 @@ function spaSetTool(t,quiet){
   document.querySelectorAll('#spaTools .stool').forEach(b=>b.classList.toggle('sel',b.dataset.t===t));
   $('spaLooks').style.display=t==='look'?'flex':'none';
   if(quiet)return;
-  spaSay({foam:'Splash ! Frotte-moi avec du savon, partout…',rinse:'Rince-moi bien, il faut que toute la mousse parte !',brush:'Brosse-moi tout doucement… ça ronronne déjà.',look:'Choisis-moi un petit look, s’il te plaît ⛧'}[t]);
+  spaSay({foam:'Splash ! Frotte-moi avec du savon, partout…',rinse:'Rince-moi bien, il faut que toute la mousse parte !',brush:'Brosse-moi tout doucement… ça ronronne déjà.',look:'Choisis-moi un petit look, s’il te plaît ♡'}[t]);
 }
 function spaStart(){
   const n=CATS[catIdx].n;
@@ -2089,7 +2020,7 @@ function spaStart(){
     b.onclick=()=>{if(spaDone)return;sfxPop();spaAcc=k==='none'?'':k;spaG.S=spaAcc?1:0;spaAccDraw();spaGauges();spaCheck()};
     lk.appendChild(b)});
   spaSetTool('foam',true);spaGauges();
-  spaSay('Bienvenue au spa ! Je suis tout sale… Commence par le savon ⛧');
+  spaSay('Bienvenue au spa ! Je suis tout sale… Commence par le savon ♡');
 }
 function spaPt(e){const r=$('spaArea').getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
 function spaAct(p,d){
@@ -2122,7 +2053,7 @@ function spaCheck(){
   if(spaDone||spaG.P<1||spaG.D<1||spaG.S<1)return;
   spaDone=true;achU('g_spa');$('spaCat').classList.add('happy');
   setTimeout(()=>{victory();rainHearts(16);buzz([80,40,80,40,200])},300);
-  spaSay('Ronron… je me sens tout neuf. Merci pour ce moment de spa ⛧');
+  spaSay('Ronron… je me sens tout neuf. Merci pour ce moment de spa ♡');
 }
 const spaA=$('spaArea');
 spaA.addEventListener('pointerdown',e=>{if(spaDone||spaTool==='look')return;e.preventDefault();try{spaA.setPointerCapture(e.pointerId)}catch(_){}spaLast=spaPt(e);spaAD=0;spaAct(spaLast,0)});
@@ -2140,7 +2071,7 @@ const LOCK=['..ooo..','.o...o.','.o...o.','ooooooo','oyyyyyo','oyyeyyo','oyyyyyo
 const MOUSE=['.oo....oo.','opwo..owpo','.owwwwwwo.','owwewwewwo','owwwppwwwo','.owwwwwwo.','..oooooo..'];
 const MPAL=Object.assign({},PAL,{w:'#cfd3e0'});
 const GAMES=[
-  {id:'catch',n:'Attrape<br>les âmes',ic:HEART,pal:GP,t:parisTarget(2026,11,5,20,0),when:'jeudi à 20h',rw:'c1',cat:3,clue:'cclue'},
+  {id:'catch',n:'Attrape<br>les cœurs',ic:HEART,pal:GP,t:parisTarget(2026,11,5,20,0),when:'jeudi à 20h',rw:'c1',cat:3,clue:'cclue'},
   {id:'mouse',n:'Chasse<br>à la souris',ic:MOUSE,pal:MPAL,t:parisTarget(2026,11,6,20,0),when:'vendredi à 20h',rw:'c2',cat:4,clue:'mclue'},
   {id:'scratch',n:'Carte<br>à gratter',ic:STAR,pal:GP,t:parisTarget(2026,11,7,20,0),when:'samedi à 20h',rw:'c3',cat:5,clue:'sclue'}
 ];
@@ -2151,16 +2082,16 @@ function refreshMenu(){
   GAMES.forEach(g=>{
     const ok=unlocked(g),b=document.createElement('button');b.className='pick'+(ok?'':' lock');
     b.innerHTML=(ok?pix(g.ic,5,g.pal):pix(LOCK,5,GP))+'<br>'+(ok?g.n+(Date.now()<g.t?'<small>(test)</small>':''):'???<small>'+g.when+'</small>');
-    b.onclick=()=>{if(!unlocked(g)){sfxErr();buzz([60]);toast('Pas encore… reviens '+g.when+' ⛧');return}$('menuOvl').classList.remove('on');START[g.id]()};
+    b.onclick=()=>{if(!unlocked(g)){sfxErr();buzz([60]);toast('Pas encore… reviens '+g.when+' ♡');return}$('menuOvl').classList.remove('on');START[g.id]()};
     box.appendChild(b)});
   $('gbook').innerHTML=pix(ENV,5,GP)+'<br>Mon carnet';
 }
 $('gbook').onclick=()=>{$('menuOvl').classList.remove('on');openBook()};
 $('bclose').onclick=()=>ovl('bookOvl').remove('on');
 function openBook(){
-  $('rwMood').textContent='Humeur de '+CATS[catIdx].n+' : '+moodOf()+' ⛧';
+  $('rwMood').textContent='Humeur de '+CATS[catIdx].n+' : '+moodOf()+' ♡';
   buildCats($('rwCats'),()=>{});
-  const nl=$('rwNotes');nl.innerHTML='';data.notes.forEach((t,i)=>{const d=document.createElement('div'),ok=unlocked(GAMES[i]);d.className='coupon'+(ok?'':' off');d.textContent=ok?t:'Un petit mot arrive '+GAMES[i].when+' ⛧';nl.appendChild(d)});
+  const nl=$('rwNotes');nl.innerHTML='';data.notes.forEach((t,i)=>{const d=document.createElement('div'),ok=unlocked(GAMES[i]);d.className='coupon'+(ok?'':' off');d.textContent=ok?t:'Un petit mot arrive '+GAMES[i].when+' ♡';nl.appendChild(d)});
   const l=$('rwList');l.innerHTML='';
   data.coupons.forEach((t,i)=>{const d=document.createElement('div'),ok=RW['c'+(i+1)];d.className='coupon'+(ok?'':' off');d.textContent=ok?t:'Coupon surprise… à gagner avec les jeux du soir';l.appendChild(d)});
   ovl('bookOvl').add('on');
@@ -2168,7 +2099,7 @@ function openBook(){
 function checkUnlocks(){
   let seen={};try{seen=JSON.parse(localStorage.getItem('ronron-seen'))||{}}catch(e){}
   const nw=GAMES.filter(g=>Date.now()>=g.t&&!seen[g.id]);
-  if(nw.length){nw.forEach(g=>seen[g.id]=1);try{localStorage.setItem('ronron-seen',JSON.stringify(seen))}catch(e){}toast('Nouveau jeu et petit mot du jour ! Ouvre le menu, puis Mini-jeux ⛧',4000);jingle()}
+  if(nw.length){nw.forEach(g=>seen[g.id]=1);try{localStorage.setItem('ronron-seen',JSON.stringify(seen))}catch(e){}toast('Nouveau jeu et petit mot du jour ! Ouvre le menu, puis Mini-jeux ♡',4000);jingle()}
 }
 setInterval(checkUnlocks,20000);setTimeout(checkUnlocks,6500);
  
@@ -2203,10 +2134,10 @@ function stat(k){ST[k]=(ST[k]||0)+1;try{localStorage.setItem('ronron-st',JSON.st
 function hopCat(){const sp=$('catSprite');sp.classList.remove('hop');void sp.offsetWidth;sp.classList.add('hop')}
 function skyMsg(){
   if(Math.random()>.4)return null;const h=parisHour();
-  if(h>=22||h<6)return 'Zzz… il est tard mon ronron, fais de beaux rêves ⛧';
-  if(h<10){hopCat();return 'Étirement du matin… miaaaou ⛧'}
+  if(h>=22||h<6)return 'Zzz… il est tard mon ronron, fais de beaux rêves ♡';
+  if(h<10){hopCat();return 'Étirement du matin… miaaaou ♡'}
   if(isDay()){hopCat();return 'Attrape le nuage ! Hop hop hop !'}
-  return 'Les étoiles sortent… ⛧';
+  return 'Les étoiles sortent… ♡';
 }
 function moodOf(){
   const h=parisHour();if(h>=22||h<6)return 'endormi';
@@ -2227,7 +2158,7 @@ $('hugBtn').addEventListener('click',()=>{try{profBuild()}catch(e){}});
 const SEP=parisTarget(2026,10,17,19,0);
 function updateSince(){
   const now=Date.now(),t=$('since');
-  if(now>=TARGET)t.textContent='0 jour sans câlin ⛧';
+  if(now>=TARGET)t.textContent='0 jour sans câlin ♡';
   else{const n=Math.max(0,Math.floor((now-SEP)/864e5));t.textContent='Ça fait '+n+' jour'+(n>1?'s':'')+' sans câlin…'}
   const p=Math.max(0,Math.min(1,(now-SEP)/(TARGET-SEP)));
   $('rtrack').style.setProperty('--p',p.toFixed(4));$('rcat').style.left='calc((100% - 36px) * '+(1-p).toFixed(4)+')';
@@ -2254,7 +2185,7 @@ updateKit();
 $('hugBtn').onclick=()=>{
   stat('hugs');achCheck();purr();rainHearts(12);buzz([40,30,40]);hopCat();
   const r=$('hugBtn').getBoundingClientRect();for(let i=0;i<5;i++)setTimeout(()=>tapHeart(r.left+Math.random()*r.width,r.top),i*120);
-  toast('Câlin envoyé ! Je le garde au chaud pour samedi ⛧ ('+ST.hugs+')',3000);
+  toast('Câlin envoyé ! Je le garde au chaud pour samedi ♡ ('+ST.hugs+')',3000);
 };
  
 /* billet pixel */
@@ -2274,7 +2205,7 @@ $('ticketBtn').onclick=()=>{
 function ticketTry(){
   const v=$('tpw').value;if(!v.trim())return;
   if(hashPw(v)===TK){try{localStorage.setItem('ronron-ticket','1')}catch(e){}ticketView(true);victory();buzz([90,50,90,50,260]);burst();setTimeout(burst,300);rainHearts(14)}
-  else{tfails++;$('tpw').value='';sfxErr();buzz([80,50,80]);$('terr').textContent=tfails<3?'Hihi non… ce mot-là, c’est moi qui te le dis ⛧':'Demande-le-moi en face, mon filou ⛧';if(tfails>=3)meow(true)}
+  else{tfails++;$('tpw').value='';sfxErr();buzz([80,50,80]);$('terr').textContent=tfails<3?'Hihi non… ce mot-là, c’est moi qui te le dis ♡':'Demande-le-moi en face, mon filou ♡';if(tfails>=3)meow(true)}
 }
 $('tgo').onclick=ticketTry;
 $('tpw').addEventListener('keydown',e=>{if(e.key==='Enter')ticketTry()});
@@ -2330,8 +2261,8 @@ function bootLeave(){
     ];
     const XF=XC.map(c=>[pix(xGrid(c,0),4,XPAL(c)),pix(xGrid(c,1),4,XPAL(c))]);
     const XE=XC.map((c,k)=>{const e=document.createElement('div');e.className='xc';e.style.left=c.x+'%';e.style.bottom='calc(var(--rh) + '+c.y+'px)';e.style.zIndex=String(30-c.y);e.style.setProperty('--d',(-k*.19)+'s');e.innerHTML='<div class="in">'+XF[k][0]+'</div>';$('xcats').appendChild(e);return e});
-    const XL={0:['On est morts…','On brûle depuis des heures…'],1:['Mon nez est rouge… de sang.','Le renne est dans le feu.'],6:['Chut… le Père Noël est mort.','Satan a pris sa place.'],2:['Les elfes sont tous morts.','Je vois des démons…'],3:['Ce cadeau bouge… et il saigne.','Il y a une tête dans le cadeau.'],4:['La guirlande m’étrangle…','Je suis un sapin. Je brûle.'],5:['Une étoile à l’envers…','Étoile du sapin, c’est Satan ⛧']};
-    const XG=['On est morts…','Les démons arrivent…','Moi je veux des âmes.','Satan, tu es sur la liste des damnés ⛧','Ho ho ho… du sang !'];
+    const XL={0:['Qui a mordu le sapin ?!','Je suis le chef du sapin.'],1:['Je suis un renne. Un vrai.','Mon nez rouge, c’est un secret…'],6:['Chut… le Père Noël dort.','Je surveille les cadeaux.'],2:['Je suis un elfe. Respect.','Les elfes aussi, ça ronronne.'],3:['J’ai mangé le cadeau… oups.','Ce cadeau bouge, non ?'],4:['Cette guirlande m’a attaquée !','Je suis un sapin. Chut.'],5:['Je prends la place de l’étoile !','Étoile du sapin, c’est moi ♡']};
+    const XG=['Miaou-ry Christmas !','Ho ho ho… miaou !','Moi je veux des croquettes.','Léo, tu es sur la liste des gentils ♡'];
     const BALL=['.oo.','orro','rhrr','rrrr','.rr.'];
     function xSay(k,txt,ms){const e=XE[k];if(!e)return;const old=e.querySelector('.xb');if(old)old.remove();
       const b=document.createElement('div');b.className='xb';b.textContent=txt;e.appendChild(b);
@@ -2342,7 +2273,7 @@ function bootLeave(){
     function xBall(){
       const h=22*tsz,b=document.createElement('div');b.className='xball';b.innerHTML=pix(BALL,4,{o:'#7a4a5a',r:'#e63946',h:'#ffffff'});
       b.style.left=(30+Math.random()*40)+'%';b.style.top=Math.round(h*.3)+'px';b.style.setProperty('--f',Math.round(h*.7)+'px');tw.appendChild(b);xWob();
-      tm.push(setTimeout(()=>{const k=Math.floor(Math.random()*XE.length);xHop(k);xSay(k,['Les démons l’ont fait tomber !','Il y a des yeux dans le sapin…','On est tous morts ici…'][Math.floor(Math.random()*3)],2600)},950));
+      tm.push(setTimeout(()=>{const k=Math.floor(Math.random()*XE.length);xHop(k);xSay(k,['Ce n’était pas moi !','Elle est tombée toute seule !','Pas vu, pas pris… miaou.'][Math.floor(Math.random()*3)],2600)},950));
       tm.push(setTimeout(()=>b.remove(),1800))}
     function startXmas(){
       let fr=0,n=0;
@@ -2352,14 +2283,14 @@ function bootLeave(){
         const k=Math.floor(Math.random()*XE.length),l=Math.random()<.65?XL[XC[k].i]:XG;xSay(k,l[Math.floor(Math.random()*l.length)],2300);if(n%3===0)xHop(k)},2600))}
     function xmasParty(){
       sc.classList.add('party');XE.forEach(e=>{const b=e.querySelector('.xb');if(b)b.remove()});
-      xWob();[[0,'Joyeux Noël, Satan !'],[3,'On est morts…'],[5,'Les démons sont là !'],[1,'Bienvenu ⛧']].forEach((p,i)=>tm.push(setTimeout(()=>xSay(p[0],p[1],1800),i*160)));
+      xWob();[[0,'Joyeux Noël Léo !'],[3,'Miaou miaou !'],[5,'Ho ho ho !'],[1,'Bienvenue ♡']].forEach((p,i)=>tm.push(setTimeout(()=>xSay(p[0],p[1],1800),i*160)));
       try{burst(innerWidth/2,innerHeight*.5);setTimeout(()=>burst(innerWidth*.25,innerHeight*.55),250);setTimeout(()=>burst(innerWidth*.75,innerHeight*.55),500)}catch(e){}
       try{jingle();rainHearts(10);sfx(t=>[0,1,2,3,4,5,6,7].forEach(i=>blip(mf(88+(i%3)*2),t+i*.07,.1,'triangle',.09)))}catch(e){}
     }
     let exI=null,whI=null,wf=0;
     b.style.animation='none';
     let k=0,st=0;
-    const lines=['Pliage de la lettre…','Collage du timbre en forme de âme…','Course à travers la ville…','Dernière ligne droite…'];
+    const lines=['Pliage de la lettre…','Collage du timbre en forme de cœur…','Course à travers la ville…','Dernière ligne droite…'];
     const T=(f,ms)=>{tm.push(setTimeout(f,ms))};
     window.__skipBoot=()=>{started=true;tm.forEach(x=>{clearTimeout(x);clearInterval(x)});bootLeave()};
     function go(n){
@@ -2379,7 +2310,7 @@ function bootLeave(){
       const wh=$('wheart'),wt=$('wtitle');
       wh.innerHTML=pix(SANTA.concat(CAT_ICON.slice(3)),10,Object.assign({},catPal(catIdx),{o:'#7a4a5a',r:'#e63946',n:'#ffffff'}));b.classList.add('xmw');if(!$('bwel').querySelector('.xsnow')){const sn=document.createElement('div');sn.className='xsnow';sn.style.zIndex='0';$('bwel').appendChild(sn)}wh.classList.remove('beat');wt.innerHTML='';wt.classList.remove('wave');
       const spans=[];let idx=0;
-      ['Bienvenu','Satan'].forEach((w,li)=>{const row=document.createElement('div');row.className='wl'+(li+1);
+      ['Bienvenue','Léo'].forEach((w,li)=>{const row=document.createElement('div');row.className='wl'+(li+1);
         [...w].forEach(c=>{const sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.setProperty('--i',idx++);row.appendChild(sp);spans.push(sp)});wt.appendChild(row)});
       const lh=document.createElement('span');lh.className='ch';lh.style.setProperty('--i',idx);lh.style.marginLeft='10px';lh.innerHTML=pix(HEART,6,PP);wt.lastChild.appendChild(lh);spans.push(lh);
       burst();meow();sfxPop();
@@ -2471,12 +2402,12 @@ function bootLeave(){
 function reward(g){
   RW[g.rw]=true;saveRw();updateKit();achU('g_'+g.id);achCheck();
   const c=$(g.clue);c.style.display='block';
-  c.textContent='Bravo mon ronron ! ⛧ Nouveau chat débloqué : '+CATS[g.cat].n+', et un coupon : « '+data.coupons[+g.rw[1]-1]+' ». Tout est dans « Mon carnet » du menu des petits jeux ⛧';
+  c.textContent='Bravo mon ronron ! ♡ Nouveau chat débloqué : '+CATS[g.cat].n+', et un coupon : « '+data.coupons[+g.rw[1]-1]+' ». Tout est dans « Mon carnet » du menu des petits jeux ♡';
   victory();buzz([80,40,80,40,200]);burst();rainHearts(10);
 }
 function drawGrid(c,grid,px,x,y,pal){for(let r=0;r<grid.length;r++)for(let q=0;q<grid[r].length;q++){const ch=grid[r][q];if(pal[ch]){c.fillStyle=pal[ch];c.fillRect(Math.round(x+q*px),Math.round(y+r*px),px,px)}}}
  
-/* --- Jeu 1 : Attrape les âmes --- */
+/* --- Jeu 1 : Attrape les cœurs --- */
 let cg=null;
 function catchStop(){if(cg){cg.run=false;cancelAnimationFrame(cg.raf)}}
 function catchStart(){ovl('catchOvl').add('on');catchReset()}
@@ -2484,7 +2415,7 @@ function catchReset(){
   catchStop();
   const cv=$('ccv'),c=cv.getContext('2d'),W=cv.width,H=cv.height,P=catPal(catIdx);
   const s={x:W/2,hs:[],score:0,lives:5,sp:0,l:performance.now(),run:true,done:false,raf:0};cg=s;
-  $('cscore').textContent='0';$('clives').textContent='5';$('cclue').style.display='none';$('cbub').textContent='Glisse ton doigt pour guider le chat ⛧';
+  $('cscore').textContent='0';$('clives').textContent='5';$('cclue').style.display='none';$('cbub').textContent='Glisse ton doigt pour guider le chat ♡';
   function f(t){
     if(!s.run)return;
     const dt=Math.min(.05,(t-s.l)/1000);s.l=t;
@@ -2495,8 +2426,8 @@ function catchReset(){
         if(h.y+18>H-56&&h.y<H-20&&h.x+21>s.x-24&&h.x<s.x+24){s.score++;$('cscore').textContent=s.score;sfx(t=>blip(1000,t,.06,'triangle',.1,1500));return false}
         if(h.y>H){s.lives--;$('clives').textContent=s.lives;sfx(t=>blip(260,t,.12,'triangle',.1,200));return false}
         return true});
-      if(s.score>=15){s.done=true;$('cbub').textContent='15 âmes ! Tu as le âme sur la main ⛧';reward(GAMES[0])}
-      else if(s.lives<=0){s.done=true;$('cbub').textContent='Oh non… plus de vies. Réessaie ⛧';sfxErr()}
+      if(s.score>=15){s.done=true;$('cbub').textContent='15 cœurs ! Tu as le cœur sur la main ♡';reward(GAMES[0])}
+      else if(s.lives<=0){s.done=true;$('cbub').textContent='Oh non… plus de vies. Réessaie ♡';sfxErr()}
     }
     c.clearRect(0,0,W,H);
     s.hs.forEach(h=>drawGrid(c,HEART,3,h.x,h.y,PAL));
@@ -2537,7 +2468,7 @@ function mouseHit(h){
 }
 function mouseEnd(){
   const s=mg;mouseStop();HOLES.forEach(h=>h.classList.remove('up'));$('mstart').disabled=false;$('mstart').textContent='Rejouer';
-  if(s.score>=12){$('mbub').textContent='12 souris attrapées ! Quel chasseur ⛧';reward(GAMES[1])}
+  if(s.score>=12){$('mbub').textContent='12 souris attrapées ! Quel chasseur ♡';reward(GAMES[1])}
   else{$('mbub').textContent='Plus que '+(12-s.score)+' souris… Rejoue !';sfxErr()}
 }
 $('mstart').onclick=mouseGo;
@@ -2551,9 +2482,9 @@ function scrReset(){
   sg={d:false,n:0,won:false,lx:0,ly:0};
   c.globalCompositeOperation='source-over';
   for(let y=0;y<150;y+=10)for(let x=0;x<300;x+=10){c.fillStyle=((x+y)/10)%2?'#cfc9dc':'#bdb6cc';c.fillRect(x,y,10,10)}
-  c.fillStyle='#ffffff';c.font="14px 'Press Start 2P',monospace";c.textAlign='center';c.fillText('GRATTE ⛧',150,80);
+  c.fillStyle='#ffffff';c.font="14px 'Press Start 2P',monospace";c.textAlign='center';c.fillText('GRATTE ♡',150,80);
   $('sunder').textContent='« '+data.coupons[2]+' »';
-  $('sclue').style.display='none';$('sbub').textContent='Gratte avec ton doigt pour découvrir ta surprise ⛧';
+  $('sclue').style.display='none';$('sbub').textContent='Gratte avec ton doigt pour découvrir ta surprise ♡';
 }
 function scrPos(e){const cv=$('scv'),r=cv.getBoundingClientRect();return[(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]}
 $('scv').addEventListener('pointerdown',e=>{if(!sg||sg.won)return;e.preventDefault();sg.d=true;[sg.lx,sg.ly]=scrPos(e);scrScratch(e)});
@@ -2567,7 +2498,7 @@ function scrScratch(e){
 function scrCheck(){
   const c=$('scv').getContext('2d'),d=c.getImageData(0,0,300,150).data;let n=0,t=0;
   for(let i=3;i<d.length;i+=160){t++;if(d[i]===0)n++}
-  if(n/t>.5){sg.won=true;c.clearRect(0,0,300,150);$('sbub').textContent='Une surprise rien que pour toi ⛧';reward(GAMES[2])}
+  if(n/t>.5){sg.won=true;c.clearRect(0,0,300,150);$('sbub').textContent='Une surprise rien que pour toi ♡';reward(GAMES[2])}
 }
 $('snew').onclick=scrReset;
 $('sclose').onclick=()=>ovl('scrOvl').remove('on');
@@ -2620,7 +2551,7 @@ function clownShow(){
   void car.offsetWidth;car.classList.add('in');honk();buzz([60,40,60]);
   T(()=>{car.classList.remove('in');car.classList.add('park','bounce');honk();msg.textContent='Tout le monde descend !'},1900);
   CATS.forEach((c,i)=>T(()=>clownExit(i),2500+i*450));
-  T(()=>{msg.textContent='Les chatons dansent pour toi ⛧';clownMusic();rainHearts(10)},3300);
+  T(()=>{msg.textContent='Les chatons dansent pour toi ♡';clownMusic();rainHearts(10)},3300);
 }
 $('clClose').onclick=()=>{clownClear();$('clown').classList.remove('on');$('clCats').innerHTML='';if(clWas)play()};
 
@@ -2654,7 +2585,7 @@ function funeralShow(){
   amb.className='fu-amb';
   $('fuBoom').className='fu-boom';$('fuFlash').className='fu-flash';$('fuClose').classList.remove('on');$('fuSkip').style.display='';
   $('fuGrave').className='fu-grave';$('fuGrave').innerHTML='<span class="fl" style="left:-26px">'+pix(['.x.','xyx','.x.'],4,{x:'#ff8fab',y:'#ffd23f'})+'</span>'+pix(FU_TOMB,5,FU_TP)+'<span class="fl" style="right:-26px">'+pix(['.x.','xyx','.x.'],4,{x:'#ffffff',y:'#ffd23f'})+'</span>';
-  $('fuName').className='fu-name';$('fuName').textContent='Ci-gît '+name+' ⛧';
+  $('fuName').className='fu-name';$('fuName').textContent='Ci-gît '+name+' ♡';
   $('fuRain').className='fu-rain';$('fuRain').innerHTML='';
   for(let i=0;i<46;i++){const d=document.createElement('i');d.style.left=(Math.random()*100)+'%';d.style.animationDelay=(-Math.random()*.7)+'s';d.style.animationDuration=(.5+Math.random()*.4)+'s';$('fuRain').appendChild(d)}
   document.querySelectorAll('#fuStage .fu-p').forEach(e=>e.remove());
@@ -2665,7 +2596,7 @@ function funeralShow(){
     const e=document.createElement('div');e.className='fu-c '+(k<2?'L':'R');e.dataset.i=ci;cats.appendChild(e);
   });
   fuSprites('angry');
-  fuMsg('Mot de passe accepté… ⛧');
+  fuMsg('Mot de passe accepté… ♡');
   /* 1. ça tremble */
   T(()=>{main.classList.add('rumble');fuMsg('Euh… le chat ne se sent pas très bien…');sfx(t=>blip(80,t,1.3,'sawtooth',.14,220))},700);
   /* 2. BOUM */
@@ -2694,7 +2625,7 @@ function funeralShow(){
   T(()=>{o.classList.add('dusk');$('fuRain').classList.add('on');fuSprites('sad');fuMsg('Puis la tristesse les envahit…');fuSad()},16400);
   T(()=>{$('fuGrave').classList.add('up');cats.querySelector('.fu-sp').style.width='88px';$('fuName').classList.add('on');fuMsg('Enterrement de '+name)},19000);
   T(()=>fuMsg('Une minute de silence pour ce petit ronron…'),22500);
-  T(()=>{fuMsg('(Rassure-toi : c’était un effet spécial, le chat va très bien ⛧)');$('fuClose').classList.add('on');$('fuSkip').style.display='none'},27500);
+  T(()=>{fuMsg('(Rassure-toi : c’était un effet spécial, le chat va très bien ♡)');$('fuClose').classList.add('on');$('fuSkip').style.display='none'},27500);
 }
 function funeralClose(){
   fuClear();fuOn=false;$('fu').className='fu';$('fuCats').innerHTML='';$('fuMsg').style.visibility='';
@@ -2707,13 +2638,13 @@ let fails=0;
 function notifIcon(){try{const c=document.createElement('canvas');c.width=c.height=192;const x=c.getContext('2d');x.fillStyle='#E5C0F1';x.fillRect(0,0,192,192);const p=catPal(catIdx),z=12;CAT_ICON.forEach((row,j)=>[...row].forEach((ch,i)=>{if(p[ch]){x.fillStyle=p[ch];x.fillRect(24+i*z,48+j*z,z,z)}}));return c.toDataURL('image/png')}catch(e){return undefined}}
 function testNotif(T){
   T=T||'Ceci est un test ronron';
-  const fb=()=>{toast(T+' ⛧',3500);try{meow()}catch(e){}};
+  const fb=()=>{toast(T+' ♡',3500);try{meow()}catch(e){}};
   /* app native (Capacitor) : notif programmée dans l’iPhone, part même app fermée */
   const cap=window.Capacitor,LN=cap&&cap.isNativePlatform&&cap.isNativePlatform()&&cap.Plugins&&cap.Plugins.LocalNotifications;
   if(LN){
     LN.requestPermissions().then(r=>{
       if(!r||r.display!=='granted'){toast('Notifications refusées',3000);return}
-      return LN.schedule({notifications:[{id:1100+(Date.now()%1000),title:'Ronron ⛧',body:T,schedule:{at:new Date(Date.now()+10000),allowWhileIdle:true},sound:'ronron.wav'}]}).then(()=>toast('Notif dans 10 secondes… tu peux fermer l’app ⛧',3500))
+      return LN.schedule({notifications:[{id:1100+(Date.now()%1000),title:'Ronron ♡',body:T,schedule:{at:new Date(Date.now()+10000),allowWhileIdle:true},sound:'ronron.wav'}]}).then(()=>toast('Notif dans 10 secondes… tu peux fermer l’app ♡',3500))
     }).catch(fb);
     return
   }
@@ -2721,11 +2652,11 @@ function testNotif(T){
     const ic=notifIcon(),o={body:T,icon:ic,badge:ic,tag:'ronron-test'};
     try{
       if(navigator.serviceWorker&&navigator.serviceWorker.getRegistration){
-        navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ⛧',o);else{try{new Notification('Ronron ⛧',o)}catch(e){fb()}}}).catch(fb)
-      }else new Notification('Ronron ⛧',o)
+        navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ♡',o);else{try{new Notification('Ronron ♡',o)}catch(e){fb()}}}).catch(fb)
+      }else new Notification('Ronron ♡',o)
     }catch(e){fb()}
   };
-  const go=()=>{toast('Notif dans 10 secondes… ⛧',2500);setTimeout(show,10000)};
+  const go=()=>{toast('Notif dans 10 secondes… ♡',2500);setTimeout(show,10000)};
   if(!('Notification' in window)){toast('Notifications non supportées ici, test en direct :',2500);setTimeout(fb,10000);return}
   if(Notification.permission==='granted'){go()}
   else if(Notification.permission==='denied'){toast('Notifications bloquées dans les réglages',3500)}
@@ -2742,15 +2673,15 @@ function notifAsk(force){
 window.__notifAsk=notifAsk;
 function notifThanks(){
   const cap=window.Capacitor,LN=cap&&cap.isNativePlatform&&cap.isNativePlatform()&&cap.Plugins&&cap.Plugins.LocalNotifications;
-  if(LN){LN.requestPermissions().then(r=>{if(r&&r.display==='granted'){LN.schedule({notifications:[{id:1002,title:'Ronron ⛧',body:'Merci ⛧',schedule:{at:new Date(Date.now()+1000)},sound:'ronron.wav'}]});notifBoot()}}).catch(()=>{});return}
+  if(LN){LN.requestPermissions().then(r=>{if(r&&r.display==='granted'){LN.schedule({notifications:[{id:1002,title:'Ronron ♡',body:'Merci ♡',schedule:{at:new Date(Date.now()+1000)},sound:'ronron.wav'}]});notifBoot()}}).catch(()=>{});return}
   if(!('Notification' in window))return;
   const show=()=>{
-    const ic=notifIcon(),o={body:'Merci ⛧',icon:ic,badge:ic,tag:'ronron-merci'};
+    const ic=notifIcon(),o={body:'Merci ♡',icon:ic,badge:ic,tag:'ronron-merci'};
     try{
       if(navigator.serviceWorker&&navigator.serviceWorker.getRegistration){
-        navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ⛧',o);else{try{new Notification('Ronron ⛧',o)}catch(e){toast('Merci ⛧',2500)}}}).catch(()=>toast('Merci ⛧',2500))
-      }else new Notification('Ronron ⛧',o)
-    }catch(e){toast('Merci ⛧',2500)}
+        navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ♡',o);else{try{new Notification('Ronron ♡',o)}catch(e){toast('Merci ♡',2500)}}}).catch(()=>toast('Merci ♡',2500))
+      }else new Notification('Ronron ♡',o)
+    }catch(e){toast('Merci ♡',2500)}
   };
   if(Notification.permission==='granted')show();
   else if(Notification.permission==='default'){let done=false;const h=r=>{if(done)return;done=true;if(r==='granted')show()};const pr=Notification.requestPermission(h);if(pr&&pr.then)pr.then(h)}
@@ -2768,8 +2699,8 @@ function notifShow(body,tag){
   const ic=notifIcon(),o={body:body,icon:ic,badge:ic,tag:tag},fb=()=>toast(body,3500);
   try{
     if(navigator.serviceWorker&&navigator.serviceWorker.getRegistration){
-      navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ⛧',o);else{try{new Notification('Ronron ⛧',o)}catch(e){fb()}}}).catch(fb)
-    }else new Notification('Ronron ⛧',o)
+      navigator.serviceWorker.getRegistration().then(r=>{if(r)r.showNotification('Ronron ♡',o);else{try{new Notification('Ronron ♡',o)}catch(e){fb()}}}).catch(fb)
+    }else new Notification('Ronron ♡',o)
   }catch(e){fb()}
 }
 let notifTm=[];
@@ -2799,8 +2730,8 @@ function notifBoot(){
     LN.checkPermissions().then(r=>{
       if(!r||r.display!=='granted')return;
       const now=Date.now(),list=[];
-      dailyTimes().filter(t=>t>now).forEach((t,i)=>list.push({id:2000+i,title:'Ronron ⛧',body:NTRAV,schedule:{at:new Date(t),allowWhileIdle:true},sound:'ronron.wav'}));
-      if(TARGET>now)list.push({id:3001,title:'Ronron ⛧',body:NSAM,schedule:{at:new Date(TARGET),allowWhileIdle:true},sound:'ronron.wav'});
+      dailyTimes().filter(t=>t>now).forEach((t,i)=>list.push({id:2000+i,title:'Ronron ♡',body:NTRAV,schedule:{at:new Date(t),allowWhileIdle:true},sound:'ronron.wav'}));
+      if(TARGET>now)list.push({id:3001,title:'Ronron ♡',body:NSAM,schedule:{at:new Date(TARGET),allowWhileIdle:true},sound:'ronron.wav'});
       return LN.schedule({notifications:list})
     }).catch(()=>{});
     return
@@ -2809,16 +2740,16 @@ function notifBoot(){
 }
 setTimeout(notifBoot,3000);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')setTimeout(notifBoot,300)});
-function login(){const pv=$('pw').value.trim().toLowerCase();if(pv==='potager'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');window.__gd.grow();return}if(pv==='testtravail'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif(NTRAV);return}if(pv==='testsamedi'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif(NSAM);return}if(pv==='notifmsg'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');notifAsk(true);return}if(pv==='testnotif'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif();return}if(pv==='bebou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');funeralShow();return}if(pv==='popup'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');try{window.__updShow&&window.__updShow(true)}catch(e){}return}if(pv==='filou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');clownShow();return}if(pv==='léo'||pv==='leo'){$('err').textContent='Mon Léo adoré ⛧';$('pw').value='';rainHearts(16);jingle();return}if(pv==='ronron'){$('err').textContent='Ronron ronron ronron… ⛧';$('pw').value='';purr();return}if(pv==='chat'){$('err').textContent='Miaou ?';$('pw').value='';meow();return}if(pv==='miaou'){$('err').textContent='Miaou à toi aussi ⛧';$('pw').value='';meow();return}if(/^(je t['’]aime|jtm)$/.test(pv)){$('err').textContent='Moi aussi, mon ronron ⛧';$('pw').value='';burst();jingle();return}if($('pw').value===PASS){fails=0;ovl('loginOvl').remove('on');openAdmin()}else{fails++;const a=$('angry');$('pw').value='';sfxErr();buzz([80,50,80]);if(fails>2)setTimeout(()=>meow(true),350);if(fails===1){$('err').textContent='Bien tenté petit filou !'}else if(fails===2){$('err').textContent='T’es trop filou !'}else{$('err').textContent='';a.classList.remove('on');void a.offsetWidth;a.classList.add('on')}}}
+function login(){const pv=$('pw').value.trim().toLowerCase();if(pv==='ronronpot'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');try{window.__jp(7777,true)}catch(e){}return}if(pv==='potager'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');window.__gd.grow();return}if(pv==='testtravail'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif(NTRAV);return}if(pv==='testsamedi'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif(NSAM);return}if(pv==='notifmsg'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');notifAsk(true);return}if(pv==='testnotif'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');testNotif();return}if(pv==='bebou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');funeralShow();return}if(pv==='popup'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');try{window.__updShow&&window.__updShow(true)}catch(e){}return}if(pv==='filou'){$('pw').value='';$('err').textContent='';ovl('loginOvl').remove('on');clownShow();return}if(pv==='léo'||pv==='leo'){$('err').textContent='Mon Léo adoré ♡';$('pw').value='';rainHearts(16);jingle();return}if(pv==='ronron'){$('err').textContent='Ronron ronron ronron… ♡';$('pw').value='';purr();return}if(pv==='chat'){$('err').textContent='Miaou ?';$('pw').value='';meow();return}if(pv==='miaou'){$('err').textContent='Miaou à toi aussi ♡';$('pw').value='';meow();return}if(/^(je t['’]aime|jtm)$/.test(pv)){$('err').textContent='Moi aussi, mon ronron ♡';$('pw').value='';burst();jingle();return}if($('pw').value===PASS){fails=0;ovl('loginOvl').remove('on');openAdmin()}else{fails++;const a=$('angry');$('pw').value='';sfxErr();buzz([80,50,80]);if(fails>2)setTimeout(()=>meow(true),350);if(fails===1){$('err').textContent='Bien tenté petit filou !'}else if(fails===2){$('err').textContent='T’es trop filou !'}else{$('err').textContent='';a.classList.remove('on');void a.offsetWidth;a.classList.add('on')}}}
 $('loginGo').onclick=login;
 $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
 function msgRow(v){const r=document.createElement('div');r.className='row';const i=document.createElement('input');i.value=v;i.maxLength=140;const b=document.createElement('button');b.className='btn';b.textContent='✕';b.setAttribute('aria-label','Supprimer');b.onclick=()=>r.remove();r.append(i,b);$('aMsgs').appendChild(r);return i}
 function openAdmin(){buildCoupons();buildColors(data.colors);$('aWelcome').value=data.welcome;$('aLetter').value=data.letter;$('aMsgs').innerHTML='';data.msgs.forEach(msgRow);ovl('adminOvl').add('on')}
 $('addMsg').onclick=()=>msgRow('').focus();
 function buildCoupons(){$('aTicket').value=data.ticket;const b=$('aCoupons');b.innerHTML='';data.coupons.forEach((t,i)=>{const inp=document.createElement('input');inp.value=t;inp.maxLength=120;inp.style.marginBottom='6px';inp.setAttribute('aria-label','Coupon '+(i+1));b.appendChild(inp)});const nb=$('aNotes');nb.innerHTML='';data.notes.forEach((t,i)=>{const inp=document.createElement('input');inp.value=t;inp.maxLength=200;inp.style.marginBottom='6px';inp.setAttribute('aria-label','Mot '+(i+1));nb.appendChild(inp)})}
-$('testBtn').onclick=()=>{testMode=!testMode;$('testBtn').textContent='Mode test (jeux, mots, ciel plein d’étoiles) : '+(testMode?'OUI':'NON');updateSky();toast(testMode?'Mode test activé ⛧':'Test désactivé')};
+$('testBtn').onclick=()=>{testMode=!testMode;$('testBtn').textContent='Mode test (jeux, mots, ciel plein d’étoiles) : '+(testMode?'OUI':'NON');updateSky();toast(testMode?'Mode test activé ♡':'Test désactivé')};
 $('skyBtn').onclick=()=>{skyForce=skyForce===null?'day':skyForce==='day'?'night':null;$('skyBtn').textContent='Ciel : '+(skyForce===null?'automatique':skyForce==='day'?'jour (test)':'nuit (test)');updateSky()};
-$('resetRw').onclick=()=>{RW={};saveRw();updateKit();try{localStorage.removeItem('ronron-ticket')}catch(e){}try{localStorage.removeItem('ronron-seen')}catch(e){}if(CATS[catIdx].rw){setCat(0);try{localStorage.setItem('ronron-cat',0)}catch(e){}}toast('Récompenses effacées ⛧')};
+$('resetRw').onclick=()=>{RW={};saveRw();updateKit();try{localStorage.removeItem('ronron-ticket')}catch(e){}try{localStorage.removeItem('ronron-seen')}catch(e){}if(CATS[catIdx].rw){setCat(0);try{localStorage.setItem('ronron-cat',0)}catch(e){}}toast('Récompenses effacées ♡')};
 const CVARS=[['bg','Fond','#ffd9de'],['bg2','Fond (accents)','#d9f2e0'],['card','Cartes','#fffaf5'],['pink','Rose clair','#ffc6cc'],['pink2','Rouge doux','#f2707f'],['ink','Texte et traits','#7a4a5a']];
 let cdraft={};
 function applyColors(c){const s=document.documentElement.style;const dk=document.documentElement.getAttribute('data-theme')==='dark';if(dk)c={};CVARS.forEach(([k])=>{if(c[k])s.setProperty('--'+k,c[k]);else s.removeProperty('--'+k)});if(c.ink)s.setProperty('--line',c.ink);else s.removeProperty('--line')}
@@ -2858,7 +2789,7 @@ applyColors(data.colors);
   const out=g.map((r,y)=>[...r].map((ch,x)=>{if(ch!=='.')return ch;for(const[dy,dx]of[[1,0],[-1,0],[0,1],[0,-1]]){const t=(g[y+dy]||'')[x+dx];if(t&&t!=='.'&&t!=='o')return 'o'}return '.'}).join(''));
   $('avTree').innerHTML=pix(out,8,Object.assign({},P,{y:'#ffd23f',g:'#2a9d5c',d:'#1f7a46'}));
   $('avStar').innerHTML=pix(['...o...','..oyo..','ooyyyoo','.oyyyo.','.oyyyo.','.oo.oo.'],5,P)}
- const SAY=['Chut, on installe le sapin !','Plus haut… plus haut… miaou !','Attention, étoile en approche !','On a mis la boule au mauvais endroit…','Un peu de neige sur le chantier ⛧','Casque obligatoire, même pour les câlins !','Plus que quelques dodos avant Noël…'];
+ const SAY=['Chut, on installe le sapin !','Plus haut… plus haut… miaou !','Attention, étoile en approche !','On a mis la boule au mauvais endroit…','Un peu de neige sur le chantier ♡','Casque obligatoire, même pour les câlins !','Plus que quelques dodos avant Noël…'];
  let sayI=0;const say=t=>{$('avBub').textContent=t};
  setInterval(()=>{if(av.classList.contains('on')){sayI=(sayI+1)%SAY.length;say(SAY[sayI])}},3200);
  [0,1,2].forEach(i=>{$('avW'+i).onclick=()=>{try{meow()}catch(e){}sayI=(sayI+1+i)%SAY.length;say(SAY[sayI])}});
@@ -2866,11 +2797,11 @@ applyColors(data.colors);
  const AV_T=Date.UTC(2026,10,30,23,0,0),p2=n=>String(n).padStart(2,'0');
  function avTick(){let d=Math.max(0,AV_T-Date.now());const s=Math.floor(d/1000);
    $('avD').textContent=p2(Math.floor(s/86400));$('avH').textContent=p2(Math.floor(s%86400/3600));$('avM').textContent=p2(Math.floor(s%3600/60));$('avS').textContent=p2(s%60);
-   if(d===0)$('avTxt').textContent='Le sapin est installé : le calendrier arrive très vite ⛧'}
+   if(d===0)$('avTxt').textContent='Le sapin est installé : le calendrier arrive très vite ♡'}
  avTick();setInterval(avTick,1000);
  function showPage(n){const pg={accueil:$('homePage'),avent:av};
    Object.keys(pg).forEach(k=>{const on=k===n,el=pg[k];el.classList.toggle('on',on);el.setAttribute('aria-hidden',on?'false':'true');if(on)el.scrollTop=0});
-   ml.querySelectorAll('.menuitem').forEach(b=>{const c=b.dataset.page===n;b.classList.toggle('cur',c);b.textContent=(c?'⛧ ':'')+b.textContent.replace(/^⛧ /,'')})}
+   ml.querySelectorAll('.menuitem').forEach(b=>{const c=b.dataset.page===n;b.classList.toggle('cur',c);b.textContent=(c?'♡ ':'')+b.textContent.replace(/^♡ /,'')})}
  window.__showPage=showPage;
  function menu(open){ml.classList.toggle('on',open);mb.setAttribute('aria-expanded',open?'true':'false')}
  mb.onclick=e=>{e.stopPropagation();try{sfxPop()}catch(_){}menu(!ml.classList.contains('on'))};
@@ -2896,7 +2827,7 @@ applyColors(data.colors);
   ['#e63946','#ffd23f','#2a9d5c'].forEach((c,i)=>{$('hpB'+i).innerHTML=pix(BAL,6,{o:'#7a4a5a',x:c,h:'#ffffff'})+'<i></i>'});
   const sc=$('hpScene'),CF=['#ff8fab','#ffd23f','#7fb8ff','#b79cff','#b5ead7','#ffffff'];
   for(let i=0;i<22;i++){const c=document.createElement('span');c.className='hpcf';c.style.left=(Math.random()*96)+'%';c.style.background=CF[i%CF.length];c.style.animationDuration=(3+Math.random()*3)+'s';c.style.animationDelay=(-Math.random()*6)+'s';sc.appendChild(c)}
-  const SAY=['Les chatons ont sorti leurs costumes de Noël ⛧','Chut… le Père Noël passe bientôt !','Qui a croqué le biscuit du Père Noël ?','On a décoré le sapin tous ensemble !','Miaou, joyeux Noël !','Plus que quelques dodos avant Noël… ⛧'];
+  const SAY=['Les chatons ont sorti leurs costumes de Noël ♡','Chut… le Père Noël passe bientôt !','Qui a croqué le biscuit du Père Noël ?','On a décoré le sapin tous ensemble !','Miaou, joyeux Noël !','Plus que quelques dodos avant Noël… ♡'];
   let si=0;const sayH=t=>{$('hpBub').textContent=t};
   setInterval(()=>{if($('homePage').classList.contains('on')){si=(si+1)%SAY.length;sayH(SAY[si])}},3200);
   document.querySelectorAll('#hpCrowd .hpk').forEach(k=>k.onclick=()=>{try{meow();burst()}catch(e){}si=(si+2)%SAY.length;sayH(SAY[si])});
@@ -2907,10 +2838,10 @@ applyColors(data.colors);
     $('hpD').textContent=pad2(Math.floor(t/86400));$('hpH').textContent=pad2(Math.floor(t%86400/3600));$('hpM').textContent=pad2(Math.floor(t%3600/60));$('hpS').textContent=pad2(t%60);
     const n=Math.round((Date.parse(pd(new Date(XMAS)))-Date.parse(pd(new Date(now))))/86400000);
     let sub;
-    if(now>=XMAS)sub=n===0?'C’est Noël ⛧ Joyeux Noël !':'Joyeuses fêtes ⛧';
-    else sub=n===1?'Noël, c’est demain ⛧':'Noël dans '+n+' jours ⛧';
+    if(now>=XMAS)sub=n===0?'C’est Noël ♡ Joyeux Noël !':'Joyeuses fêtes ♡';
+    else sub=n===1?'Noël, c’est demain ♡':'Noël dans '+n+' jours ♡';
     if($('hpSub').textContent!==sub)$('hpSub').textContent=sub;
-    $('hpWel').textContent='Coucou '+(PR.n||'Léo')+' ⛧'}
+    $('hpWel').textContent='Coucou '+(PR.n||'Léo')+' ♡'}
   hpTick();setInterval(hpTick,1000);
   {const HD=CAT_BASE,QQ=['.ooo.','o...o','....o','...o.','..o..','.....','..o..'];
    const pk=[[4,0],[84,-.9],[164,-1.7]];
@@ -2925,7 +2856,7 @@ $('resetColors').onclick=()=>{buildColors({});applyColors(cdraft)};
 $('adminClose').onclick=()=>{applyColors(data.colors);ovl('adminOvl').remove('on')};
 function collect(){return{welcome:$('aWelcome').value.trim()||DEFAULTS.welcome,letter:$('aLetter').value,msgs:[...$('aMsgs').querySelectorAll('input')].map(i=>i.value.trim()).filter(Boolean),colors:Object.assign({},cdraft),coupons:[...$('aCoupons').querySelectorAll('input')].map((i,k)=>i.value.trim()||DEFAULTS.coupons[k]),notes:[...$('aNotes').querySelectorAll('input')].map((i,k)=>i.value.trim()||DEFAULTS.notes[k]),ticket:$('aTicket').value.trim()||DEFAULTS.ticket}}
 function toast(t,ms){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',ms||2000)}
-$('save').onclick=()=>{data=collect();render();last=-1;toast(persist()?'Enregistré ⛧':'Enregistrement impossible sur ce navigateur')};
+$('save').onclick=()=>{data=collect();render();last=-1;toast(persist()?'Enregistré ♡':'Enregistrement impossible sur ce navigateur')};
 $('exportBtn').onclick=async()=>{
   data=collect();render();persist();
   const json=JSON.stringify(data,null,2).replace(/</g,'\\u003c'),out=$('expOut');
@@ -2937,11 +2868,11 @@ $('exportBtn').onclick=async()=>{
     const html=src.replace(re,()=>'/*D_START*/'+json+'/*D_END*/');
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download='index.html';
     document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
-    out.style.display='none';toast('Fichier exporté ⛧ Remplace ton index.html en ligne par celui-ci',4500);
+    out.style.display='none';toast('Fichier exporté ♡ Remplace ton index.html en ligne par celui-ci',4500);
   }catch(e){
     out.value=json;out.style.display='block';out.select();
     try{navigator.clipboard.writeText(json)}catch(_){}
-    toast('Export direct impossible ici : le contenu est copié ci-dessous ⛧',4500);
+    toast('Export direct impossible ici : le contenu est copié ci-dessous ♡',4500);
   }
 };
 $('preview').onclick=()=>{data=collect();render();ovl('adminOvl').remove('on');gxCancel();previewing=true;opened=false;document.body.classList.remove('dawn');env.classList.remove('open','ready');
@@ -2959,7 +2890,7 @@ function setReady(){
   env.classList.remove('dday');env.classList.add('ready');
   $('hint').textContent='✨ Touche la lettre pour la découvrir ! ✨';
   const st=env.parentNode;
-  if(!$('tapMe')){const t=document.createElement('div');t.className='tapme';t.id='tapMe';t.textContent='TOUCHE LA LETTRE ⛧';st.appendChild(t)}
+  if(!$('tapMe')){const t=document.createElement('div');t.className='tapme';t.id='tapMe';t.textContent='TOUCHE LA LETTRE ♡';st.appendChild(t)}
   st.querySelectorAll('.spk').forEach(e=>e.remove());
   [[2,40],[210,30],[-6,150],[226,160],[110,2]].forEach((p,i)=>{const e=document.createElement('span');e.className='spk';e.textContent=i%2?'✦':'✧';e.style.left=p[0]+'px';e.style.top=p[1]+'px';e.style.setProperty('--d',(i*-.13)+'s');st.appendChild(e)});
   try{jingle();buzz([40,40,40])}catch(e){}
@@ -3002,7 +2933,7 @@ function gxReveal(){
   victory();buzz([90,50,90,50,260]);
   gxTo(()=>{
     g.classList.remove('charge');g.classList.add('reveal');$('gxRes').classList.add('on');
-    env.classList.add('open');document.body.classList.add('dawn');$('hint').textContent='Touche l’enveloppe pour relire ta lettre ⛧';
+    env.classList.add('open');document.body.classList.add('dawn');$('hint').textContent='Touche l’enveloppe pour relire ta lettre ♡';
     RW.c4=true;saveRw();
     burst(innerWidth/2,innerHeight*.45);rainHearts(14);
     gxA=0;gxI=setInterval(()=>{gxA^=1;g.querySelectorAll('.gx-cat').forEach(e=>{e.firstChild.innerHTML=gxSprite(+e.dataset.i,gxA)})},260);
@@ -3042,34 +2973,34 @@ const FP2={o:'#7a4a5a',p:'#ff8fab',q:'#ffb3c6',w:'#fff3e6',y:'#ffd23f',g:'#7ed99
 const xo=g=>{const h=g.length,w=g[0].length,f=(y,x)=>y>=0&&y<h&&x>=0&&x<w&&g[y][x]!=='.',o=[];for(let y=-1;y<=h;y++){let r='';for(let x=-1;x<=w;x++)r+=f(y,x)?g[y][x]:(f(y-1,x)||f(y+1,x)||f(y,x-1)||f(y,x+1)?'o':'.');o.push(r)}return o};
 Object.assign(FP2,{R:'#d62839',G:'#2a9d5c',D:'#1f7a46',O:'#ff9f1c'});
 const FUR={
- xtree:{n:'Sapin de Noël',p:200,y0:.9,g:xo(['.....y.....','....yyy....','....GGG....','...GGRGG...','..GGGGGbG..','...GGGGG...','..GGRGGGG..','.DGGGGGbGG.','GGGGGGRGGGG','....mmm....','....mmm....'])},
- xfire:{n:'Cheminée de Noël',p:220,y0:.9,g:xo(['nnnnnnnnnnnn','.ww..ww..ww.','.RR..GG..RR.','.RRR.GGG.RRR','nnnnnnnnnnnn','nkkkkkkkkkkn','nkkkykkykkkn','nkkyyykyykkn','nkRyyyRyyRkn','nnnnnnnnnnnn'])},
- xman:{n:'Bonhomme de neige',p:120,y0:.9,g:xo(['...kkk...','...kkk...','.kkkkkkk.','..wwwww..','.wwkwkww.','.wwwOwww.','..wwwww..','.RRRRRRR.','wwwwkwwww','wwwwwwwww','wwwwkwwww','.wwwwwww.'])},
- xgifts:{n:'Pile de cadeaux',p:90,y0:.9,g:xo(['....y.y....','.....y.....','..GGGwGGG..','..GGGwGGG..','RRRRRwRRRRR','wwwwwwwwwww','RRRRRwRRRRR','RRRRRwRRRRR'])},
- sofa:{n:'Canapé',p:160,y0:.9,g:['.oooooooooooo.','oqqqqqqqqqqqqo','oqppppppppppqo','oqppppppppppqo','oqqqqqqqqqqqqo','oooooooooooooo','.oo........oo.']},
- basket:{n:'Panier douillet',p:100,y0:.9,g:['..oooooooo..','.owwwwwwwwo.','oqqqqqqqqqqo','oqppppppppqo','.oooooooooo.']},
- tree:{n:'Arbre à chat',p:240,y0:.9,g:['..oooooo..','.onnnnnno.','oonnnnnnoo','.oooooooo.','....om....','....om....','..oooooo..','.onnnnnno.','.oooooooo.','....om....','....om....','oooooooooo','onnnnnnnno','oooooooooo']},
- plant:{n:'Plante',p:50,y0:.9,g:['...g.g..','.g.ggg.g','.gggdggg','..gggdg.','...ggg..','.oooooo.','.oppppo.','.oppppo.','..oppo..','..oooo..']},
- lamp:{n:'Lampe',p:70,y0:.9,g:['.oooo.','oyyyyo','oyyyyo','.oyyo.','..oo..','..om..','..om..','..om..','..om..','..om..','oppppo','oooooo']},
- table:{n:'Table basse',p:90,y0:.9,g:['oooooooooooo','onnnnnnnnnno','oooooooooooo','.om......mo.','.om......mo.','.om......mo.']},
- aqua:{n:'Aquarium',p:180,y0:.9,g:['oooooooooooo','obbbbbbbbbbo','obbbbyybbbbo','obbbyyykbbbo','obbbbyybbbbo','obbbbbbbbbbo','ogggbbbbgggo','oooooooooooo','.om......mo.']}
+ xtree:{n:'Sapin de Noël',p:300,y0:.9,g:xo(['.....y.....','....yyy....','....GGG....','...GGRGG...','..GGGGGbG..','...GGGGG...','..GGRGGGG..','.DGGGGGbGG.','GGGGGGRGGGG','....mmm....','....mmm....'])},
+ xfire:{n:'Cheminée de Noël',p:330,y0:.9,g:xo(['nnnnnnnnnnnn','.ww..ww..ww.','.RR..GG..RR.','.RRR.GGG.RRR','nnnnnnnnnnnn','nkkkkkkkkkkn','nkkkykkykkkn','nkkyyykyykkn','nkRyyyRyyRkn','nnnnnnnnnnnn'])},
+ xman:{n:'Bonhomme de neige',p:180,y0:.9,g:xo(['...kkk...','...kkk...','.kkkkkkk.','..wwwww..','.wwkwkww.','.wwwOwww.','..wwwww..','.RRRRRRR.','wwwwkwwww','wwwwwwwww','wwwwkwwww','.wwwwwww.'])},
+ xgifts:{n:'Pile de cadeaux',p:135,y0:.9,g:xo(['....y.y....','.....y.....','..GGGwGGG..','..GGGwGGG..','RRRRRwRRRRR','wwwwwwwwwww','RRRRRwRRRRR','RRRRRwRRRRR'])},
+ sofa:{n:'Canapé',p:240,y0:.9,g:['.oooooooooooo.','oqqqqqqqqqqqqo','oqppppppppppqo','oqppppppppppqo','oqqqqqqqqqqqqo','oooooooooooooo','.oo........oo.']},
+ basket:{n:'Panier douillet',p:150,y0:.9,g:['..oooooooo..','.owwwwwwwwo.','oqqqqqqqqqqo','oqppppppppqo','.oooooooooo.']},
+ tree:{n:'Arbre à chat',p:360,y0:.9,g:['..oooooo..','.onnnnnno.','oonnnnnnoo','.oooooooo.','....om....','....om....','..oooooo..','.onnnnnno.','.oooooooo.','....om....','....om....','oooooooooo','onnnnnnnno','oooooooooo']},
+ plant:{n:'Plante',p:75,y0:.9,g:['...g.g..','.g.ggg.g','.gggdggg','..gggdg.','...ggg..','.oooooo.','.oppppo.','.oppppo.','..oppo..','..oooo..']},
+ lamp:{n:'Lampe',p:105,y0:.9,g:['.oooo.','oyyyyo','oyyyyo','.oyyo.','..oo..','..om..','..om..','..om..','..om..','..om..','oppppo','oooooo']},
+ table:{n:'Table basse',p:135,y0:.9,g:['oooooooooooo','onnnnnnnnnno','oooooooooooo','.om......mo.','.om......mo.','.om......mo.']},
+ aqua:{n:'Aquarium',p:270,y0:.9,g:['oooooooooooo','obbbbbbbbbbo','obbbbyybbbbo','obbbyyykbbbo','obbbbyybbbbo','obbbbbbbbbbo','ogggbbbbgggo','oooooooooooo','.om......mo.']}
 };
 const DEC={
- xwreath:{n:'Couronne de Noël',p:35,y0:.34,g:['..GGGGG..','.GGRGGGG.','GGG...GRG','GR.....GG','GG.....GG','GGG...GGG','.GGGRGGG.','..RRGRR..','..R...R..']},
- xlights:{n:'Guirlande de Noël',p:50,y0:.16,g:['GGGGGGGGGGGGGGGG','.RR.yy.bb.RR.yy.','.RR.yy.bb.RR.yy.','..R..y..b..R..y.']},
- xflake:{n:'Poster flocon',p:40,y0:.36,g:xo(['kkkkkkkkk','kkkkwkkkk','kkwkwkwkk','kkkwwwkkk','kwwwwwwwk','kkkwwwkkk','kkwkwkwkk','kkkkwkkkk','kkkkkkkkk'])},
- frame:{n:'Cadre âme',p:30,y0:.34,g:['ooooooo','oqqqqqo','oqrqrqo','oqrrrqo','oqqrqqo','oqqqqqo','ooooooo']},
- window:{n:'Fenêtre',p:60,y0:.42,g:['ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','nnnnnnnnn']},
- clock:{n:'Horloge',p:50,y0:.3,g:['..ooo..','.owwwo.','owwkwwo','owwkkwo','owwwwwo','.owwwo.','..ooo..']},
- flags:{n:'Fanions',p:40,y0:.16,g:['oooooooooooooooo','.rr.yy.bb.pp.gg.','.rr.yy.bb.pp.gg.','..r..y..b..p..g.']},
- poster:{n:'Poster étoile',p:50,y0:.36,g:['oooooo','okkkko','okkyko','okyyko','okkyko','okkkko','oooooo']}
+ xwreath:{n:'Couronne de Noël',p:50,y0:.34,g:['..GGGGG..','.GGRGGGG.','GGG...GRG','GR.....GG','GG.....GG','GGG...GGG','.GGGRGGG.','..RRGRR..','..R...R..']},
+ xlights:{n:'Guirlande de Noël',p:75,y0:.16,g:['GGGGGGGGGGGGGGGG','.RR.yy.bb.RR.yy.','.RR.yy.bb.RR.yy.','..R..y..b..R..y.']},
+ xflake:{n:'Poster flocon',p:60,y0:.36,g:xo(['kkkkkkkkk','kkkkwkkkk','kkwkwkwkk','kkkwwwkkk','kwwwwwwwk','kkkwwwkkk','kkwkwkwkk','kkkkwkkkk','kkkkkkkkk'])},
+ frame:{n:'Cadre cœur',p:45,y0:.34,g:['ooooooo','oqqqqqo','oqrqrqo','oqrrrqo','oqqrqqo','oqqqqqo','ooooooo']},
+ window:{n:'Fenêtre',p:90,y0:.42,g:['ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','obbbobbbo','obbbobbbo','obbbobbbo','ooooooooo','nnnnnnnnn']},
+ clock:{n:'Horloge',p:75,y0:.3,g:['..ooo..','.owwwo.','owwkwwo','owwkkwo','owwwwwo','.owwwo.','..ooo..']},
+ flags:{n:'Fanions',p:60,y0:.16,g:['oooooooooooooooo','.rr.yy.bb.pp.gg.','.rr.yy.bb.pp.gg.','..r..y..b..p..g.']},
+ poster:{n:'Poster étoile',p:75,y0:.36,g:['oooooo','okkkko','okkyko','okyyko','okkyko','okkkko','oooooo']}
 };
 const RUG={
  r0:{n:'Tapis rose',p:0,a:'#ffb3c6',b:'#ff8fab'},
- r1:{n:'Tapis bleu',p:60,a:'#bde0fe',b:'#8ec5f5'},
- r2:{n:'Tapis menthe',p:70,a:'#c7f0d2',b:'#8fd9a8'},
- r3:{n:'Tapis soleil',p:80,a:'#ffe9a8',b:'#ffd23f'},
- r4:{n:'Tapis de Noël',p:90,a:'#2a9d5c',b:'#d62839'}
+ r1:{n:'Tapis bleu',p:90,a:'#bde0fe',b:'#8ec5f5'},
+ r2:{n:'Tapis menthe',p:105,a:'#c7f0d2',b:'#8fd9a8'},
+ r3:{n:'Tapis soleil',p:120,a:'#ffe9a8',b:'#ffd23f'},
+ r4:{n:'Tapis de Noël',p:135,a:'#2a9d5c',b:'#d62839'}
 };
 const CLO={
  bow:{n:'Nœud',p:30,s:'hat',x:8,y:-1,g:['rr.rr','rrorr','rr.rr']},
@@ -3124,7 +3055,7 @@ $('mzCI').innerHTML=pix(FISHG,3,FP);$('ibCI').innerHTML=pix(FISHG,3,FP);$('bqCI'
  
 /* --- La maison --- */
 const room=$('mzRoom'),rugEl=$('mzRug');
-rugEl.innerHTML='<span class="mzh">Touche pour câliner ⛧</span>';
+rugEl.innerHTML='<span class="mzh">Touche pour câliner ♡</span>';
 let mz={on:false,ed:false,cs:[],raf:0,iv:0,lt:0,drag:null,fr:0};
 function mzPos(e,p){e.style.left=(p[0]*100)+'%';e.style.top=(p[1]*100)+'%';e.style.zIndex=2+Math.round(p[1]*100)}
 function mzPlace(s){const e=s.e;e.style.left=(s.x*100)+'%';e.style.top=(s.y*100)+'%';e.style.zIndex=3+Math.round(s.y*100);e.style.transform='translate(-50%,-100%) scaleX('+s.d+')'}
@@ -3137,7 +3068,7 @@ function mzBuild(){
     const e=document.createElement('div');e.className='mzcat';
     const s={i,e,x:.12+Math.random()*.76,y:.62+Math.random()*.28,w:Math.random()*2,d:1,fast:false};s.tx=s.x;s.ty=s.y;
     e.innerHTML=dcat(i,4,0);
-    e.addEventListener('click',()=>{if(mz.ed)return;meow();const b=e.getBoundingClientRect();tapHeart(b.left+b.width/2-10,b.top);$('mzBub').textContent=CATS[i].n+' : « '+['Miaou ⛧','Prrr…','Gratouille ?','Joue avec moi !'][Math.floor(Math.random()*4)]+' »'});
+    e.addEventListener('click',()=>{if(mz.ed)return;meow();const b=e.getBoundingClientRect();tapHeart(b.left+b.width/2-10,b.top);$('mzBub').textContent=CATS[i].n+' : « '+['Miaou ♡','Prrr…','Gratouille ?','Joue avec moi !'][Math.floor(Math.random()*4)]+' »'});
     room.appendChild(e);mzPlace(s);return s});
 }
 function mzTick(t){
@@ -3164,7 +3095,7 @@ function mzTray(){
   let ids=Object.keys(ALL).filter(id=>owns(id)&&(ALL[id].k==='f'||(ALL[id].k==='d'&&!ALL[id].rug)));
   const rugs=Object.keys(RUG).filter(k=>k!=='r0'&&owns(k));if(rugs.length)rugs.unshift('r0');
   ids=ids.concat(rugs);
-  if(!ids.length){t.innerHTML='<p style="margin:0;font-size:20px">Rien à poser dans cet appartement… passe à la boutique ⛧</p>';return}
+  if(!ids.length){t.innerHTML='<p style="margin:0;font-size:20px">Rien à poser dans cet appartement… passe à la boutique ♡</p>';return}
   ids.forEach(id=>{
     const it=ALL[id],b=document.createElement('button'),on=it.rug?AP().rug===id:!!AP().pl[id];
     b.className='pick slook'+(on?' sel':'');
@@ -3181,7 +3112,7 @@ function mzTray(){
 function mzOpen(i){if(i!=null)cur=i;$('mzTitle').textContent='Chez '+CATS[cur].n;
   mz.on=true;mz.ed=false;mz.fr=0;room.classList.remove('ed');$('mzTray').style.display='none';$('mzDeco').textContent='Décorer';
   upW();mzBuild();ovl('mzOvl').add('on');
-  $('mzBub').textContent='Bienvenue chez '+CATS[cur].n+' ! Touche le sol pour lancer une pelote, ou le tapis pour câliner ⛧';
+  $('mzBub').textContent='Bienvenue chez '+CATS[cur].n+' ! Touche le sol pour lancer une pelote, ou le tapis pour câliner ♡';
   mz.lt=performance.now();cancelAnimationFrame(mz.raf);mz.raf=requestAnimationFrame(mzTick);
   clearInterval(mz.iv);mz.iv=setInterval(()=>{mz.fr^=1;mz.cs.forEach(s=>{s.e.innerHTML=dcat(s.i,4,mz.fr)})},260);
   sfxPop();
@@ -3197,7 +3128,7 @@ room.addEventListener('pointerdown',e=>{
   const b=document.createElement('div');b.className='mzball';b.innerHTML=pix(YARN,5,FP2);b.style.left=(bx*100)+'%';b.style.top=(by*100)+'%';b.style.zIndex=95;room.appendChild(b);setTimeout(()=>b.remove(),2800);
   sfx(t=>blip(700,t,.08,'triangle',.1,1000));
   mz.cs.forEach((s,k)=>{s.tx=Math.max(.06,Math.min(.94,bx+((k%3)-1)*.09));s.ty=Math.max(.6,Math.min(.93,by+(k>2?.06:0)));s.w=0;s.fast=true});
-  $('mzBub').textContent='Hop ! Une pelote ! Les chats accourent ⛧';
+  $('mzBub').textContent='Hop ! Une pelote ! Les chats accourent ♡';
 });
 room.addEventListener('pointermove',e=>{
   if(!mz.drag)return;
@@ -3209,7 +3140,7 @@ rugEl.onclick=()=>{if(mz.ed)return;sfxPop();ptOpen()};
 $('mzDeco').onclick=()=>{
   mz.ed=!mz.ed;sfxPop();room.classList.toggle('ed',mz.ed);
   $('mzTray').style.display=mz.ed?'flex':'none';$('mzDeco').textContent=mz.ed?'Terminé':'Décorer';
-  if(mz.ed){mzTray();$('mzBub').textContent='Touche un objet pour le poser ou le ranger, glisse-le pour le déplacer ⛧'}
+  if(mz.ed){mzTray();$('mzBub').textContent='Touche un objet pour le poser ou le ranger, glisse-le pour le déplacer ♡'}
 };
 $('mzShop').onclick=()=>bqOpen();
 $('mzDress').onclick=()=>{ctSel=cur;ctOpen()};
@@ -3287,28 +3218,28 @@ function badge(){const x=needs(),n=x.g+x.k+x.c;['gdBadge','gdBadge2'].forEach(id
 function plant(i,id){if(!(G.seeds[id]>0)||G.plots[i])return;const c=cr(id);G.seeds[id]--;G.plots[i]={c:id,s:now(),d:c.t*1000,end:now()+c.t*1000,w:0};qAdd('plant');save();try{sfxPop()}catch(e){}closeSheet();render()}
 function water(i){const p=G.plots[i];if(!p||p.w||now()>=p.end)return false;p.w=1;p.end-=Math.round((p.end-now())*.25);qAdd('water');save();try{sfxPop()}catch(e){}return true}
 function harvest(i){const p=G.plots[i];if(!p||now()<p.end)return;const c=cr(p.c);G.plots[i]=null;G.bag[p.c]=(G.bag[p.c]||0)+1;G.hv=(G.hv||0)+1;qAdd('harvest');
- if(Math.random()<.1){const g=c.cost*4+5;gain(g);toast('Récolte dorée ! +'+g+' croquettes ⛧',2600);try{burst();buzz([40,30,40])}catch(e){}}
+ if(Math.random()<.1){const g=c.cost*4+5;gain(g);toast('Récolte dorée ! +'+g+' croquettes ♡',2600);try{burst();buzz([40,30,40])}catch(e){}}
  else if(Math.random()<.15){G.seeds[p.c]=(G.seeds[p.c]||0)+1;toast('Graine bonus : '+c.n+' !',1800)}
  save();try{meow()}catch(e){}}
 function cook(pi,rid){const r=rc(rid);if(!r||G.pots[pi]||G.served<r.u)return;if(!Object.keys(r.i).every(k=>(G.bag[k]||0)>=r.i[k]))return;Object.keys(r.i).forEach(k=>G.bag[k]-=r.i[k]);G.pots[pi]={r:rid,end:now()+r.t*1000};qAdd('cook');save();try{sfxPop()}catch(e){}closeSheet();render()}
 function collect(pi){const p=G.pots[pi];if(!p||now()<p.end)return;G.dish[p.r]=(G.dish[p.r]||0)+1;G.pots[pi]=null;save();try{sfxPop()}catch(e){}render()}
 function serve(ci){const c=G.cust[ci];if(!c||!(G.dish[c.r]>0))return;const r=rc(c.r),was=G.cust.length>=3,before=G.served;G.dish[c.r]--;G.cust.splice(ci,1);if(was)G.lc=now();G.served++;qAdd('serve');
  const tip=Math.round(r.p*Math.random()*.25),f=G.fr[c.c]=(G.fr[c.c]||0)+1;gain(r.p+tip);
- toast(CATS[c.c].n+' adore ! +'+(r.p+tip)+' croquettes ⛧',2400);try{meow();burst();rainHearts(6)}catch(e){}
+ toast(CATS[c.c].n+' adore ! +'+(r.p+tip)+' croquettes ♡',2400);try{meow();burst();rainHearts(6)}catch(e){}
  const nr=RECS.find(x=>x.u>before&&x.u<=G.served);if(nr)setTimeout(()=>toast('Nouvelle recette : '+nr.n+' !',2600),2500);
- if(f===3||f===8||f===15){const sid=['tomate','mais','fraise'][f===3?0:f===8?1:2];G.seeds[sid]=(G.seeds[sid]||0)+2;setTimeout(()=>toast(CATS[c.c].n+' t’offre 2 graines de '+cr(sid).n+' ⛧',2600),1200)}
+ if(f===3||f===8||f===15){const sid=['tomate','mais','fraise'][f===3?0:f===8?1:2];G.seeds[sid]=(G.seeds[sid]||0)+2;setTimeout(()=>toast(CATS[c.c].n+' t’offre 2 graines de '+cr(sid).n+' ♡',2600),1200)}
  try{achU('g_garden')}catch(e){}save();render()}
 const price=c=>c.id==='radis'&&!G.free.radis?0:c.cost;
-function buy(i){const c=CROPS[i],pr=price(c);if(stockOf(i)<1||H.c<pr)return;if(pr)spend(pr);else{G.free[c.id]=1;toast('Première graine de '+c.n.toLowerCase()+' offerte ⛧',2000)}const s=slot()+'';Object.keys(G.bought).forEach(k=>{if(!k.startsWith(s))delete G.bought[k]});G.bought[s+c.id]=(G.bought[s+c.id]||0)+1;G.seeds[c.id]=(G.seeds[c.id]||0)+1;save();try{sfxPop()}catch(e){}render()}
-function basket(){if(now()<G.bn)return;G.bn=now()+BK;const co=8+Math.floor(Math.random()*13),a=CROPS[Math.floor(Math.random()*3)];G.seeds[a.id]=(G.seeds[a.id]||0)+2;gain(co);save();toast('Panier : +'+co+' croquettes et 2 graines de '+a.n+' ⛧',2800);try{burst();meow()}catch(e){}render()}
+function buy(i){const c=CROPS[i],pr=price(c);if(stockOf(i)<1||H.c<pr)return;if(pr)spend(pr);else{G.free[c.id]=1;toast('Première graine de '+c.n.toLowerCase()+' offerte ♡',2000)}const s=slot()+'';Object.keys(G.bought).forEach(k=>{if(!k.startsWith(s))delete G.bought[k]});G.bought[s+c.id]=(G.bought[s+c.id]||0)+1;G.seeds[c.id]=(G.seeds[c.id]||0)+1;save();try{sfxPop()}catch(e){}render()}
+function basket(){if(now()<G.bn)return;G.bn=now()+BK;const co=8+Math.floor(Math.random()*13),a=CROPS[Math.floor(Math.random()*3)];G.seeds[a.id]=(G.seeds[a.id]||0)+2;gain(co);save();toast('Panier : +'+co+' croquettes et 2 graines de '+a.n+' ♡',2800);try{burst();meow()}catch(e){}render()}
 function streakInfo(){const d=pd();if(G.sk.d===d)return{n:G.sk.n,claimed:true};return{n:G.sk.d===yd()?(G.sk.n%7)+1:1,claimed:false}}
-function daily(){const s=streakInfo();if(s.claimed)return;G.sk={d:pd(),n:s.n};gain(SR[s.n-1]);const b=SB[s.n];if(b)G.seeds[b[0]]=(G.seeds[b[0]]||0)+b[1];save();toast('Jour '+s.n+' : +'+SR[s.n-1]+' croquettes'+(b?' et '+b[1]+' graines de '+cr(b[0]).n:'')+' ⛧',3000);try{burst();rainHearts(8)}catch(e){}closeSheet();render()}
+function daily(){const s=streakInfo();if(s.claimed)return;G.sk={d:pd(),n:s.n};gain(SR[s.n-1]);const b=SB[s.n];if(b)G.seeds[b[0]]=(G.seeds[b[0]]||0)+b[1];save();toast('Jour '+s.n+' : +'+SR[s.n-1]+' croquettes'+(b?' et '+b[1]+' graines de '+cr(b[0]).n:'')+' ♡',3000);try{burst();rainHearts(8)}catch(e){}closeSheet();render()}
 /* ---- rendu ---- */
 let tab='g',isOpen=false;
 const gcat=(i,sz)=>pix(CAT_BASE,sz,catPal(i));
-function say(){const x=needs();if(x.g)return 'Les légumes sont prêts, viens les récolter ⛧';if(potsReady())return 'Ça sent bon dans la cuisine !';if(canServe())return 'Un client attend son plat, miaou !';if(now()>=G.bn)return 'Un panier cadeau t’attend !';
- if(G.plots.slice(0,G.np).filter(Boolean).length<G.np&&Object.values(G.seeds).some(v=>v>0))return 'Il reste de la place pour planter ⛧';
- if(G.plots.some(p=>p&&!p.w&&now()<p.end))return 'Un peu d’eau ferait du bien aux plantes…';return 'Tout pousse tranquillement… reviens bientôt ⛧'}
+function say(){const x=needs();if(x.g)return 'Les légumes sont prêts, viens les récolter ♡';if(potsReady())return 'Ça sent bon dans la cuisine !';if(canServe())return 'Un client attend son plat, miaou !';if(now()>=G.bn)return 'Un panier cadeau t’attend !';
+ if(G.plots.slice(0,G.np).filter(Boolean).length<G.np&&Object.values(G.seeds).some(v=>v>0))return 'Il reste de la place pour planter ♡';
+ if(G.plots.some(p=>p&&!p.w&&now()<p.end))return 'Un peu d’eau ferait du bien aux plantes…';return 'Tout pousse tranquillement… reviens bientôt ♡'}
 function rG(){let h='<div class="gdmas"><div class="gi">'+pix(HATG.concat(CAT_BASE.slice(3)),4,Object.assign({},catPal(catIdx),{y:'#ffd23f'}))+'</div><div class="gdsay">'+say()+'</div></div><div class="gdgrid">';
  for(let i=0;i<G.np;i++){const p=G.plots[i];
   if(!p)h+='<button class="gdp" data-a="plot" data-i="'+i+'" type="button"><span class="gdplus">+</span><small>Planter</small></button>';
@@ -3323,14 +3254,14 @@ function rG(){let h='<div class="gdmas"><div class="gi">'+pix(HATG.concat(CAT_BA
  return h}
 function rK(){let h='<div class="gdh">Marmites</div>';
  G.pots.forEach((p,i)=>{
-  if(!p)h+='<div class="gdc"><div class="gi">'+bowl('#d8cbbd',4)+'</div><div class="gt"><b>Marmite vide</b><small>Choisis une recette ⛧</small></div><button class="gdb" data-a="recipes" data-i="'+i+'" type="button">Cuisiner</button></div>';
+  if(!p)h+='<div class="gdc"><div class="gi">'+bowl('#d8cbbd',4)+'</div><div class="gt"><b>Marmite vide</b><small>Choisis une recette ♡</small></div><button class="gdb" data-a="recipes" data-i="'+i+'" type="button">Cuisiner</button></div>';
   else{const r=rc(p.r),ok=now()>=p.end;h+='<div class="gdc"><div class="gi">'+bowl(r.c,4)+'</div><div class="gt"><b>'+r.n+'</b><small>'+(ok?'C’est prêt !':'Encore <span data-end="'+p.end+'">'+fmt(p.end-now())+'</span>')+'</small></div>'+(ok?'<button class="gdb red" data-a="collect" data-i="'+i+'" type="button">Récupérer</button>':'')+'</div>'}});
  if(G.pots.length<2)h+='<div class="gdc"><div class="gi">'+bowl('#d8cbbd',4)+'</div><div class="gt"><b>2e marmite</b><small>Cuisine deux plats en même temps</small></div><button class="gdb" data-a="pot2" type="button"'+(H.c<POT2?' disabled':'')+'>'+POT2+'</button></div>';
  const ds=RECS.filter(r=>G.dish[r.id]>0);
  h+='<div class="gdh">Plats prêts</div><div class="gdbag">'+(ds.length?ds.map(r=>'<span><i>'+bowl(r.c,2)+'</i>'+r.n+' ×'+G.dish[r.id]+'</span>').join(''):'<small style="font-size:17px;opacity:.75">Aucun plat pour l’instant.</small>')+'</div>';
  custTick();h+='<div class="gdh">Les chats affamés</div>';
  if(!G.cust.length)h+='<div class="gdc"><div class="gt"><b>Personne pour l’instant</b><small>Un chat arrive dans quelques minutes…</small></div></div>';
- G.cust.forEach((c,i)=>{const r=rc(c.r),has=G.dish[c.r]>0;h+='<div class="gdc"><div class="gi">'+gcat(c.c,4)+'</div><div class="gt"><b>'+CATS[c.c].n+' <span style="font-weight:400;font-size:16px">'+'⛧'.repeat(Math.min(5,Math.floor((G.fr[c.c]||0)/3)))+'</span></b><small>Je voudrais : '+r.n+' ('+r.p+' croq.)</small></div><button class="gdb'+(has?' red':'')+'" data-a="serve" data-i="'+i+'" type="button"'+(has?'':' disabled')+'>'+(has?'Servir':'Manque')+'</button></div>'});
+ G.cust.forEach((c,i)=>{const r=rc(c.r),has=G.dish[c.r]>0;h+='<div class="gdc"><div class="gi">'+gcat(c.c,4)+'</div><div class="gt"><b>'+CATS[c.c].n+' <span style="font-weight:400;font-size:16px">'+'♡'.repeat(Math.min(5,Math.floor((G.fr[c.c]||0)/3)))+'</span></b><small>Je voudrais : '+r.n+' ('+r.p+' croq.)</small></div><button class="gdb'+(has?' red':'')+'" data-a="serve" data-i="'+i+'" type="button"'+(has?'':' disabled')+'>'+(has?'Servir':'Manque')+'</button></div>'});
  if(G.cust.length<3)h+='<p style="font-size:17px;opacity:.75;margin:0">Prochain client dans <span data-end="'+(G.lc+CMS)+'">'+fmt(G.lc+CMS-now())+'</span></p>';
  return h}
 function rS(){const nx=(slot()+1)*SLOT;let h='<div class="gdc"><div class="gt"><b>Nouvelles graines dans <span data-end="'+nx+'" data-rs="1">'+fmt(nx-now())+'</span></b><small>La boutique change toutes les 20 min, les rares ne restent pas longtemps !</small></div></div>';
@@ -3338,11 +3269,11 @@ function rS(){const nx=(slot()+1)*SLOT;let h='<div class="gdc"><div class="gt"><
  return h}
 function rC(){const s=streakInfo();let h='<div class="gdh">Cadeau du jour</div><div class="gdsk">';
  for(let d=1;d<=7;d++){const done=d<s.n||(s.claimed&&d===s.n),cur=!s.claimed&&d===s.n;h+='<div class="'+(done?'done':cur?'cur':'')+'">J'+d+'<b>'+SR[d-1]+'</b>'+(SB[d]?'+':'')+'</div>'}
- h+='</div><button class="gdb red" data-a="daily" type="button"'+(s.claimed?' disabled':'')+'>'+(s.claimed?'Déjà récupéré, reviens demain ⛧':'Récupérer le jour '+s.n)+'</button>';
+ h+='</div><button class="gdb red" data-a="daily" type="button"'+(s.claimed?' disabled':'')+'>'+(s.claimed?'Déjà récupéré, reviens demain ♡':'Récupérer le jour '+s.n)+'</button>';
  h+='<div class="gdh">Panier du jardinier</div><div class="gdc"><div class="gt"><b>Panier gratuit</b><small>'+(now()>=G.bn?'Prêt ! Croquettes et graines':'Prochain dans <span data-end="'+G.bn+'">'+fmt(G.bn-now())+'</span>')+'</small></div><button class="gdb red" data-a="basket" type="button"'+(now()>=G.bn?'':' disabled')+'>Ouvrir</button></div>';
  h+='<div class="gdh">Quêtes du jour</div>';
  quests().forEach(q=>{const p=Math.min(q.n,G.q.p[q.k]||0),cl=G.q.c[q.k];h+='<div class="gdc'+(cl?' done':'')+'"><div class="gt"><b>'+q.t+'</b><small>'+p+' / '+q.n+' · '+q.r+' croquettes</small><div class="gdbar"><i style="width:'+Math.round(p/q.n*100)+'%"></i></div></div><button class="gdb red" data-a="qc" data-c="'+q.k+'" type="button"'+(p>=q.n&&!cl?'':' disabled')+'>'+(cl?'Fait':'Récupérer')+'</button></div>'});
- h+='<p style="font-size:17px;opacity:.75;margin:6px 0 0">Les quêtes changent chaque jour. Reviens souvent : tes plantes poussent même quand tu n’es pas là ⛧</p>';return h}
+ h+='<p style="font-size:17px;opacity:.75;margin:6px 0 0">Les quêtes changent chaque jour. Reviens souvent : tes plantes poussent même quand tu n’es pas là ♡</p>';return h}
 function render(){if(!isOpen)return;const b=$('gdBody'),y=b.scrollTop;b.innerHTML={g:rG,k:rK,s:rS,c:rC}[tab]();b.scrollTop=y;
  const x=needs();document.querySelectorAll('#gdTabs button').forEach(t=>{t.classList.toggle('on',t.dataset.t===tab);t.querySelector('i').classList.toggle('on',!!({g:x.g,k:x.k,s:0,c:x.c})[t.dataset.t])});$('gdCoins').textContent=H.c;badge()}
 const sheet=h=>{$('gdSp').innerHTML=h;$('gdSheet').classList.add('on')};
@@ -3352,12 +3283,20 @@ function seedSheet(i){const l=CROPS.filter(c=>G.seeds[c.id]>0);
 function recSheet(pi){sheet('<h3>Quelle recette ?</h3>'+RECS.map(r=>{const lock=G.served<r.u,ok=!lock&&Object.keys(r.i).every(k=>(G.bag[k]||0)>=r.i[k]);
  const ing=Object.keys(r.i).map(k=>'<span style="color:'+((G.bag[k]||0)>=r.i[k]?'inherit':'#e5485c')+'">'+r.i[k]+' '+cr(k).n.toLowerCase()+'</span>').join(', ');
  return '<div class="gdc'+(lock?' done':'')+'"><div class="gi">'+bowl(lock?'#d8cbbd':r.c,3)+'</div><div class="gt"><b>'+(lock?'???':r.n)+'</b><small>'+(lock?'Sers '+r.u+' plats pour débloquer':ing+' · '+dur(r.t)+' · '+r.p+' croq.')+'</small></div>'+(lock?'':'<button class="gdb" data-a="cook" data-i="'+pi+'" data-c="'+r.id+'" type="button"'+(ok?'':' disabled')+'>Cuisiner</button>')+'</div>'}).join(''))}
-function dailySheet(){const s=streakInfo(),b=SB[s.n];sheet('<h3>Cadeau du jour ⛧</h3><p>Jour '+s.n+' de ta série : <b>+'+SR[s.n-1]+' croquettes</b>'+(b?' et '+b[1]+' graines de '+cr(b[0]).n.toLowerCase():'')+'. Reviens chaque jour pour de plus gros cadeaux !</p><button class="gdb red" data-a="daily" type="button">Récupérer</button> <button class="gdb" data-a="sx" type="button" style="background:var(--pink);box-shadow:0 3px 0 var(--line);color:var(--ink)">Plus tard</button>')}
-function introSheet(){sheet('<h3>Bienvenue au Potager ⛧</h3><p>1. Plante des graines et arrose-les.<br>2. Récolte, puis cuisine dans la marmite.<br>3. Sers les chats affamés pour gagner des croquettes !</p><p>Tout pousse en temps réel, même quand tu fermes l’appli. Reviens souvent !</p><button class="gdb red" data-a="intro" type="button">C’est parti</button>')}
+function dailySheet(){const s=streakInfo(),b=SB[s.n];sheet('<h3>Cadeau du jour ♡</h3><p>Jour '+s.n+' de ta série : <b>+'+SR[s.n-1]+' croquettes</b>'+(b?' et '+b[1]+' graines de '+cr(b[0]).n.toLowerCase():'')+'. Reviens chaque jour pour de plus gros cadeaux !</p><button class="gdb red" data-a="daily" type="button">Récupérer</button> <button class="gdb" data-a="sx" type="button" style="background:var(--pink);box-shadow:0 3px 0 var(--line);color:var(--ink)">Plus tard</button>')}
+const TUTO=[
+ {t:'Planter et arroser',ic:()=>spr(SPR1,5)+'<span style="line-height:0;align-self:center">'+pix(DROP,5,{o:'#2d5fa8',b:'#7fb8ff'})+'</span>'+spr(SPR2,5),x:'Touche une parcelle vide, choisis une graine : elle se plante. Tu as déjà 4 radis et 2 carottes ! Touche ensuite la plante pour l’arroser (une fois par plante) : ça fait gagner 25 % de temps. « Tout arroser » le fait d’un coup.'},
+ {t:'Récolter',ic:()=>cico(CROPS[0],5)+cico(CROPS[1],5)+cico(CROPS[2],5),x:'Les plantes poussent en temps réel, même quand l’appli est fermée : radis 2 min, carotte 10 min, tomate 30 min… Quand une parcelle brille et affiche « Prêt ! », touche-la. Parfois la récolte est dorée et rapporte des croquettes en plus, ou rend une graine bonus !'},
+ {t:'Cuisiner',ic:()=>bowl('#ff9db0',6)+bowl('#ff9f1c',6)+bowl('#e63946',6),x:'Va dans l’onglet Cuisine. Touche « Cuisiner », choisis une recette dont tu as les légumes (ils viennent de ton panier). La marmite cuit toute seule, tu peux partir et revenir. Touche « Récupérer » quand c’est prêt. De nouvelles recettes se débloquent quand tu sers des plats.'},
+ {t:'Servir les chats',ic:()=>gcat(0,5)+bowl('#ff9db0',5)+gcat(1,5),x:'Des chats affamés arrivent toutes les 8 minutes environ (3 maximum). Chacun demande un plat précis. Touche « Servir » quand tu l’as : ça rapporte des croquettes et un pourboire. Plus tu sers un chat, plus il t’aime, et il finit par t’offrir des graines rares.'},
+ {t:'Graines et cadeaux',ic:()=>cico(CROPS[2],5)+cico(CROPS[3],5)+cico(CROPS[5],5),x:'Dans Graines, achète de quoi planter : la boutique change toutes les 20 min et les rares partent vite. Dans Cadeaux, récupère ton cadeau du jour (plus gros chaque jour de suite), le panier gratuit toutes les 3 h et les quêtes du jour. Reviens plusieurs fois par jour !'}];
+function tuto(n,first){const d=TUTO[n],last=n===TUTO.length-1;
+ sheet('<h3>Étape '+(n+1)+' / '+TUTO.length+' · '+d.t+'</h3><div style="display:flex;justify-content:center;gap:14px;margin:6px 0 12px">'+d.ic()+'</div><p>'+d.x+'</p><div style="display:flex;justify-content:center;gap:6px;margin:0 0 10px">'+TUTO.map((_,k)=>'<i style="width:10px;height:10px;border-radius:50%;background:'+(k===n?'#e5485c':'var(--line)')+';opacity:'+(k===n?1:.4)+'"></i>').join('')+'</div><div style="display:flex;gap:8px;justify-content:center">'+(n>0?'<button class="gdb" data-a="tuto" data-i="'+(n-1)+'" data-c="'+(first?1:'')+'" type="button" style="background:var(--pink);box-shadow:0 3px 0 var(--line);color:var(--ink)">Retour</button>':'')+(last?'<button class="gdb red" data-a="intro" data-c="'+(first?1:'')+'" type="button">C’est parti !</button>':'<button class="gdb red" data-a="tuto" data-i="'+(n+1)+'" data-c="'+(first?1:'')+'" type="button">Suivant</button>')+'</div>')}
+const introSheet=()=>tuto(0,true);
 function act(a,i,c,t){
  if(a==='tab'){tab=t.dataset.t;closeSheet();try{sfxPop()}catch(e){}render();return}
- if(a==='plot'){const p=G.plots[i];if(!p)seedSheet(i);else if(now()>=p.end){harvest(i);render()}else if(!p.w){water(i);render()}else toast('Encore '+fmt(p.end-now())+' ⛧',1400);return}
- if(a==='lock'){const cost=PC[G.np-6];if(H.c<cost){toast('Il te faut '+cost+' croquettes ⛧',1800);return}spend(cost);G.np++;save();try{sfxPop()}catch(e){}render();return}
+ if(a==='plot'){const p=G.plots[i];if(!p)seedSheet(i);else if(now()>=p.end){harvest(i);render()}else if(!p.w){water(i);render()}else toast('Encore '+fmt(p.end-now())+' ♡',1400);return}
+ if(a==='lock'){const cost=PC[G.np-6];if(H.c<cost){toast('Il te faut '+cost+' croquettes ♡',1800);return}spend(cost);G.np++;save();try{sfxPop()}catch(e){}render();return}
  if(a==='sow')return plant(i,c);
  if(a==='hall'){G.plots.forEach((p,k)=>{if(p&&now()>=p.end)harvest(k)});render();return}
  if(a==='wall'){G.plots.forEach((p,k)=>{if(p&&!p.w&&now()<p.end)water(k)});render();return}
@@ -3369,22 +3308,136 @@ function act(a,i,c,t){
  if(a==='buy')return buy(i);
  if(a==='daily')return daily();
  if(a==='basket')return basket();
- if(a==='qc'){const q=QP.find(x=>x.k===c);if(!q||G.q.c[c]||(G.q.p[c]||0)<q.n)return;G.q.c[c]=1;gain(q.r);save();toast('Quête terminée ! +'+q.r+' croquettes ⛧',2200);try{burst()}catch(e){}render();return}
+ if(a==='qc'){const q=QP.find(x=>x.k===c);if(!q||G.q.c[c]||(G.q.p[c]||0)<q.n)return;G.q.c[c]=1;gain(q.r);save();toast('Quête terminée ! +'+q.r+' croquettes ♡',2200);try{burst()}catch(e){}render();return}
  if(a==='toshop'){tab='s';closeSheet();render();return}
  if(a==='sx'){closeSheet();return}
- if(a==='intro'){G.intro=1;save();closeSheet();if(dailyOk())dailySheet();return}}
+ if(a==='tuto')return tuto(i,!!c);
+ if(a==='intro'){const f=!G.intro;G.intro=1;save();closeSheet();if(f&&dailyOk())dailySheet();return}}
 function gdOpen(){isOpen=true;ovl('gdOvl').add('on');try{sfxPop()}catch(e){}tab='g';custTick();render();closeSheet();
  if(!G.intro)introSheet();else if(dailyOk())dailySheet()}
 function gdClose(){isOpen=false;ovl('gdOvl').remove('on');closeSheet();badge()}
 $('gdOvl').addEventListener('click',e=>{if(e.target===$('gdSheet')){closeSheet();return}const t=e.target.closest('[data-a]');if(!t||t.disabled)return;act(t.dataset.a,+t.dataset.i,t.dataset.c,t)});
-$('gdClose').onclick=gdClose;
+$('gdClose').onclick=gdClose;$('gdHelp').onclick=()=>{try{sfxPop()}catch(e){}tuto(0,false)};
 $('gdHome').onclick=gdOpen;
 document.querySelector('[data-act="garden"]').onclick=()=>{mnClose();gdOpen()};
 $('gdHomeIcon').innerHTML=spr(CROPS[0].g,3,{o:'#ffffff',g:'#d6ffe2',r:'#ff5d7a',h:'#ffc2cf'});
 setInterval(()=>{if(!isOpen)return;let re=false;document.querySelectorAll('#gdBody [data-end]').forEach(e=>{const r=+e.dataset.end-now();if(r<=0)re=true;else e.textContent=fmt(r)});if(re)render()},1000);
 setInterval(badge,15000);badge();
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){const n=badge();if(!isOpen&&n>0&&G.intro)toast('Ton potager t’attend ⛧ ('+n+' chose'+(n>1?'s':'')+' à faire)',3200);if(isOpen)render()}});
-window.__gd={G:()=>G,open:gdOpen,grow:()=>{const t=now();G.plots.forEach(p=>{if(p)p.end=t});G.pots.forEach(p=>{if(p)p.end=t});save();gdOpen();toast('Tout a poussé d’un coup ⛧',2200)}};
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){const n=badge();if(!isOpen&&n>0&&G.intro)toast('Ton potager t’attend ♡ ('+n+' chose'+(n>1?'s':'')+' à faire)',3200);if(isOpen)render()}});
+window.__gd={G:()=>G,open:gdOpen,CROPS:CROPS,spr:spr,grow:()=>{const t=now();G.plots.forEach(p=>{if(p)p.end=t});G.pots.forEach(p=>{if(p)p.end=t});save();gdOpen();toast('Tout a poussé d’un coup ♡',2200)}};
+}
+
+/* ---------- Casino des chatons : blackjack avec croupier chaton ---------- */
+{
+const CK='ronron-cas',SU=['♥','♦','♣','♠'],RK=['A','2','3','4','5','6','7','8','9','10','J','Q','K'],MINB=5;
+let C={n:0,w:0,best:0,pity:'',lb:10};try{Object.assign(C,JSON.parse(localStorage.getItem(CK)||'{}'))}catch(e){}
+const csave=()=>{try{localStorage.setItem(CK,JSON.stringify(C))}catch(e){}};
+const VIS=['...oooooo...','..oggggggo..','.oggggggggo.','oooooooooooo'];
+const DG=VIS.concat(CAT_BASE.slice(3).map((r,i)=>i===5?'.owwrrrrwwo.':r));
+$('casCat').innerHTML=pix(DG,4,Object.assign({},catPal(2),{g:'#2a9d5c',r:'#e63946'}));
+let shoe=[],pl=[],dl=[],bet=0,ph='bet',hole=true,busy=false,net=0,isOpen=false;
+function newShoe(){shoe=[];for(let d=0;d<4;d++)for(let s=0;s<4;s++)for(let r=0;r<13;r++)shoe.push({r,s});for(let i=shoe.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shoe[i],shoe[j]]=[shoe[j],shoe[i]]}}
+const draw=()=>{if(shoe.length<16)newShoe();return shoe.pop()};
+const val=c=>c.r===0?11:Math.min(10,c.r+1);
+function tot(h){let t=0,a=0;h.forEach(c=>{t+=val(c);if(c.r===0)a++});while(t>21&&a>0){t-=10;a--}return t}
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const say=t=>{$('casBub').textContent=t};
+const sfxc=()=>{try{sfxPop()}catch(e){}};
+const cardEl=(c,hid)=>{const e=document.createElement('div');if(hid||!c)e.className='bjc back';else{e.className='bjc '+(c.s<2?'red':'blk');e.innerHTML='<b>'+RK[c.r]+'</b><span>'+SU[c.s]+'</span>'}return e};
+const addC=(box,c,hid)=>box.appendChild(cardEl(c,hid));
+function upTot(){const pt=tot(pl);$('casPT').textContent=pl.length?'Toi : '+pt+(pl.length===2&&pt===21?' · Blackjack !':''):'';$('casDT').textContent=dl.length?'Croupier : '+(hole?val(dl[0])+' + ?':tot(dl)):''}
+function coins(){$('casCoins').textContent=H.c;$('casFt').textContent='Session : '+(net>0?'+':'')+net+' · Mains : '+C.n+' · Victoires : '+C.w+(C.best?' · Record : +'+C.best:'')}
+const setCtl=h=>{$('casCtl').innerHTML=h};
+const bt=(k,t,cls,dis,v)=>'<button class="gdb '+(cls||'')+'" data-k="'+k+'"'+(v!=null?' data-v="'+v+'"':'')+(dis?' disabled':'')+' type="button">'+t+'</button>';
+function betUI(){ph='bet';$('casMid').textContent='Mise : '+bet;
+ setCtl([5,10,25,50,100].map(v=>'<button class="caschip" data-k="chip" data-v="'+v+'" type="button"'+(bet+v>H.c?' disabled':'')+'>'+v+'</button>').join('')+'<div style="flex-basis:100%;height:0"></div>'+bt('clr','Effacer','',bet===0)+bt('deal','Distribuer','red',bet<MINB||bet>H.c));coins()}
+function actUI(){ph='play';setCtl(bt('hit','Tirer')+bt('stand','Rester','red')+(pl.length===2&&H.c>=bet?bt('dbl','Doubler ('+bet+')'):''))}
+function reveal(){if(!hole)return;hole=false;const b=$('casD');if(b.children[1])b.replaceChild(cardEl(dl[1]),b.children[1]);upTot()}
+function deal(){if(bet<MINB||bet>H.c)return;H.c-=bet;saveH();upW();C.lb=bet;csave();ph='play';busy=true;pl=[];dl=[];hole=true;$('casD').innerHTML='';$('casP').innerHTML='';setCtl('');$('casMid').textContent='Mise : '+bet;coins();say(pick(['Les jeux sont faits, miaou !','Bonne chance, petit chat !','Je distribue…']));
+ const seq=[()=>{pl.push(draw());addC($('casP'),pl[0])},()=>{dl.push(draw());addC($('casD'),dl[0])},()=>{pl.push(draw());addC($('casP'),pl[1])},()=>{dl.push(draw());addC($('casD'),null,true)}];
+ seq.forEach((f,i)=>setTimeout(()=>{f();upTot();sfxc()},300*i+100));
+ setTimeout(()=>{busy=false;const pb=pl.length===2&&tot(pl)===21,db=dl.length===2&&tot(dl)===21;if(pb||db){reveal();finish(pb&&db?'push':pb?'bj':'lose');return}say(pick(['Tu tires ou tu restes ?','Hmm… je ronronne en attendant.','Ta décision, mon chat !']));actUI()},1500)}
+function hit(){if(busy)return;busy=true;setCtl('');const c=draw();pl.push(c);addC($('casP'),c);upTot();sfxc();
+ setTimeout(()=>{busy=false;const t=tot(pl);if(t>21){reveal();finish('bust')}else if(t===21)stand();else{say(pick(['Encore une ?','Prudence, prudence…','Joli !']));actUI()}},450)}
+function stand(){if(busy&&ph==='dealer')return;ph='dealer';busy=true;setCtl('');reveal();say('Voyons ma main… ♡');
+ const step=()=>{const t=tot(dl);if(t<17)setTimeout(()=>{const c=draw();dl.push(c);addC($('casD'),c);upTot();sfxc();step()},700);else setTimeout(()=>{const p=tot(pl);finish(t>21||p>t?'win':p===t?'push':'lose')},600)};setTimeout(step,600)}
+function dbl(){if(busy||H.c<bet)return;busy=true;setCtl('');H.c-=bet;saveH();upW();bet*=2;$('casMid').textContent='Mise : '+bet;coins();const c=draw();pl.push(c);addC($('casP'),c);upTot();sfxc();say('Quitte ou double !');
+ setTimeout(()=>{busy=false;if(tot(pl)>21){reveal();finish('bust')}else stand()},700)}
+const L={bj:['BLACKJACK ! Miaouuu, tu es trop fort !','Un blackjack ! Je m’incline ♡'],win:['Bravo, tu gagnes !','Aïe, ma moustache ! Bien joué.','Tu as gagné, ronron !'],push:['Égalité, on remet ça ?','Ni gagnant ni perdant ♡'],lose:['La maison gagne, miaou !','Pas de chance… ronron de consolation ♡','Je gagne cette fois !'],bust:['Oups, tu dépasses 21 !','Trop haut, petit chat !']};
+function finish(res){ph='end';busy=false;const pay=res==='bj'?Math.floor(bet*2.5):res==='win'?bet*2:res==='push'?bet:0,gain2=pay-bet;
+ H.c+=pay;saveH();upW();net+=gain2;C.n++;const w=res==='bj'||res==='win';if(w){C.w++;C.best=Math.max(C.best,gain2);try{achU('g_cas')}catch(e){}}csave();
+ $('casMid').textContent=w?'Gagné ! +'+gain2:res==='push'?'Égalité, mise rendue':'Perdu : -'+bet;say(pick(L[res]));
+ try{if(res==='bj'){burst();rainHearts(10);jingle()}else if(w){burst();meow()}else if(res!=='push')meow(true)}catch(e){}
+ coins();setTimeout(endUI,600)}
+function endUI(){bet=Math.min(C.lb,H.c);
+ if(H.c<MINB){const d=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris'}).format(new Date());
+  if(C.pity!==d){C.pity=d;csave();H.c+=10;saveH();upW();coins();say('Plus de croquettes ? Tiens, un biscuit offert ♡');bet=Math.min(C.lb,H.c);betUI();return}
+  say('Plus de croquettes… va jardiner au Potager, je t’attends ♡');ph='end';setCtl(bt('garden','Aller au Potager','red'));return}
+ ph='end';setCtl(bt('again','Même mise ('+bet+')','red')+bt('chg','Changer la mise'))}
+$('casCtl').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b||b.disabled||busy)return;const k=b.dataset.k;
+ if(k==='chip'){bet=Math.min(H.c,bet+(+b.dataset.v));sfxc();betUI()}
+ else if(k==='clr'){bet=0;betUI()}
+ else if(k==='deal')deal();
+ else if(k==='again')deal();
+ else if(k==='chg'){bet=0;$('casD').innerHTML='';$('casP').innerHTML='';pl=[];dl=[];upTot();say('Combien tu mises ?');betUI()}
+ else if(k==='hit')hit();else if(k==='stand')stand();else if(k==='dbl')dbl();
+ else if(k==='garden'){casClose(true);try{window.__gd.open()}catch(e){}}});
+function casOpen(){isOpen=true;ovl('casOvl').add('on');try{sfxPop()}catch(e){}if(!shoe.length)newShoe();
+ if(ph==='bet'||ph==='end'){pl=[];dl=[];$('casD').innerHTML='';$('casP').innerHTML='';upTot();bet=H.c>=MINB?Math.min(C.lb||10,H.c):0;say('Bienvenue au casino ! Une petite main ?');$('casMid').textContent='Mise : '+bet;betUI()}coins();if(stab==='sl')slInit()}
+function casClose(force){if(!force&&(busy||spinning||ph==='play'||ph==='dealer')){toast('Termine ta main d’abord ♡',1600);return}isOpen=false;ovl('casOvl').remove('on')}
+$('casClose').onclick=()=>casClose();
+$('gcas').innerHTML=pix(DG,3,Object.assign({},catPal(2),{g:'#2a9d5c',r:'#e63946'}))+'<br>Casino<br>des chatons';
+$('casHomeIcon').innerHTML=pix(DG,3,Object.assign({},catPal(2),{g:'#2a9d5c',r:'#e63946',o:'#ffffff'}));$('casHome').onclick=()=>casOpen();
+$('gcas').onclick=()=>{$('menuOvl').classList.remove('on');casOpen()};
+document.querySelector('[data-act="casino"]').onclick=()=>{mnClose();casOpen()};
+/* --- machine à sous : 6 cases + jackpot --- */
+const SY=[['radis','radis',30,[0,2,8,27]],['carotte','carottes',24,[1,3,13,54]],['tomate','tomates',18,[1,5,20,80]],['fraise','fraises',12,[3,11,40,160]],['etoile','étoiles',9,[5,20,80,400]],['chat','chats',5,[10,40,200,1000]]],SYT=98;
+const symH=(k)=>{const g=window.__gd;if(k==='etoile')return pix(['...y...','...y...','yyyyyyy','.yyyyy.','..yyy..','.yy.yy.','yy...yy'],7,{y:'#ffd23f'});if(k==='chat')return pix(CAT_BASE,4,catPal(0));const c=g.CROPS.find(x=>x.id===k);return g.spr(c.g,6,c.p)};
+const pickSym=()=>{let r=Math.random()*SYT,i=0;for(;i<SY.length-1;i++){r-=SY[i][2];if(r<0)break}return SY[i][0]};
+const COIN=['..oooo..','.oyyyyo.','oyhhyyyo','oyhyyyyo','oyyyyyyo','oyyyyvyo','.oyyyvo.','..oooo..'];
+let sbet=10,spinning=false,snet=0,stab='bj',jpT=[];
+const slMsg=t=>{$('slMsg').textContent=t};
+const setCtl2=h=>{$('slCtl').innerHTML=h};
+function slUI(){const low=H.c<MINB;
+ setCtl2(low?bt('garden','Aller au Potager','red'):[5,10,25].map(v=>'<button class="caschip'+(v===sbet?' on':'')+'" data-k="sbet" data-v="'+v+'" type="button"'+(v>H.c?' disabled':'')+'>'+v+'</button>').join('')+'<div style="flex-basis:100%;height:0"></div>'+bt('spin','Tirer le levier ('+sbet+')','red',H.c<sbet));
+ $('slFt').textContent='Session : '+(snet>0?'+':'')+snet+' · Tirages : '+(C.sn||0)+(C.sbest?' · Record : +'+C.sbest:'');$('casCoins').textContent=H.c}
+function slInit(){if(!$('slWin').children.length){$('slWin').innerHTML=[0,1,2,3,4,5].map(i=>'<div class="slr" id="slR'+i+'"></div>').join('');
+  [0,1,2,3,4,5].forEach(i=>$('slR'+i).innerHTML=symH(['radis','carotte','chat','tomate','etoile','fraise'][i]));
+  $('slPay').innerHTML='<div style="justify-content:center;font-size:16px">Combien d’identiques : 3 · 4 · 5 · 6</div>'+SY.map(x=>'<div><i>'+symH(x[0]).replace(/width="(\d+)"/,'width="26"').replace(/height="(\d+)"/,'height="26"')+'</i><span>'+x[3].map(m=>m?'×'+m:'–').join(' · ')+'</span></div>').join('')+'<div style="justify-content:center;font-size:16px">3 identiques ou plus, n’importe où : ça paie !</div>'}
+ if(sbet>H.c)sbet=[25,10,5].find(v=>v<=H.c)||5;slUI()}
+function jackpot(gain,big){const o=$('jpOvl'),txt=big?'JACKPOT !!!':'GROS GAIN !';jpT.forEach(t=>{clearTimeout(t);clearInterval(t)});jpT=[];
+ $('jpCat').innerHTML=pix(DG,big?9:7,Object.assign({},catPal(2),{g:'#2a9d5c',r:'#e63946'}));
+ $('jptxt'.replace('jptxt','jpTxt')).innerHTML=[...txt].map((ch,i)=>'<span style="animation-delay:'+(i*-.08)+'s">'+(ch===' '?'&nbsp;':ch)+'</span>').join('');
+ const cb=$('jpCoins');cb.innerHTML='';const coin=pix(COIN,5,{o:'#a87608',y:'#ffd23f',h:'#fff3a8',v:'#e0a21a'});
+ const rain=n=>{for(let k=0;k<n;k++){const e=document.createElement('div');e.className='jpc';e.innerHTML=coin;e.style.left=(Math.random()*94)+'%';e.style.animationDuration=(1.6+Math.random()*1.8)+'s';e.style.animationDelay=(Math.random()*1.2)+'s';cb.appendChild(e);setTimeout(()=>e.remove(),4600)}};
+ rain(big?44:22);o.classList.add('on');jpT.push(setInterval(()=>rain(big?10:5),700));const t0=Date.now(),dur=big?2600:1600,am=$('jpAmt');am.textContent='0';
+ const iv=setInterval(()=>{const f=Math.min(1,(Date.now()-t0)/dur);am.textContent=Math.round(gain*f);if(f>=1)clearInterval(iv)},50);jpT.push(iv);
+ const fx=()=>{try{jingle();burst();rainHearts(big?12:6)}catch(e){}};fx();[500,1100,1700].forEach(d=>jpT.push(setTimeout(fx,d)));
+ if(big){[1500,3000].forEach(d=>jpT.push(setTimeout(()=>rain(30),d)))}
+ try{buzz([80,40,80,40,200])}catch(e){}
+ const closeAt=Date.now()+900;o.onclick=()=>{if(Date.now()<closeAt)return;o.classList.remove('on');jpT.forEach(t=>{clearTimeout(t);clearInterval(t)});jpT=[]};
+ jpT.push(setTimeout(()=>{o.classList.remove('on');jpT.forEach(t=>{clearTimeout(t);clearInterval(t)});jpT=[]},big?9000:5000))}
+window.__jp=jackpot;
+function spin(){if(spinning||H.c<sbet)return;H.c-=sbet;saveH();upW();$('casCoins').textContent=H.c;spinning=true;setCtl2('');slMsg('…');
+ const res=[0,1,2,3,4,5].map(pickSym),iv=[];
+ res.forEach((_,i)=>{const r=$('slR'+i);r.classList.remove('win');r.classList.add('spin');iv[i]=setInterval(()=>{r.innerHTML=symH(SY[Math.floor(Math.random()*SY.length)][0])},90);
+  setTimeout(()=>{clearInterval(iv[i]);r.classList.remove('spin');r.innerHTML=symH(res[i]);sfxc()},600+i*380)});
+ setTimeout(()=>{spinning=false;let mult=0,best=null;const wins=[];
+  SY.forEach(y=>{const c=res.filter(k=>k===y[0]).length;if(c>=3){const m=y[3][c-3];mult+=m;wins.push(y[0]);if(m>0&&(!best||m>best.m))best={m,c,l:y[1]}}});
+  const pay=sbet*mult,g=pay-sbet;H.c+=pay;saveH();upW();snet+=g;C.sn=(C.sn||0)+1;if(pay>0)C.sbest=Math.max(C.sbest||0,g);csave();
+  res.forEach((k,i)=>{if(wins.includes(k))$('slR'+i).classList.add('win')});
+  if(wins.length&&pay>0){slMsg(best?best.c+' '+best.l+' ! '+(g>=0?'+':'')+g:'Gain : '+pay);try{achU('g_slot')}catch(e){}
+   if(mult>=200)jackpot(g,true);else if(mult>=40)jackpot(g,false);else{try{burst();meow()}catch(e){}}}
+  else if(wins.length){slMsg('Mise rendue… presque !');try{meow()}catch(e){}}
+  else{slMsg(['Presque… miaou !','Perdu, ronron de consolation ♡','Essaie encore !'][Math.floor(Math.random()*3)]);try{meow(true)}catch(e){}}
+  slUI()},600+5*380+300)}
+$('slCtl').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b||b.disabled||spinning)return;const k=b.dataset.k;
+ if(k==='sbet'){sbet=+b.dataset.v;sfxc();slUI()}else if(k==='spin')spin();else if(k==='garden'){casClose(true);try{window.__gd.open()}catch(e){}}});
+function casTab(t){if(spinning||busy||ph==='play'||ph==='dealer'){toast('Termine d’abord ♡',1400);return}stab=t;$('casBJ').style.display=t==='bj'?'':'none';$('casSL').style.display=t==='sl'?'':'none';
+ document.querySelectorAll('.castabs .gdb').forEach(b=>{const on=b.dataset.t===t;b.classList.toggle('red',on);b.style.cssText=on?'':'background:var(--pink);box-shadow:0 3px 0 var(--line);color:var(--ink)'});
+ if(t==='sl')slInit();else coins();sfxc()}
+document.querySelectorAll('.castabs .gdb').forEach(b=>b.onclick=()=>casTab(b.dataset.t));
+
 }
 
 document.querySelector('[data-act="cat"]').onclick=()=>{mnClose();$('catBtn').click()};
@@ -3404,7 +3457,7 @@ function ibBuild(){
       w.onclick=()=>{sfxPop();mzOpen(i)};
     }else{
       w.innerHTML='<span style="line-height:0">'+pix(LOCK,4,GP)+'</span><small>???</small>';
-      w.onclick=()=>{sfxErr();buzz([60]);toast('Cet appartement attend un nouveau chat ⛧')};
+      w.onclick=()=>{sfxErr();buzz([60]);toast('Cet appartement attend un nouveau chat ♡')};
     }
     g.appendChild(w)});
 }
@@ -3444,9 +3497,9 @@ function bqBuild(){
 function bqBuy(id){
   const it=ALL[id],pa=isB(id);
   if(owns(id,bqA))return;
-  if(H.c<it.p){sfxErr();buzz([60]);toast('Il te manque '+(it.p-H.c)+' croquettes… va servir au Café des chatons ⛧',3000);return}
+  if(H.c<it.p){sfxErr();buzz([60]);toast('Il te manque '+(it.p-H.c)+' croquettes… va servir au Café des chatons ♡',3000);return}
   H.c-=it.p;if(pa)grant(id,bqA);else H.own[id]=1;if(it.rug)AP(bqA).rug=id;saveH();upW();jingle();buzz([40,30,40]);
-  toast(it.k==='c'?'Acheté ! Essaie-le à la cabine ⛧':it.rug?'Nouveau tapis posé chez '+CATS[bqA].n+' ⛧':'Acheté pour '+CATS[bqA].n+' ! Pose-le dans son appartement ⛧',2500);bqBuild();
+  toast(it.k==='c'?'Acheté ! Essaie-le à la cabine ♡':it.rug?'Nouveau tapis posé chez '+CATS[bqA].n+' ♡':'Acheté pour '+CATS[bqA].n+' ! Pose-le dans son appartement ♡',2500);bqBuild();
 }
 $('bqEarn').onclick=()=>{ovl('bqOvl').remove('on');cfOpen()};
 $('bqClose').onclick=()=>{ovl('bqOvl').remove('on');mzBack()};
@@ -3471,11 +3524,11 @@ function ctBuild(){
       b.innerHTML=(id?pix(CLO[id].g,2,FP2):'')+'<br>'+(id?CLO[id].n:'Rien');
       b.onclick=()=>{
         H.fit[ctSel]=H.fit[ctSel]||{};H.fit[ctSel][a[0]]=id;saveH();sfxPop();
-        $('ctBub').textContent=id?['Miaou, quel style !','Je me sens tout beau ⛧','Prrr… j’adore !'][Math.floor(Math.random()*3)]:'Retour au naturel ⛧';
+        $('ctBub').textContent=id?['Miaou, quel style !','Je me sens tout beau ♡','Prrr… j’adore !'][Math.floor(Math.random()*3)]:'Retour au naturel ♡';
         if(id)jingle();ctBuild()};
       row.appendChild(b)});
     sl.append(lab,row)});
-  if(!any&&!$('ctBub').textContent)$('ctBub').textContent='Tu n’as pas encore de vêtements… file à la boutique ⛧';
+  if(!any&&!$('ctBub').textContent)$('ctBub').textContent='Tu n’as pas encore de vêtements… file à la boutique ♡';
 }
 $('ctClose').onclick=()=>{ovl('ctOvl').remove('on');mzBack()};
  
@@ -3486,7 +3539,7 @@ function ptOpen(){
     const d=document.createElement('div');d.className='ptc';
     d.innerHTML='<div class="ptp">'+dcat(i,6,0)+'</div><div class="mlv"><i></i></div><small>'+CATS[i].n+'</small>';
     d._v=0;d._a=0;d._pt=0;a.appendChild(d)});
-  $('ptBub').textContent='Glisse ton doigt sur les chats pour les caresser ⛧ Chaque chat comblé t’offre 1 croquette.';
+  $('ptBub').textContent='Glisse ton doigt sur les chats pour les caresser ♡ Chaque chat comblé t’offre 1 croquette.';
   ovl('ptOvl').add('on');
 }
 let ptD=null;
@@ -3496,7 +3549,7 @@ function ptStroke(c,d,e){
   c.classList.add('rub');clearTimeout(c._t);c._t=setTimeout(()=>c.classList.remove('rub'),250);
   if(c._a>=26){
     c._a=0;c._v+=7;tapHeart(e.clientX-10,e.clientY-16);typeBlip();buzz(10);
-    if(c._v>=100){c._v=0;H.c++;H.tot=(H.tot||0)+1;saveH();upW();achCheck();toast('+1 croquette ⛧ (tu en as '+H.c+')',1800);jingle();$('ptBub').textContent='Ce chat est comblé ! Prrrr ⛧'}
+    if(c._v>=100){c._v=0;H.c++;H.tot=(H.tot||0)+1;saveH();upW();achCheck();toast('+1 croquette ♡ (tu en as '+H.c+')',1800);jingle();$('ptBub').textContent='Ce chat est comblé ! Prrrr ♡'}
     c.querySelector('.mlv i').style.width=Math.min(100,c._v)+'%';
   }
 }
@@ -3517,7 +3570,7 @@ function cfOpen(){ovl('cfOvl').add('on');cfReset();sfxPop()}
 function cfReset(){
   cfStop();cf={run:false,t:30,e:0,s:0,cm:0,cur:null,pat:0,mx:4,iv:0,to:0};
   $('cfScore').textContent='0';$('cfTime').textContent='30';const k0=$('cfK');k0.className='cfk';k0.innerHTML=dcat(un()[0],7,0);$('cfB').style.visibility='hidden';
-  $('cfBub').textContent='Appuie sur « Jouer » : les chatons arrivent au comptoir ! Touche ce qu’ils demandent ⛧';
+  $('cfBub').textContent='Appuie sur « Jouer » : les chatons arrivent au comptoir ! Touche ce qu’ils demandent ♡';
   $('cfStart').textContent='Jouer';$('cfStart').disabled=false;
 }
 function cfGo(){cfReset();cf.run=true;$('cfStart').disabled=true;$('cfBub').textContent='Vite, ils ont faim !';cfNext();cf.iv=setInterval(cfTick,100)}
@@ -3544,7 +3597,7 @@ function cfPick(k){
     const g=2+Math.min(3,Math.floor(cf.cm/3))+(cf.pat>cf.mx*.6?1:0);
     cf.cm++;cf.e+=g;cf.s++;$('cfScore').textContent=cf.e;
     const r=$('cfK').getBoundingClientRect();tapHeart(r.left+r.width/2-10,r.top-6);jingle();buzz(15);
-    $('cfBub').textContent=['Miam ⛧ +'+g,'Merci ! +'+g,'Prrr… délicieux ! +'+g][Math.floor(Math.random()*3)]+(cf.cm>=3?'  (série x'+cf.cm+')':'');
+    $('cfBub').textContent=['Miam ♡ +'+g,'Merci ! +'+g,'Prrr… délicieux ! +'+g][Math.floor(Math.random()*3)]+(cf.cm>=3?'  (série x'+cf.cm+')':'');
     cf.cur=null;$('cfB').style.visibility='hidden';$('cfK').className='cfk out';cf.to=setTimeout(cfNext,650);
   }else{
     cf.cm=0;cf.pat-=1;sfxErr();buzz(40);$('cfBub').textContent='Pas ça ! Je voulais autre chose…';
@@ -3554,7 +3607,7 @@ function cfPick(k){
 function cfEnd(){
   const e=cf.e;cfStop();H.c+=e;H.tot=(H.tot||0)+e;saveH();upW();achCheck();
   $('cfB').style.visibility='hidden';$('cfStart').disabled=false;$('cfStart').textContent='Rejouer';
-  $('cfBub').textContent=e>0?'Service terminé ! +'+e+' croquettes ⛧ (tu en as '+H.c+')':'Personne n’a été servi… réessaie ⛧';
+  $('cfBub').textContent=e>0?'Service terminé ! +'+e+' croquettes ♡ (tu en as '+H.c+')':'Personne n’a été servi… réessaie ♡';
   if(e>=15){achU('g_cafe');victory();rainHearts(10);buzz([80,40,80,40,200])}else sfxPop();
 }
 CIT.forEach((it,k)=>{
@@ -3575,7 +3628,7 @@ function skipBtn(){
 }
 function skipToggle(){
   const on=!skipOn();try{localStorage.setItem(SKK,on?'1':'0')}catch(e){}
-  $('pw').value='';$('err').textContent=on?'Code SKIP activé : le bouton Skip apparaît au chargement ⛧':'Code SKIP désactivé ⛧';
+  $('pw').value='';$('err').textContent=on?'Code SKIP activé : le bouton Skip apparaît au chargement ♡':'Code SKIP désactivé ♡';
   jingle();rainHearts(8);
 }
 const isSkip=()=>$('pw').value.trim().toLowerCase()==='skip';
@@ -3585,7 +3638,7 @@ if(skipOn())skipBtn();
 
 /* --- Pop-up de mise à jour : un chat court vers nous, tombe, lâche une lettre qui s'écrase sur l'écran et s'ouvre --- */
 const UPD_V='1.0',UPD_K='ronron-update-seen';/* change UPD_V à chaque mise à jour pour ré-afficher le pop-up */
-const UPD=[['big','BIENVENUE DANS LA VERSION 1.0 !'],['hot','C’EST LA FÊTE DU JOUR-J !'],['hot','LE MENU DÉROULANT DÉBARQUE !'],['','Tu y retrouveras les mini-jeux, ton carnet et la nouvelle résidence des ronrons !'],['hot','ET OUI, LES RONRONS ONT DÉMÉNAGÉ ! AVEC LEURS MEUBLES…'],['','Mais y aura-t-il assez de meubles pour tous tes ronrons ?'],['hot','ET TON PROFIL EST ENFIN LÀ !'],['','Choisis ton prénom, ta photo de chat et la couleur du site, puis retrouve tes stats : câlins envoyés et croquettes !'],['','À toi de découvrir le reste des nouveautés du jour-J !'],['big','JE T’AIME ⛧']];
+const UPD=[['big','BIENVENUE DANS LA VERSION 1.0 !'],['hot','C’EST LA FÊTE DU JOUR-J !'],['hot','LE MENU DÉROULANT DÉBARQUE !'],['','Tu y retrouveras les mini-jeux, ton carnet et la nouvelle résidence des ronrons !'],['hot','ET OUI, LES RONRONS ONT DÉMÉNAGÉ ! AVEC LEURS MEUBLES…'],['','Mais y aura-t-il assez de meubles pour tous tes ronrons ?'],['hot','ET TON PROFIL EST ENFIN LÀ !'],['','Choisis ton prénom, ta photo de chat et la couleur du site, puis retrouve tes stats : câlins envoyés et croquettes !'],['','À toi de découvrir le reste des nouveautés du jour-J !'],['big','JE T’AIME ♡']];
 const UPD_STAR=['..x..','..x..','xxxxx','.xxx.','.x.x.'];
 const UPD_PAPER=['oooooooooo','opwwwwwwpo','owpwwwwpwo','owwpwwpwwo','owwwppwwwo','owwwxxwwwo','owwwwwwwwo','oooooooooo'];
 let updTm=[],updOn=false,updTyping=false,updWas=false,updIntro=false,updLp=0,updN=0,updWk=0,updTr=0,updG=null,updCh=[],updCi=0,updNs=0;
@@ -3750,7 +3803,7 @@ function updShow(force){
 }
 $('updX').onclick=()=>{sfxPop();updClose()};
 $('updGo').onclick=()=>{updClose(true);$('profBtn').click()};
-$('updHide').onclick=()=>{try{localStorage.setItem(UPD_K,UPD_V)}catch(e){}sfxPop();updClose();toast('C’est noté, à la prochaine mise à jour ⛧',2200)};
+$('updHide').onclick=()=>{try{localStorage.setItem(UPD_K,UPD_V)}catch(e){}sfxPop();updClose();toast('C’est noté, à la prochaine mise à jour ♡',2200)};
 $('updBody').addEventListener('pointerdown',()=>{if(updTyping)updFinish()});
 window.__updShow=updShow;
 /* ---------- Succès ---------- */
@@ -3772,10 +3825,12 @@ const ACH=[
     {id:'g_mem',g:'j',t:'Memory des ronrons',d:'Gagne une partie de Memory.'},
     {id:'g_feed',g:'j',t:'Nourris le chat',d:'Remplis la gamelle comme il faut.'},
     {id:'g_spa',g:'j',t:'Spa des ronrons',d:'Termine tous les soins du spa.'},
-    {id:'g_catch',g:'j',t:'Attrape les âmes',d:'Attrape 15 âmes.'},
+    {id:'g_catch',g:'j',t:'Attrape les cœurs',d:'Attrape 15 cœurs.'},
     {id:'g_mouse',g:'j',t:'Chasse à la souris',d:'Attrape 12 souris.'},
     {id:'g_scratch',g:'j',t:'Carte à gratter',d:'Gratte la carte pour la révéler.'},
     {id:'g_cafe',g:'j',t:'Café des chatons',d:'Gagne 15 croquettes ou plus pendant un service.'},
+    {id:'g_slot',g:'j',t:'Machine à sous',d:'Gagne un gain à la machine à sous (3 symboles identiques ou plus).'},
+    {id:'g_cas',g:'j',t:'Casino des chatons',d:'Gagne une main de blackjack contre le croupier.'},
     {id:'g_garden',g:'j',t:'Potager des ronrons',d:'Sers ton premier plat à un chat du potager.'}
   ]);
 const ACHM={};ACH.forEach(a=>{ACHM[a.id]=a});
@@ -3798,7 +3853,7 @@ function achCheck(){ACH.forEach(a=>{if(a.ok&&!AS[a.id]&&a.ok())achU(a.id)})}
 /* au lancement : rattrape les succès déjà remplis (un seul message s'il y en a beaucoup) */
 function achInit(){
   const pend=ACH.filter(a=>a.ok&&!AS[a.id]&&a.ok());
-  if(pend.length>2){pend.forEach(a=>{AS[a.id]=Date.now()});achSave();try{profAchUpd()}catch(e){}achQ.push({t:pend.length+' succès débloqués !',d:'Retrouve-les dans ton profil ⛧'});achNext()}
+  if(pend.length>2){pend.forEach(a=>{AS[a.id]=Date.now()});achSave();try{profAchUpd()}catch(e){}achQ.push({t:pend.length+' succès débloqués !',d:'Retrouve-les dans ton profil ♡'});achNext()}
   else pend.forEach(a=>achU(a.id));
 }
 function achSpark(bn){
@@ -3835,7 +3890,7 @@ function achBuild(){
       r.innerHTML='<span class="achri">'+pix(TROPHY,3,u?TPAL:TPALX)+'</span><span class="achtxt"><b></b><small></small></span><span class="achpg"></span>';
       r.querySelector('b').textContent=a.t;r.querySelector('small').textContent=a.d;
       const p=a.pr?a.pr():null;
-      r.querySelector('.achpg').textContent=u?'⛧':(p?Math.min(p[0],p[1])+'/'+p[1]:'');
+      r.querySelector('.achpg').textContent=u?'♡':(p?Math.min(p[0],p[1])+'/'+p[1]:'');
       L.appendChild(r)})});
   $('achCount').textContent=n+' / '+ACH.length+' succès';
   $('achBarI').style.width=Math.round(n/ACH.length*100)+'%';
@@ -3843,74 +3898,6 @@ function achBuild(){
 $('profAch').onclick=()=>{sfxPop();achBuild();ovl('achOvl').add('on')};
 $('achClose').onclick=()=>{sfxPop();ovl('achOvl').remove('on');try{profAchUpd()}catch(e){}};
 profAchUpd();
-
-/* ===== NOËL HORRIFIQUE : couche ajoutée ===== */
-try{(function(){
-const D=document,Q=s=>D.querySelector(s),R=a=>a[Math.random()*a.length|0];
-D.documentElement.setAttribute('data-theme','dark');
-const tb=D.getElementById('themeBtn');if(tb)tb.style.display='none';
-D.title='Les retrouvailles des ronrons… (plus de survivants)';
-const tc=Q('meta[name=theme-color]');if(tc)tc.content='#1a0000';
-const L=D.createElement('div');L.id='hz';
-let h='<div class="hz-vig"></div><div class="hz-fl"></div><div class="hz-band"></div>';
-for(let i=0;i<16;i++)h+='<i class="hz-dr" style="left:'+(i*6.2+Math.random()*3).toFixed(1)+'%;width:'+(6+Math.random()*10|0)+'px;--h:'+(40+Math.random()*150|0)+'px;animation-delay:'+(-Math.random()*9).toFixed(1)+'s;animation-duration:'+(7+Math.random()*6).toFixed(1)+'s"></i>';
-for(let i=0;i<7;i++)h+='<u class="hz-sp" style="left:'+(Math.random()*90).toFixed(0)+'%;top:'+(18+Math.random()*70).toFixed(0)+'%;--s:'+(50+Math.random()*90|0)+'px;--r:'+(Math.random()*360|0)+'deg"></u>';
-L.innerHTML=h;D.body.appendChild(L);
-/* textes */
-const S={hpDay:'Joyeux Noël… ☠',hpSub:'Noël approche. Ils ne l’auront pas vu venir.',avBub:'AU FEU ! Le sapin brûle !',avTxt:'Mes petits chats de chantier ne répondent plus…'};
-const HP=['Les chatons… ne bougent plus.','Chut. Tu entends ? Plus aucun ronron.','Le père Noël est passé. Il n’a laissé que du sang.','Ne regarde pas sous le sapin.','Léo… ils sont tous morts…'];
-function txt(){for(const k in S){const e=D.getElementById(k);if(e&&e.textContent!==S[k])e.textContent=S[k]}
-let e=Q('#ibOvl h2');if(e)e.textContent='Résidence ronron (ruines)';e=Q('#cfOvl h2');if(e)e.textContent='Le Café des Chatons (bagarre générale)';e=Q('#avPage .target');if(e)e.textContent='Inauguration du sapin le 1er décembre (s’il en reste un)';
-try{master&&master.gain.setValueAtTime(0,master.context.currentTime)}catch(x){}}
-try{play=function(){}}catch(x){}
-txt();setInterval(txt,400);
-setInterval(()=>{const b=D.getElementById('hpBub');if(b)b.textContent=R(HP)},4000);
-/* audio */
-let A=null,G=null,on=true;
-function nz(d,t0,fa,fb,v){const n=A.createBufferSource(),b=A.createBuffer(1,A.sampleRate*d|0,A.sampleRate),x=b.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=(Math.random()*2-1)*Math.pow(1-i/x.length,2);n.buffer=b;const f=A.createBiquadFilter();f.type='lowpass';f.frequency.setValueAtTime(fa,t0);f.frequency.exponentialRampToValueAtTime(fb,t0+d);const g=A.createGain();g.gain.value=v;n.connect(f);f.connect(g);g.connect(G);n.start(t0)}
-function tone(f,f2,t,d,type,v,bp){const o=A.createOscillator(),g=A.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+d*.15);g.gain.exponentialRampToValueAtTime(.0005,t+d);let n=o;if(bp){const q=A.createBiquadFilter();q.type='bandpass';q.frequency.value=bp;q.Q.value=3;o.connect(q);n=q}n.connect(g);g.connect(G);o.start(t);o.stop(t+d+.05)}
-function boom(){if(!A||!on)return;const t=A.currentTime;nz(1.6,t,3000,80,1);tone(90,25,t,1.2,'sine',.9)}
-function screech(){if(!A||!on)return;const t=A.currentTime;tone(700,1900,t,.7,'sawtooth',.06,1200);tone(720,1500,t+.05,.7,'sawtooth',.04,1500)}
-function catFight(){if(!A||!on)return;const t=A.currentTime;for(let i=0;i<4;i++){const f=500+Math.random()*500;tone(f,f*2.6,t+i*.22,.3,'sawtooth',.07,1400);tone(f*1.1,f*.6,t+i*.22+.1,.25,'square',.03,900)}nz(.4,t,6000,600,.25)}
-function startA(){if(A){if(A.state==='suspended')A.resume();return}
-try{const C=window.AudioContext||window.webkitAudioContext;A=new C();G=A.createGain();G.gain.value=on?.55:0;G.connect(A.destination);
-[[55,'sawtooth'],[58.3,'sawtooth'],[110.5,'triangle']].forEach(a=>{const o=A.createOscillator(),g=A.createGain(),lp=A.createBiquadFilter();o.type=a[1];o.frequency.value=a[0];lp.type='lowpass';lp.frequency.value=240;g.gain.value=.15;o.connect(lp);lp.connect(g);g.connect(G);o.start()});
-[466,659].forEach(f=>{const o=A.createOscillator(),g=A.createGain(),l=A.createOscillator(),lg=A.createGain();o.type='sine';o.frequency.value=f;g.gain.value=.012;l.frequency.value=4+Math.random()*3;lg.gain.value=.012;l.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(G);o.start();l.start()});
-const beat=()=>{if(on){const t=A.currentTime;tone(70,32,t,.25,'sine',.5);tone(65,30,t+.24,.25,'sine',.35)}setTimeout(beat,1250)};beat();
-const sc=()=>{screech();setTimeout(sc,7000+Math.random()*9000)};setTimeout(sc,5000);
-const N=[4,4,4,4,4,4,4,7,0,2,4,5,5,5,5,5,4,4,4,4,2,2,4,2,7];let i=0;
-const mb=()=>{if(on&&Math.random()>.14){const t=A.currentTime,m=64-12+N[i%N.length],f=440*Math.pow(2,(m-69)/12)*Math.pow(2,(-Math.random()*70)/1200);const lp=A.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1800;lp.connect(G);[[1,.12],[2.76,.04]].forEach(p=>{const o=A.createOscillator(),g=A.createGain();o.type='sine';o.frequency.value=f*p[0];g.gain.setValueAtTime(p[1],t);g.gain.exponentialRampToValueAtTime(.0005,t+1.6);o.connect(g);g.connect(lp);o.start(t);o.stop(t+1.7)})}i++;setTimeout(mb,i%12===0?1800:560)};mb();
-}catch(e){}}
-['pointerdown','touchend','click','keydown'].forEach(ev=>D.addEventListener(ev,startA,{passive:true}));
-D.addEventListener('visibilitychange',()=>{if(!A)return;D.hidden?A.suspend():A.resume()});
-const pp=D.getElementById('pp');
-if(pp)pp.addEventListener('click',e=>{e.stopImmediatePropagation();e.preventDefault();on=!on;if(G)G.gain.value=on?.55:0;pp.textContent=on?'❚❚':'▶'},true);
-/* choix du chat : le chat cliqué explose, les autres boutons disparaissent */
-D.addEventListener('click',e=>{const c=e.target.closest&&e.target.closest('.cats .pcard');if(!c)return;const box=c.parentNode;
-setTimeout(()=>{const s=box.querySelector('.pcard.sel');if(!s)return;box.querySelectorAll('.pcard').forEach(x=>{if(x!==s)x.remove()});s.classList.add('hz-done');
-let g='<b class="hz-bm">💥</b>';for(let i=0;i<16;i++){const a=Math.random()*6.28,d=50+Math.random()*70;g+='<i class="hz-gib" style="--x:'+(Math.cos(a)*d|0)+'px;--y:'+(Math.sin(a)*d|0)+'px;animation-delay:'+(Math.random()*.1).toFixed(2)+'s"></i>'}
-s.insertAdjacentHTML('beforeend',g);setTimeout(()=>s.classList.add('hz-dead'),350);
-const bx=s.closest('.box');if(bx){bx.classList.add('hz-shk');setTimeout(()=>bx.classList.remove('hz-shk'),1300)}
-startA();boom()},0)},true);
-/* plein de chats morts partout */
-function pile(sel,n,s,bot,h){const p=Q(sel);if(!p)return;const w=D.createElement('div');w.className='hz-pile';w.style.bottom=bot+'px';w.style.height=h+'px';let x='';for(let i=0;i<n;i++){const r=R([80,95,110,-80,-95,-110,180,170,-170,100]);x+='<span class="hz-dc" style="left:'+(Math.random()*88|0)+'%;bottom:'+(Math.random()*(h-10)|0)+'px;transform:rotate('+r+'deg);z-index:'+(i%5)+'">'+pix(CAT_A,s,catPal(Math.random()*CATS.length|0))+'</span>'}w.innerHTML=x;p.appendChild(w)}
-try{pile('#hpScene',16,3,0,46);pile('#ibOvl .ibgnd',9,3,0,30);pile('#cfOvl .cfs',9,3,2,36);pile('#avScene',10,3,0,40);pile('#bload .xground',12,4,0,40)}catch(x){}
-/* menu : que des boutons Résidence ronron */
-function mnRes(){D.querySelectorAll('#menuList .menuitem').forEach(b=>{if(b.dataset.page==='avent'||b.dataset.act==='garden')return;if(b.textContent!=='Résidence ronron')b.textContent='Résidence ronron'})}
-mnRes();const mbt=D.getElementById('menuBtn');if(mbt)mbt.addEventListener('click',()=>setTimeout(mnRes,0));
-const ml=D.getElementById('menuList');if(ml)ml.addEventListener('click',e=>{const b=e.target.closest('.menuitem');if(!b)return;e.stopImmediatePropagation();e.preventDefault();try{mnClose()}catch(x){}ibOpen()},true);
-/* sapin en feu sur l'accueil */
-const hs=D.getElementById('hpScene');if(hs&&!hs.querySelector('.hz-tw')){const w=D.createElement('div');w.className='hz-tw';w.innerHTML='<div class="hz-tree"><i></i><i></i><i></i><b></b></div><div class="hz-fire"></div>'+[0,1,2,3].map(i=>'<span class="hz-sm" style="left:'+(20+i*18)+'%;bottom:70%;animation-delay:'+(-i*.9)+'s"></span>').join('');hs.insertBefore(w,D.getElementById('hpCrowd'))}
-/* ouvertures : explosion & bagarre */
-function watch(id,open,close){const e=D.getElementById(id);if(!e)return;let was=false;new MutationObserver(()=>{const n=e.classList.contains('on');if(n&&!was)open();if(!n&&was&&close)close();was=n}).observe(e,{attributes:true,attributeFilter:['class']})}
-watch('ibOvl',()=>{const b=D.createElement('div');b.className='hz-boom';D.body.appendChild(b);setTimeout(()=>b.remove(),1200);const bx=Q('#ibOvl .box');if(bx){bx.classList.add('hz-shk');setTimeout(()=>bx.classList.remove('hz-shk'),1300)}
-const ib=Q('#ibOvl .ib');if(ib&&!ib.querySelector('.hz-sm'))for(let i=0;i<6;i++){const s=D.createElement('span');s.className='hz-sm';s.style.left=(8+i*15)+'%';s.style.animationDelay=(-i*.7)+'s';ib.appendChild(s)}
-const bb=D.getElementById('ibBub');if(bb)bb.textContent=R(['La résidence a explosé… Personne n’a survécu.','Ne touche pas aux fenêtres. Elles brûlent encore.','On entend des miaulements sous les décombres…']);boom()});
-let ft=null;
-watch('cfOvl',()=>{const s=Q('#cfOvl .cfs');if(s){const o=s.querySelector('.hz-fight');if(o)o.remove();let a=0,b=0;try{const u=un();a=u[0];b=u[1]!=null?u[1]:u[0]}catch(x){}
-const f=D.createElement('div');f.className='hz-fight';f.innerHTML='<span class="hz-fc l">'+dcat(a,4,0)+'</span><span class="hz-cloud"></span><span class="hz-fc r">'+dcat(b,4,1)+'</span><b class="hz-fx">FSSSHH !!</b><b class="hz-fx2">💢</b>';s.appendChild(f)}
-catFight();clearInterval(ft);ft=setInterval(catFight,2600)},()=>clearInterval(ft));
-})()}catch(e){console.error('horreur',e)}
 
 })();
 </script>
