@@ -1142,6 +1142,15 @@ button.cctile:active{transform:scale(.96)}
 .xban .ni svg{display:block;width:30px;height:auto}
 .xban .nt{flex:1;min-width:0;line-height:1.15}.xban b{display:block;font-size:16px;font-weight:600}.xban span{font-size:14px;opacity:.85}
 .xban time{align-self:flex-start;font-size:12px;opacity:.6}
+.menubtn,.menulist,.profbtn,.player{display:none!important}
+.homebtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:12px;z-index:20;display:none;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;border:3px solid #fff;background:linear-gradient(#ffd1df,#ff8fab);color:#fff;font-family:'Fredoka',system-ui,sans-serif;font-size:16px;font-weight:600;text-shadow:0 1px 0 rgba(0,0,0,.25);box-shadow:0 4px 0 #d6567a,0 8px 14px rgba(8,14,50,.3);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.homebtn:active{transform:translateY(3px);box-shadow:0 1px 0 #d6567a}
+body:not(:has(#homePage.on)) .homebtn{display:flex}
+.cl{display:flex;flex-direction:column}
+.cr{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid rgba(122,74,90,.18);cursor:pointer}.cr.off{opacity:.45;cursor:default}
+.cav{flex:none;width:50px;height:50px;border-radius:50%;background:linear-gradient(#ffd1df,#ff8fab);border:2px solid #fff;box-shadow:0 2px 0 rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden}.cav svg{width:34px;height:auto}
+.cr b{display:block;font-size:17px}.cr small{display:block;opacity:.7;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62vw}
+.chh{position:relative}.chb{position:absolute;left:0;top:2px;background:none;border:0;color:var(--xc);font-size:15px;font-weight:600;padding:0}
 </style>
 <body>
 <button class="adminbtn" id="adminBtn"><span id="adminIcon"></span><span class="al">Admin<span class="alx">istrateur ronron</span></span></button>
@@ -1175,6 +1184,7 @@ button.cctile:active{transform:scale(.96)}
 <p class="target">Inauguration du sapin le 1er décembre ♡</p>
 <div class="avtape"></div>
 </div></div>
+<button class="homebtn" id="homeBtn" type="button" aria-label="Retour à l’accueil">‹ Accueil</button>
 <div class="xov" id="xOv" aria-hidden="true"><div class="xhd"><button id="xBk" type="button">‹ Accueil</button><b id="xTt"></b><span></span></div><div class="xbd" id="xBd"></div></div>
 <button class="ccgrab" id="ccGrab" type="button" aria-label="Centre de contrôle"><i></i><b></b></button>
 <div class="ccwrap" id="ccWrap" aria-hidden="true"><div class="ccdim" id="ccDim"></div>
@@ -4258,17 +4268,56 @@ setInterval(()=>{const n=Date.now();
  if(TMR&&n>=TMR){TMR=null;sv('ronron-tmr',null);yay(3);toast('Miaou ! Le minuteur est terminé ♡',4000);if(xc==='h')A.h()}
  const d=new Date(),hm=P(d.getHours())+':'+P(d.getMinutes());
  if(AL.on&&hm===AL.t&&alD!==hm+d.getDate()){alD=hm+d.getDate();yay(5);toast('Miaou miaou ! C’est l’heure ♡',5000)}},1000);
+const CV={
+'Praline🤫':{s:{m:['Léo… psst 🤫','Tu es seul(e) ? J’ai un truc à te demander.','On m’a dit que Nuage t’a confié un secret… une histoire de croquette 👀'],c:[['Oui, il m’a dit un secret','a'],['Quel secret ? Je ne sais rien','b']]},
+a:{m:['Je le savais !! Dis-moi, dis-moi, dis-moi 🥺','Je te donne un câlin. Et deux ronrons. Et mon coussin préféré.'],c:[['Bon… il a caché une croquette','t'],['Non, j’ai promis à Nuage','n']]},
+b:{m:['Menteur ! Tes moustaches ont bougé 😼','Allez Léo… juste une toute petite miette d’indice.'],c:[['C’est dans le salon','m'],['Rien du tout, désolé','n']]},
+m:{m:['Le salon ?! 🛋️ Donc le canapé…','Sous un coussin, j’en suis sûre. J’y vais !'],c:[['Non attends !','u'],['Bonne chasse 😈','u']]},
+t:{m:['AH ! Sous le coussin du canapé !! Merci Léo 💖','*bruits de coussins qui volent*','…Il n’y avait plus rien. Nuage l’avait déjà mangée 😭','Il dort dessus avec un air très satisfait. Je ne dirai rien… cette fois 🤫']},
+u:{m:['*fouille tous les coussins*','Rien ! Seulement une croquette à moitié mangée.','Nuage m’a regardée avec ses yeux de sommeil. Je crois qu’il sait que tu as parlé 🙈','Excuse-moi auprès de lui ?']},
+n:{m:['Oooh… tu gardes le secret ? 🥹','Tu es un vrai ami, Léo. Moi je l’aurais dit en deux secondes.','Je dirai à Nuage que tu es digne de confiance.','Et en récompense : un câlin de Praline 💕']}},
+Nuage:{s:{m:['Miaou Léo… tu es réveillé ? 🌙','Moi je viens de me réveiller de ma sieste. La 5e de la journée.'],c:[['Seulement 5 ? 😮','a'],['Tu rêvais de quoi ?','b']]},
+a:{m:['Oui seulement 5 ! J’ai raté celle de 16h… catastrophe.','Heureusement il reste le canapé.'],c:[['Va vite te recoucher','c'],['Je viens te faire un câlin','d']]},
+b:{m:['D’un nuage en forme de poisson 🐟☁️','Il était tout doux. J’ai voulu le croquer… mais il a fondu.'],c:[['Pauvre nuage…','c'],['Ça devait être bon !','d']]},
+c:{m:['Tu as raison, mon ronron. Je ferme les yeux deux minutes…','Zzz… ah non, je te réponds encore ♡'],c:[['Dors bien, Nuage','e'],['Raconte-moi un secret','f']]},
+d:{m:['Un câlin ?? J’arrive !!! Mais doucement, je suis en mode nuage.','*ronron ronron ronron*'],c:[['Ronron, ronron…','e'],['Un secret ?','f']]},
+f:{m:['Chut… j’ai caché une croquette sous le coussin du canapé.','Ne le dis à personne. Surtout pas à Praline 🤫'],c:[['Promis 🤞','e']]},
+e:{m:['Merci d’être là, Léo.','Tu es mon nuage préféré à moi ♡','Bonne nuit… Zzz 💤']}},
+Mochi:{s:{m:['Léo ! Regarde ce que je viens de faire…','J’ai fait tomber le verre. Et le vase. Et une boule du sapin 🎄'],c:[['Mochi !! 😱','a'],['Bravo l’artiste 👏','b']]},
+a:{m:['C’est pas ma faute, la boule m’a regardé bizarrement.','Je me fais pardonner avec un ronron ?','Prrrr ♡']},
+b:{m:['Merci ! Je prépare une expo : « Les chutes de Mochi ».','Prochaine œuvre : la tasse. Ne dis rien 🤫']}},
+Caramel:{s:{m:['Léo, j’ai une question TRÈS sérieuse 🍪','Est-ce que les croquettes de Noël ont un goût de sapin ?'],c:[['Non, de poulet','a'],['Essaie, tu verras','b']]},
+a:{m:['Du poulet ?! Je savais que Noël était magique.','Je reprends une gamelle entière 😋']},
+b:{m:['…J’ai goûté. Aucun goût de sapin.','Mais le sapin avait un goût de croquette cassée. Pardon Léo 🎄']}},
+Cacao:{s:{m:['Il fait froid dehors, Léo ❄️','Je suis sous la couverture avec mon chocolat chaud. Il y a des guimauves.'],c:[['Garde-moi une place','a'],['Tu me ramènes un chocolat ?','b']]},
+a:{m:['Place réservée, côté radiateur.','Apporte juste ton ronron, c’est le meilleur chauffage ♡']},
+b:{m:['Un chocolat ? J’ai tout bu…','…mais il me reste une guimauve. Je te la garde, promis. Enfin, j’essaie 🫣']}},
+Praline:{s:{m:['Coucou Léo 💕 j’ai accroché une branche de gui','Juste au-dessus du canapé. Par hasard, bien sûr.'],c:[['Hmm, suspect 😏','a'],['J’arrive pour le bisou 😘','b']]},
+a:{m:['Qui, moi ? Jamais ! 🙈','Bon… peut-être un petit peu. Viens vérifier ♡']},
+b:{m:['Aaah !! Je rougis jusqu’aux moustaches 🌸','Je t’attends sous le gui, ne traîne pas 💖']}},
+Étoile:{s:{m:['Léo, regarde par la fenêtre ✨','Il y a une étoile filante ! J’ai fait un vœu.'],c:[['Dis-moi ton vœu !','a'],['Je parie que c’est des croquettes','b']]},
+a:{m:['Si je te le dis, il ne se réalisera pas 🤐','Mais indice : il y a ton prénom dedans ♡']},
+b:{m:['Même pas !','C’était : « que Léo soit heureux ». Bon, et des croquettes aussi 🐟']}},
+Ash:{s:{m:['Bonsoir Léo. Je porte mon plus beau nœud papillon 🎩','Je me suis préparé pour le dîner de Noël.'],c:[['Très élégant !','a'],['Tu as encore volé la dinde ?','b']]},
+a:{m:['Merci. L’élégance est une seconde nature chez moi.','Surtout le noir et blanc : ça va avec tout ♡']},
+b:{m:['Je n’ai pas volé. J’ai… emprunté.','La dinde ne s’en est pas plainte. Elle était trop cuite 🦃']}}};
+const mk=(t)=>{tm.forEach(clearTimeout);tm=[];B.innerHTML=`<div class="chh"><button class="chb" data-bk="1">‹ Messages</button><b>${t}</b><small id="chS">en ligne</small></div><div id="chL"></div><div class="qr" id="chQ"></div>`;B.scrollTop=0;
+ const L=$('chL'),S=$('chS'),add=(t,c='')=>{const e=document.createElement('div');e.className='bb '+c;e.textContent=t;L.appendChild(e);B.scrollTop=1e5},
+ say=(t,cb)=>{S.textContent='écrit…';const e=document.createElement('div');e.className='bb ty';e.innerHTML='<i></i><i></i><i></i>';L.appendChild(e);B.scrollTop=1e5;wait(()=>{e.remove();S.textContent='en ligne';add(t);q(sfxPop);cb&&cb()},1000+t.length*12)},
+ seq=(a,cb)=>a.length?say(a[0],()=>seq(a.slice(1),cb)):cb&&cb();
+ return{add,say,seq,Q:$('chQ')}};
 const A={
 w(){const u=ls('ronron-wal',{});
  B.innerHTML=data.coupons.map((t,i)=>{const ok=RW['c'+(i+1)];return `<div class="wc ${ok?'':'off'} ${u[i]?'used':''}" data-i="${i}" style="--h:${[340,200,35,270][i%4]}"><small>COUPON N°${i+1}</small><p>${ok?t:'Coupon surprise… à gagner avec les jeux du soir'}</p><span>${!ok?'🔒 Verrouillé':u[i]?'✓ Utilisé':'Toucher pour utiliser'}</span></div>`}).join('');
  B.onclick=e=>{const c=e.target.closest('.wc');if(!c||c.classList.contains('off'))return;u[c.dataset.i]=!u[c.dataset.i];sv('ronron-wal',u);q(sfxPop);A.w()}},
-m(){const L0=GAMES.map((g,i)=>[g,data.notes[i]]);
- B.innerHTML='<div class="chh"><b>Mon ronron ♡</b><small id="chS">en ligne</small></div><div id="chL"></div><div class="qr">'+['Moi aussi ♡','Miaou ?','Un câlin ?'].map(t=>`<button>${t}</button>`).join('')+'</div>';
- const L=$('chL'),S=$('chS'),add=(t,c='')=>{const e=document.createElement('div');e.className='bb '+c;e.textContent=t;L.appendChild(e);B.scrollTop=1e5},
- say=(t,cb)=>{S.textContent='écrit…';const e=document.createElement('div');e.className='bb ty';e.innerHTML='<i></i><i></i><i></i>';L.appendChild(e);B.scrollTop=1e5;wait(()=>{e.remove();S.textContent='en ligne';add(t);q(sfxPop);cb&&cb()},1100+t.length*12)},
- run=i=>{if(i>=L0.length)return;const[g,t]=L0[i];if(unlocked(g)&&t){add('Petit mot du '+g.when.split(' ')[0],'sys');say(t,()=>run(i+1))}else add('Un petit mot arrive '+g.when+' ♡','sys')};
- run(0);
- B.onclick=e=>{const b=e.target.closest('.qr button');if(!b)return;add(b.textContent,'me');const M=data.msgs.length?data.msgs:['Miaou ♡'];say(M[Math.random()*M.length|0])}},
+m(){tm.forEach(clearTimeout);tm=[];const fl=ls('ronron-cvf',{}),cs=CATS.map((c,i)=>[i,c.n,null,okCat(i)?CV[c.n].s.m[0]:'🔒 Pas encore débloqué',okCat(i)]).sort((a,b)=>(b[1]==='Nuage')-(a[1]==='Nuage'));if(okCat(4))cs.splice(cs.findIndex(x=>x[0]===4)+1,0,['ps','Praline 🤫',pix(CAT_ICON,3,catPal(4)),fl.n?'Psst… tu es seul(e) ?':'🔒 Un secret à découvrir…',!!fl.n]);
+ B.innerHTML='<div class="cl">'+[['r','Mon ronron ♡','💌','Les petits mots du jour',1]].concat(cs).map(([k,n,e,p,ok])=>`<div class="cr ${ok?'':'off'}" data-k="${k}"><span class="cav">${e||pix(CAT_ICON,3,catPal(k))}</span><span><b>${n}</b><small>${p}</small></span></div>`).join('')+'</div>';
+ B.onclick=e=>{const r=e.target.closest('.cr');if(!r||r.classList.contains('off'))return;q(sfxPop);r.dataset.k==='r'?A.mr():r.dataset.k==='ps'?A.mc('Praline🤫'):A.mc(+r.dataset.k)}},
+mr(){const L0=GAMES.map((g,i)=>[g,data.notes[i]]),c=mk('Mon ronron ♡'),run=i=>{if(i>=L0.length)return;const[g,t]=L0[i];if(unlocked(g)&&t){c.add('Petit mot du '+g.when.split(' ')[0],'sys');c.say(t,()=>run(i+1))}else c.add('Un petit mot arrive '+g.when+' ♡','sys')};
+ c.Q.innerHTML=['Moi aussi ♡','Miaou ?','Un câlin ?'].map(t=>`<button>${t}</button>`).join('');run(0);
+ B.onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.bk){A.m();return}c.add(b.textContent,'me');const M=data.msgs.length?data.msgs:['Miaou ♡'];c.say(M[Math.random()*M.length|0])}},
+mc(i){const nm=typeof i==='string'?i:CATS[i].n,T=CV[nm],c=mk(nm.replace('🤫',' 🤫')),go=id=>{const nd=T[id];if(nm==='Nuage'&&id==='f')sv('ronron-cvf',{n:1});c.Q.innerHTML='';c.seq(nd.m,()=>{c.Q.innerHTML=nd.c?nd.c.map(([l,x])=>`<button data-n="${x}">${l}</button>`).join(''):'<button data-r="1">↺ Recommencer</button>';B.scrollTop=1e5})};
+ B.onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.bk){A.m();return}q(sfxPop);if(b.dataset.n){c.add(b.textContent,'me');go(b.dataset.n)}else if(b.dataset.r){$('chL').innerHTML='';go('s')}};go('s')},
 n(){const f=ls('ronron-xn',{});if(localStorage.getItem('ronron-ticket'))f['adorable']=1;
  const W=[['miaou','Memory des ronrons','le mot que le chat dit si bien'],['je t’aime','Nourris le chat','le secret tendre du mot de passe'],['adorable','Mon billet','le mot de passe du billet']];
  B.innerHTML='<h3>🔑 Mots de passe</h3>'+W.map(([w,g,h])=>`<div class="ln ${f[w]?'':'off'}"><b>${f[w]?w:'??????'}</b><span>${f[w]?'Trouvé : '+g:'Indice : '+h+' (→ '+g+')'}</span></div>`).join('')+'<h3>🔎 Indices</h3>'+GAMES.map((g,i)=>{const ok=unlocked(g),w=RW[g.rw];return `<div class="ln ${ok?'':'off'}"><b>${ok?g.n.replace(/<br>/g,' '):'???'}</b><span>${ok?(w?'✓ Gagné : chat '+CATS[g.cat].n+' + coupon n°'+(i+1):'À jouer ce soir ♡'):'Se débloque '+g.when}</span></div>`}).join('');B.onclick=null},
@@ -4313,6 +4362,7 @@ window.__welBanner=function(){const e=document.createElement('div');e.className=
  setTimeout(bye,5500);e.onclick=bye;
  e.addEventListener('touchstart',t=>{y0=t.touches[0].clientY},{passive:true});
  e.addEventListener('touchmove',t=>{if(y0!==null&&y0-t.touches[0].clientY>24){y0=null;bye()}},{passive:true})};
+$('homeBtn').onclick=()=>{q(sfxPop);window.__showPage('accueil');window.scrollTo(0,0)};
 document.querySelectorAll('#hpPage2 [data-x]').forEach(a=>a.onclick=()=>open(a.dataset.x));
 })();
 
